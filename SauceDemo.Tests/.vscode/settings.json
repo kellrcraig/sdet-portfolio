@@ -1,0 +1,9 @@
+{
+    "cucumberautocomplete.steps": [
+      "Tests/Steps/**/*.cs"
+    ],
+    "cucumberautocomplete.syncfeatures": "SauceDemo.Tests/Tests/Features",
+    "cucumberautocomplete.strictGherkinCompletion": true,
+    "cucumberautocomplete.smartSnippets": true
+  }
+  
