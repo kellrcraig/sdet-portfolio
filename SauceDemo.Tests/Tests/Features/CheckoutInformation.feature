@@ -1,10 +1,19 @@
 Feature: Checkout: Your Information
+
+    Scenario: Zip code field only accepts standard US format (five digits (e.g., 90210) or nine digits with dash (e.g., 90210-1234))
+    Scenario: Name fields accept alphabetic characters
+    Scenario: Name fields accept hyphens and apostrophes
+    Scenario: Name fields accept names with spaces
+    Scenario: Name fields accept names with Unicode characters
+    Scenario: Name fields reject inputs longer than 50 characters
+    Scenario: Name fields warns for numbers but does not block submission
+    Scenario: Tab key navigates to the next field
+    Scenario: Shift+tab navigates to the previous field
+    Scenario: Continue button navigates to Checkout: Overview page after validation succeeds
+
+    #This scenario will validate that the three fields have a non-zero character count
+    Scenario: Continue button does not navigate after validation fails
+
     Scenario: Validation error is cleared after closing the message
-    Scenario: First and Last Name should only allow characters that can be put into names. Commas maybe, opostraphes, tildas, etc. 
-    Scenario: Zip code shold only allow chaarcters that can be put into a zip code. I think only numbers and dashes.
-    Scenario: Continue button navigates correctly
-    Scenario: Continue button validates that each field has some sort of text
-    Scenario: Error message can be cleared
-    Scenario: Cancel button naviagtes correctly
-    Scenario: If I cancel and then come back, then the three text boxes should be cleared out
-    Scenario: Tab and shift tab buttons navigate correctly
+    Scenario: Cancel button navigates to Your Cart page
+    Scenario: Cannot access Checkout: Your Information page via direct URL

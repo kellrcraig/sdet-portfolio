@@ -1,9 +1,3 @@
-# Scenario Discovery Board for SauceDemo website
-
-| Page  | Given | when | Then | Scenario title idea | Priority |
-| ----- | ----- | ---- | ---- | ------------------- | -------- |
-| Login |       |      |      |                     |          |
-|       |       |      |      |                     |          |
 
 ## UI Elements
 
