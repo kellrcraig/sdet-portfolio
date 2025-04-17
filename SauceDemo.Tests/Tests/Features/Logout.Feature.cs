@@ -28,7 +28,7 @@ namespace SauceDemo.Tests.Tests.Features
         
         private static string[] featureTags = ((string[])(null));
         
-#line 1 "Logout.Feature"
+#line 1 "Logout.feature"
 #line hidden
         
         [NUnit.Framework.OneTimeSetUpAttribute()]
@@ -74,12 +74,14 @@ namespace SauceDemo.Tests.Tests.Features
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Logged in user is signed out after a certain amount of time")]
-        public void LoggedInUserIsSignedOutAfterACertainAmountOfTime()
+        [NUnit.Framework.DescriptionAttribute("User who is actively using the app is not automatically logged out after 10 minut" +
+            "es")]
+        public void UserWhoIsActivelyUsingTheAppIsNotAutomaticallyLoggedOutAfter10Minutes()
         {
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Logged in user is signed out after a certain amount of time", null, tagsOfScenario, argumentsOfScenario, featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("User who is actively using the app is not automatically logged out after 10 minut" +
+                    "es", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 3
     this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -95,12 +97,12 @@ namespace SauceDemo.Tests.Tests.Features
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Signed out user cannot navigate back inside the app")]
-        public void SignedOutUserCannotNavigateBackInsideTheApp()
+        [NUnit.Framework.DescriptionAttribute("Idle user cannot cannot modify cart after automatic logout")]
+        public void IdleUserCannotCannotModifyCartAfterAutomaticLogout()
         {
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Signed out user cannot navigate back inside the app", "        Epic sadface: You can only access \'/cart.html\' when you are logged in.", tagsOfScenario, argumentsOfScenario, featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Idle user cannot cannot modify cart after automatic logout", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 4
     this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -116,12 +118,33 @@ namespace SauceDemo.Tests.Tests.Features
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Signed out (automatically or manually) user\'s cart state remains in tact")]
-        public void SignedOutAutomaticallyOrManuallyUsersCartStateRemainsInTact()
+        [NUnit.Framework.DescriptionAttribute("Logout link signs out the current user")]
+        public void LogoutLinkSignsOutTheCurrentUser()
         {
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Signed out (automatically or manually) user\'s cart state remains in tact", null, tagsOfScenario, argumentsOfScenario, featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Logout link signs out the current user", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 5
+    this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Logged out user cannot access protected pages")]
+        public void LoggedOutUserCannotAccessProtectedPages()
+        {
+            string[] tagsOfScenario = ((string[])(null));
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Logged out user cannot access protected pages", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 6
     this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -137,12 +160,12 @@ namespace SauceDemo.Tests.Tests.Features
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute(@"There is something weird about the auto signout. The app lets you make changes on the Inventory page, but after a while, it logs you out if you try to access the cart. Seems like if you are logged out, you should be redirected to the login screen. I think the logout feature logs you out even if you are making edits.")]
-        public void ThereIsSomethingWeirdAboutTheAutoSignout_TheAppLetsYouMakeChangesOnTheInventoryPageButAfterAWhileItLogsYouOutIfYouTryToAccessTheCart_SeemsLikeIfYouAreLoggedOutYouShouldBeRedirectedToTheLoginScreen_IThinkTheLogoutFeatureLogsYouOutEvenIfYouAreMakingEdits_()
+        [NUnit.Framework.DescriptionAttribute("Cart contents are preserved after logout")]
+        public void CartContentsArePreservedAfterLogout()
         {
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo(@"There is something weird about the auto signout. The app lets you make changes on the Inventory page, but after a while, it logs you out if you try to access the cart. Seems like if you are logged out, you should be redirected to the login screen. I think the logout feature logs you out even if you are making edits.", null, tagsOfScenario, argumentsOfScenario, featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Cart contents are preserved after logout", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 7
     this.ScenarioInitialize(scenarioInfo);
 #line hidden

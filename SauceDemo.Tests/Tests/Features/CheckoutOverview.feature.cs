@@ -235,12 +235,12 @@ namespace SauceDemo.Tests.Tests.Features
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("What should Reset App State do here?")]
-        public void WhatShouldResetAppStateDoHere()
+        [NUnit.Framework.DescriptionAttribute("Reset App State scenarios")]
+        public void ResetAppStateScenarios()
         {
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("What should Reset App State do here?", null, tagsOfScenario, argumentsOfScenario, featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Reset App State scenarios", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 9
     this.ScenarioInitialize(scenarioInfo);
 #line hidden

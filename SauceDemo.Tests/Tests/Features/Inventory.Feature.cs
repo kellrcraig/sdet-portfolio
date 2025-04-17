@@ -28,7 +28,7 @@ namespace SauceDemo.Tests.Tests.Features
         
         private static string[] featureTags = ((string[])(null));
         
-#line 1 "Inventory.Feature"
+#line 1 "Inventory.feature"
 #line hidden
         
         [NUnit.Framework.OneTimeSetUpAttribute()]
@@ -74,14 +74,12 @@ namespace SauceDemo.Tests.Tests.Features
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Validate the default app state; sorting option is set to Name A-Z, items are in e" +
-            "pxted order with correct properties, and carte is empty")]
-        public void ValidateTheDefaultAppStateSortingOptionIsSetToNameA_ZItemsAreInEpxtedOrderWithCorrectPropertiesAndCarteIsEmpty()
+        [NUnit.Framework.DescriptionAttribute("Inventory page loads with default items, sorting option, and empty cart")]
+        public void InventoryPageLoadsWithDefaultItemsSortingOptionAndEmptyCart()
         {
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Validate the default app state; sorting option is set to Name A-Z, items are in e" +
-                    "pxted order with correct properties, and carte is empty", null, tagsOfScenario, argumentsOfScenario, featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Inventory page loads with default items, sorting option, and empty cart", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 3
     this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -97,16 +95,12 @@ namespace SauceDemo.Tests.Tests.Features
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Sorting options work. Can we use a table to represent the 4 sorting options and a" +
-            "nother table to represent the item? Make sure to have a case for the Add to Catr" +
-            "t and Remove buttons")]
-        public void SortingOptionsWork_CanWeUseATableToRepresentThe4SortingOptionsAndAnotherTableToRepresentTheItemMakeSureToHaveACaseForTheAddToCatrtAndRemoveButtons()
+        [NUnit.Framework.DescriptionAttribute("Sorting by Name (A to Z) orders items alphabetically")]
+        public void SortingByNameAToZOrdersItemsAlphabetically()
         {
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Sorting options work. Can we use a table to represent the 4 sorting options and a" +
-                    "nother table to represent the item? Make sure to have a case for the Add to Catr" +
-                    "t and Remove buttons", null, tagsOfScenario, argumentsOfScenario, featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Sorting by Name (A to Z) orders items alphabetically", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 4
     this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -122,12 +116,12 @@ namespace SauceDemo.Tests.Tests.Features
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Add to cart buttons work on various items")]
-        public void AddToCartButtonsWorkOnVariousItems()
+        [NUnit.Framework.DescriptionAttribute("Sorting by Name (Z to A) orders items in reverse alphabetical order")]
+        public void SortingByNameZToAOrdersItemsInReverseAlphabeticalOrder()
         {
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Add to cart buttons work on various items", null, tagsOfScenario, argumentsOfScenario, featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Sorting by Name (Z to A) orders items in reverse alphabetical order", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 5
     this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -143,12 +137,12 @@ namespace SauceDemo.Tests.Tests.Features
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Remove buttons work on various items")]
-        public void RemoveButtonsWorkOnVariousItems()
+        [NUnit.Framework.DescriptionAttribute("Sorting by Price (low to high) orders items from cheapest to most expensive")]
+        public void SortingByPriceLowToHighOrdersItemsFromCheapestToMostExpensive()
         {
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Remove buttons work on various items", null, tagsOfScenario, argumentsOfScenario, featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Sorting by Price (low to high) orders items from cheapest to most expensive", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 6
     this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -164,14 +158,12 @@ namespace SauceDemo.Tests.Tests.Features
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Reset App State reverts Cart, sorting option, item order, and Remove buttons to d" +
-            "efault state")]
-        public void ResetAppStateRevertsCartSortingOptionItemOrderAndRemoveButtonsToDefaultState()
+        [NUnit.Framework.DescriptionAttribute("Sorting by Price (high to low) orders items from most to least expensive")]
+        public void SortingByPriceHighToLowOrdersItemsFromMostToLeastExpensive()
         {
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Reset App State reverts Cart, sorting option, item order, and Remove buttons to d" +
-                    "efault state", null, tagsOfScenario, argumentsOfScenario, featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Sorting by Price (high to low) orders items from most to least expensive", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 7
     this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -187,14 +179,12 @@ namespace SauceDemo.Tests.Tests.Features
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("I would expect that the sorting order persists when going from one of the cart pa" +
-            "ges and back to the inventory page.")]
-        public void IWouldExpectThatTheSortingOrderPersistsWhenGoingFromOneOfTheCartPagesAndBackToTheInventoryPage_()
+        [NUnit.Framework.DescriptionAttribute("Add to cart button adds item to cart")]
+        public void AddToCartButtonAddsItemToCart()
         {
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("I would expect that the sorting order persists when going from one of the cart pa" +
-                    "ges and back to the inventory page.", null, tagsOfScenario, argumentsOfScenario, featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Add to cart button adds item to cart", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 8
     this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -210,13 +200,99 @@ namespace SauceDemo.Tests.Tests.Features
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Removing an item from the Cart also sets item button back to Add to cart")]
-        public void RemovingAnItemFromTheCartAlsoSetsItemButtonBackToAddToCart()
+        [NUnit.Framework.DescriptionAttribute("Remove button removes item from cart")]
+        public void RemoveButtonRemovesItemFromCart()
         {
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Removing an item from the Cart also sets item button back to Add to cart", null, tagsOfScenario, argumentsOfScenario, featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Remove button removes item from cart", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 9
+    this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Reset App State link reverts items, sorting option, and cart to defaults")]
+        public void ResetAppStateLinkRevertsItemsSortingOptionAndCartToDefaults()
+        {
+            string[] tagsOfScenario = ((string[])(null));
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Reset App State link reverts items, sorting option, and cart to defaults", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 10
+    this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Items and sorting option persist when returning to inventory page")]
+        public void ItemsAndSortingOptionPersistWhenReturningToInventoryPage()
+        {
+            string[] tagsOfScenario = ((string[])(null));
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Items and sorting option persist when returning to inventory page", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 11
+    this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Remove button changes to Add to cart button after removing item from the cart")]
+        public void RemoveButtonChangesToAddToCartButtonAfterRemovingItemFromTheCart()
+        {
+            string[] tagsOfScenario = ((string[])(null));
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Remove button changes to Add to cart button after removing item from the cart", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 12
+    this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Add to cart button displays Remove on item detail page after adding from inventor" +
+            "y")]
+        public void AddToCartButtonDisplaysRemoveOnItemDetailPageAfterAddingFromInventory()
+        {
+            string[] tagsOfScenario = ((string[])(null));
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Add to cart button displays Remove on item detail page after adding from inventor" +
+                    "y", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 13
     this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))

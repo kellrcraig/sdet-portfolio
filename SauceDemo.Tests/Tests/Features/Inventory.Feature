@@ -1,9 +1,19 @@
 Feature: Inventory
 
-    Scenario: Validate the default app state; sorting option is set to Name A-Z, items are in epxted order with correct properties, and carte is empty
-    Scenario: Sorting options work. Can we use a table to represent the 4 sorting options and another table to represent the item? Make sure to have a case for the Add to Catrt and Remove buttons
-    Scenario: Add to cart buttons work on various items
-    Scenario: Remove buttons work on various items
-    Scenario: Reset App State reverts Cart, sorting option, item order, and Remove buttons to default state
-    Scenario: I would expect that the sorting order persists when going from one of the cart pages and back to the inventory page.
-    Scenario: Removing an item from the Cart also sets item button back to Add to cart
+    Scenario: Inventory page loads with default items, sorting option, and empty cart
+    Scenario: Sorting by Name (A to Z) orders items alphabetically
+    Scenario: Sorting by Name (Z to A) orders items in reverse alphabetical order
+    Scenario: Sorting by Price (low to high) orders items from cheapest to most expensive
+    Scenario: Sorting by Price (high to low) orders items from most to least expensive
+    Scenario: Add to cart button updates cart icon count
+    Scenario: Remove button updates cart icon count
+    Scenario: Back to products link navigates from the Item detail screen to the Inventory page
+    @reset-app-state
+    Scenario: Reset App State link reverts items, sorting option, and cart icon count to defaults
+    Scenario: Items and sorting option persist when returning to inventory page
+    @cart-button-state
+    Scenario: Remove button displays Add to cart after removing item from the cart
+    @cart-button-state
+    Scenario: Add to cart button displays Remove on inventory page after adding from item detail
+    @cart-button-state
+    Scenario: Add to cart button displays Add to cart on inventory page after removing from item detail
