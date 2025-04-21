@@ -1,4 +1,4 @@
-# Scenario Style Guide for Gherkin Feature Files
+# Scenario Guide for Gherkin Feature Files
 
 A practical, opinionated guide to writing clean, consistent, and professional scenario titles and descriptions in `.feature` files. This style guide is based on your finalized scenario titles, recurring challenges, and professional conventions used in high-quality test automation projects.
 
