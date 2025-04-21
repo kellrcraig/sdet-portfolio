@@ -1,9 +1,11 @@
 Feature: Checkout: Overview
 
     #This button behaves inconsistently with the Checkout: Your Information page. 
-    #The Checkout: Your Information page navigates to the previous page back, but this Cancel button brings you all the way back to the Inventory page
+    #The Checkout: Your Information page navigates to the previous page back, but this Cancel button brings you all the way back to the Products page
+    @page-navigation
     Scenario: Cancel button navigates to Checkout: Your Information page
 
+    @page-navigation
     Scenario: Finish button navigates to Checkout: Complete page
 
     @cart-contents

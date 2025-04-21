@@ -4,9 +4,11 @@ Feature: Your Cart
     Scenario: Resetting App State clears all items from the cart
     
     #If navigated from Inventory Detail, returns there; otherwise returns to Inventory
+    @page-navigation
     Scenario: Continue Shopping button navigates back to previous page
-
+    @page-navigation
     Scenario: Checkout button navigates to Checkout: Your Information page when the cart is not empty
+    @page-navigation
     Scenario: Checkout button does not navigate when the cart is empty
     @cart-contents
     Scenario: Cart displays empty when there are no items in it

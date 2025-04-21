@@ -7,6 +7,8 @@ Feature: Menu Component
 # - CheckoutOverview.feature
 
     Scenario: Close button hides the menu
-    Scenario: All Items link navigates to the inventory page
+    @page-navigation
+    Scenario: All Items link navigates to Products page
+    @page-navigation
     Scenario: About link navigates to the Sauce Labs website
 

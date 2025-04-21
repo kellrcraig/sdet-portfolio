@@ -95,13 +95,15 @@ namespace SauceDemo.Tests.Tests.Features
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("All Items link navigates to the inventory page")]
-        public void AllItemsLinkNavigatesToTheInventoryPage()
+        [NUnit.Framework.DescriptionAttribute("All Items link navigates to Products page")]
+        [NUnit.Framework.CategoryAttribute("page-navigation")]
+        public void AllItemsLinkNavigatesToProductsPage()
         {
-            string[] tagsOfScenario = ((string[])(null));
+            string[] tagsOfScenario = new string[] {
+                    "page-navigation"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("All Items link navigates to the inventory page", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 10
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("All Items link navigates to Products page", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 11
     this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
@@ -117,12 +119,14 @@ namespace SauceDemo.Tests.Tests.Features
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("About link navigates to the Sauce Labs website")]
+        [NUnit.Framework.CategoryAttribute("page-navigation")]
         public void AboutLinkNavigatesToTheSauceLabsWebsite()
         {
-            string[] tagsOfScenario = ((string[])(null));
+            string[] tagsOfScenario = new string[] {
+                    "page-navigation"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("About link navigates to the Sauce Labs website", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 11
+#line 13
     this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))

@@ -9,11 +9,15 @@ Feature: Checkout: Your Information
     Scenario: Name fields warns for numbers but does not block submission
     Scenario: Tab key navigates to the next field
     Scenario: Shift+tab navigates to the previous field
+
+    @page-navigation
     Scenario: Continue button navigates to Checkout: Overview page after validation succeeds
 
     #This scenario will validate that the three fields have a non-zero character count
     Scenario: Continue button does not navigate after validation fails
 
     Scenario: Validation error is cleared after closing the message
+
+    @page-navigation
     Scenario: Cancel button navigates to Your Cart page
     Scenario: Cannot access Checkout: Your Information page via direct URL
