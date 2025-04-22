@@ -1,7 +1,10 @@
 Feature: Item Detail
 
     # Works from the image link and the name link. All properties from the selected item show up on the detail screen. Test multiple products.
+    @page-navigation
     Scenario: Item Detail page displays correct item after selecting from Inventory
+    @page-navigation
+    Scenario: Item Detail page displays correct item after selecting from Cart
 
     @reset-app-state
     Scenario: Reset App State link reverts item state and cart icon count to defaults

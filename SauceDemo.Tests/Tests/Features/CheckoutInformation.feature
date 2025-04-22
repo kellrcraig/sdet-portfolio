@@ -9,6 +9,9 @@ Feature: Checkout: Your Information
     Scenario: Name fields warns for numbers but does not block submission
     Scenario: Tab key navigates to the next field
     Scenario: Shift+tab navigates to the previous field
+    Scenario: Continue button blocks page navigation when First Name field is empty
+    Scenario: Continue button blocks page navigation when Last Name field is empty
+    Scenario: Continue button blocks page navigation when Postal Code field is empty
 
     @page-navigation
     Scenario: Continue button navigates to Checkout: Overview page after validation succeeds
