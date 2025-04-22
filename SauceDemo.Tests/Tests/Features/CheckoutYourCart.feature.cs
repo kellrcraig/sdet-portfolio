@@ -281,27 +281,6 @@ namespace SauceDemo.Tests.Tests.Features
             }
             this.ScenarioCleanup();
         }
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("TODO Item detail link naviagtes to Item Detail page for chosen item")]
-        public void TODOItemDetailLinkNaviagtesToItemDetailPageForChosenItem()
-        {
-            string[] tagsOfScenario = ((string[])(null));
-            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("TODO Item detail link naviagtes to Item Detail page for chosen item", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 30
-    this.ScenarioInitialize(scenarioInfo);
-#line hidden
-            if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
-            {
-                testRunner.SkipScenario();
-            }
-            else
-            {
-                this.ScenarioStart();
-            }
-            this.ScenarioCleanup();
-        }
     }
 }
 #pragma warning restore
