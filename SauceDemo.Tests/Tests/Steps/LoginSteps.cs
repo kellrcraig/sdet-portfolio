@@ -1,37 +1,27 @@
 using TechTalk.SpecFlow;
 using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
 using SauceDemo.Tests.Pages;
-using SauceDemo.Tests.TestData;
+using SauceDemo.Tests.Tests.TestData;
 
 namespace SauceDemo.Tests.Tests.Steps;
 
 [Binding]
-public class LoginSteps
+public class LoginSteps : BaseSteps
 {
-    private IWebDriver? _driver;
-    private LoginPage? _loginPage;
-
-    [BeforeScenario]
-    public void SetUp()
+    private readonly LoginPageObject? _loginPage;
+    public LoginSteps(ScenarioContext scenarioContext) : base(scenarioContext)
     {
-        _driver = new ChromeDriver();
-        _loginPage = new LoginPage(_driver); 
-
-    }   
-
-    [AfterScenario]
-    public void TearDown()
-    {
-        _driver?.Quit();
+        _loginPage = Page<LoginPageObject>();
     }
 
+    [Given(@"I open the login page")]
     [Given(@"I am on the login page")]
-    public void GivenIAmOnTheLoginPage() => _loginPage?.NavigateTo();
+    public void IOpenTheLoginPage() => _loginPage?.NavigateTo();
 
-    [When(@"I log in as ""(.*)""")] 
-    public void WhenILogInAs(string username) => _loginPage?.Login(username, LoginUsers.CorrectPassword);
-
-    [Then(@"I should be redirected to the inventory page")]
-    public void ThenIShouldBeRedirectedToTheInventoryPage() => Assert.That(_driver?.Url, Does.Contain("/inventory"));
+    [When(@"I log in as ""(.*)""")]
+    public void ILogInAs(string username)
+    {
+        var validUserName = LoginUsers.ValidateUserName(username);
+        _loginPage?.Login(validUserName, LoginUsers.CorrectPassword);
+    }
 }

@@ -1,11 +1,16 @@
 Feature: Login
 
     Scenario: Standard user logs in
-        Given I am on the login page
+        Given I open the login page
         When I log in as "standard_user"
-        Then I should be redirected to the inventory page
+        Then the "inventory" page is displayed
     
     Scenario: Locked out user cannot log in
+        Given I open the login page
+        When I log in as "locked_out_user"
+        Then the "login" page is displayed
+        And the "Epic sadface: Sorry, this user has been locked out." message is displayed
+
     Scenario: User with incorrect username cannot log in
     Scenario: User with incorrect password cannot log in
     Scenario: User with empty username cannot log in
