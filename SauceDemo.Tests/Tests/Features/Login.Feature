@@ -12,8 +12,28 @@ Feature: Login
         And the "Epic sadface: Sorry, this user has been locked out." message is displayed
 
     Scenario: User with incorrect username cannot log in
-    Scenario: User with incorrect password cannot log in
+        Given I open the login page
+        When I log in as "incorrect_username"
+        Then the "login" page is displayed
+        And the "Epic sadface: Username and password do not match any user in this service" message is displayed
+
     Scenario: User with empty username cannot log in
-    Scenario: User with empty password cannot log in    
+        Given I open the login page
+        When I log in with username "" and password "secret_sauce"
+        Then the "login" page is displayed
+        And the "Epic sadface: Username is required" message is displayed        
+
+    Scenario: User with empty password cannot log in
+        Given I open the login page
+        When I log in with username "standard_user" and password ""
+        Then the "login" page is displayed
+        And the "Epic sadface: Password is required" message is displayed
+
+    Scenario: User with incorrect password cannot log in
+        Given I open the login page
+        When I log in with username "standard_user" and password "incorrect_password"
+        Then the "login" page is displayed
+        And the "Epic sadface: Username and password do not match any user in this service" message is displayed
+
     Scenario: Login error is cleared after closing the message
     Scenario: Chrome's "change your password" notice is dismissed

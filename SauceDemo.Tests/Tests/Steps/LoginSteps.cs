@@ -1,5 +1,4 @@
 using TechTalk.SpecFlow;
-using OpenQA.Selenium;
 using SauceDemo.Tests.Pages;
 using SauceDemo.Tests.Tests.TestData;
 
@@ -14,9 +13,17 @@ public class LoginSteps : BaseSteps
         _loginPage = Page<LoginPageObject>();
     }
 
-    [Given(@"I open the login page")]
     [Given(@"I am on the login page")]
+    [Given(@"I open the login page")]
     public void IOpenTheLoginPage() => _loginPage?.NavigateTo();
+
+    [When(@"I log in with username ""(.*)"" and password ""(.*)""")]
+    public void ILogInWithUsernameAndPassword(string username, string password)
+    {
+        var validUserName = LoginUsers.ValidateUserName(username);
+        var validPassword = LoginUsers.ValidatePassword(password);
+        _loginPage?.Login(validUserName, validPassword);
+    }
 
     [When(@"I log in as ""(.*)""")]
     public void ILogInAs(string username)

@@ -4,7 +4,6 @@ namespace SauceDemo.Tests.Tests.TestData
     public class LoginUsers
     {
         public const string CorrectPassword = "secret_sauce";
-        public const string IncorrectPassword = "secretsauce";
         private static readonly HashSet<string> ValidUsers = new(StringComparer.OrdinalIgnoreCase)
         {
             "standard_user",
@@ -12,7 +11,16 @@ namespace SauceDemo.Tests.Tests.TestData
             "problem_user",
             "performance_glitch_user",
             "error_user",
-            "visual_user"
+            "visual_user",
+            "incorrect_username",
+            ""
+        };
+        
+        private static readonly HashSet<string> ValidPasswords = new(StringComparer.OrdinalIgnoreCase)
+        {
+            CorrectPassword,
+            "incorrect_password",
+            ""
         };
 
         public static string ValidateUserName(string username)
@@ -23,6 +31,16 @@ namespace SauceDemo.Tests.Tests.TestData
                     $"Invalid SauceDemo username: '{username}'. Allowed values: {string.Join(", ", ValidUsers)}");
             }
             return username;
+        }
+
+        public static string ValidatePassword(string password)
+        {
+            if(!ValidPasswords.Contains(password))
+            {
+                throw new ArgumentException(
+                    $"Invalid SauceDemo password: '{password}'. Allowed values: {string.Join(", ", ValidPasswords)}");
+            }
+            return password;
         }
     }
 }

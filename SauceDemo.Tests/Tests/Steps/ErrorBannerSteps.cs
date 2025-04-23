@@ -22,4 +22,6 @@ public class ErrorBannerSteps : BaseSteps
         var actualText = _errorBanner?.GetErrorMessageText();
         TestAssertions.AssertErrorMessage(isVisible, actualText, expectedErrorMessage);
     }
+
+    public void 
 }
