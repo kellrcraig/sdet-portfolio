@@ -28,7 +28,7 @@ namespace SauceDemo.Tests.Tests.Features
         
         private static string[] featureTags = ((string[])(null));
         
-#line 1 "MenuComponent.Feature"
+#line 1 "MenuComponent.feature"
 #line hidden
         
         [NUnit.Framework.OneTimeSetUpAttribute()]
