@@ -17,9 +17,20 @@ namespace SauceDemo.Tests.Tests.Hooks
         [BeforeScenario]
         public void SetUp()
         {
-            var driver = new ChromeDriver();
-            scenarioContext["driver"] = driver;
-        }
+        var options = new ChromeOptions();
+        options.AddArgument("--disable-blink-features=AutomationControlled");
+        options.AddArgument("disable-infobars");  // optional, removes "Chrome is being controlled"
+        options.AddUserProfilePreference("credentials_enable_service", false);
+        options.AddUserProfilePreference("profile.password_manager_enabled", false);
+
+        // Disable extensions and use fresh profile
+        options.AddArgument("--disable-extensions");
+        options.AddArgument("--start-maximized");
+        options.AddArgument("--incognito");  // Helps ensure no cached settings interfere
+
+        var driver = new ChromeDriver(options);
+        scenarioContext["driver"] = driver;
+    }
 
         [AfterScenario]
         public void TearDown()
