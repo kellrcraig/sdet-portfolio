@@ -36,4 +36,7 @@ Feature: Login
         And the "Epic sadface: Username and password do not match any user in this service" message is displayed
 
     Scenario: Login error is cleared after closing the message
-    Scenario: Chrome's "change your password" notice is dismissed
+        Given I open the login page
+        And I log in as "incorrect_username"
+        When I dismiss the error message
+        Then the error message is not displayed
