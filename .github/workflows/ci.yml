@@ -28,7 +28,8 @@ jobs:
     - name: Run tests excluding @wip scenarios
       run: dotnet test SauceDemo.Tests/SauceDemo.Tests.csproj --configuration Release --no-build --logger "trx;LogFileName=test-results.trx" --filter "TestCategory!=wip"
 
-    - name: Upload Test Results as Artifact (Optional)
+    - name: Upload Test Results as Artifact
+      if: always()
       uses: actions/upload-artifact@v4
       with:
         name: test-results
