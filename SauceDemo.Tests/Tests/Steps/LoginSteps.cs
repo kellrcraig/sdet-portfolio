@@ -27,6 +27,7 @@ namespace SauceDemo.Tests.Tests.Steps
             loginPage?.Login(validUserName, validPassword);
         }
 
+        [Given(@"I log in as ""(.*)""")]
         [When(@"I log in as ""(.*)""")]
         public void ILogInAs(string username)
         {
