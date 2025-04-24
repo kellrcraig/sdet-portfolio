@@ -1,3 +1,4 @@
+@wip
 Feature: Logout
 
     Scenario: User who is actively using the app is not automatically logged out after 10 minutes

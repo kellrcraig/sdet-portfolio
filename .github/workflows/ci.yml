@@ -1,0 +1,35 @@
+name: .NET Test Automation
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: '7.0.x'
+
+    - name: Restore dependencies
+      run: dotnet restore SauceDemo.Tests/SauceDemo.Tests.csproj
+
+    - name: Build the project
+      run: dotnet build SauceDemo.Tests/SauceDemo.Tests.csproj --configuration Release --no-restore
+
+    - name: Run tests excluding @wip scenarios
+      run: dotnet test SauceDemo.Tests/SauceDemo.Tests.csproj --configuration Release --no-build --logger "trx;LogFileName=test-results.trx" --filter "TestCategory!=wip"
+
+    - name: Upload Test Results as Artifact (Optional)
+      uses: actions/upload-artifact@v4
+      with:
+        name: test-results
+        path: '**/*.trx'

@@ -1,3 +1,4 @@
+@wip
 Feature: Item Detail
 
     # Works from the image link and the name link. All properties from the selected item show up on the detail screen. Test multiple products.
