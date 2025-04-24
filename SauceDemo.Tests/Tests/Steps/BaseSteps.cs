@@ -1,19 +1,23 @@
-using OpenQA.Selenium;
-using SauceDemo.Tests.Pages;
-using TechTalk.SpecFlow;
-
-namespace SauceDemo.Tests.Tests.Steps;
-public abstract class BaseSteps
+namespace SauceDemo.Tests.Tests.Steps
 {
-    private readonly IWebDriver _driver;
-    protected BaseSteps(ScenarioContext scenarioContext)
-    {
-        _driver = scenarioContext["driver"] as IWebDriver
-                  ?? throw new InvalidOperationException("WebDriver not found in ScenarioContext.");
-    }
+    using OpenQA.Selenium;
+    using SauceDemo.Tests.Pages;
+    using TechTalk.SpecFlow;
 
-    protected TPage Page<TPage>() where TPage : BasePageObject
+    public abstract class BaseSteps
     {
-        return (TPage)Activator.CreateInstance(typeof(TPage), _driver)!;
+        private readonly IWebDriver driver;
+
+        protected BaseSteps(ScenarioContext scenarioContext)
+        {
+            driver = scenarioContext["driver"] as IWebDriver
+                      ?? throw new InvalidOperationException("WebDriver not found in ScenarioContext.");
+        }
+
+        protected TPage Page<TPage>()
+            where TPage : BasePageObject
+        {
+            return (TPage)Activator.CreateInstance(typeof(TPage), driver) !;
+        }
     }
 }

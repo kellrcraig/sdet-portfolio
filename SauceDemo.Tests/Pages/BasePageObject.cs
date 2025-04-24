@@ -1,25 +1,30 @@
-using OpenQA.Selenium;
-
 namespace SauceDemo.Tests.Pages
 {
+    using OpenQA.Selenium;
+
     public abstract class BasePageObject
     {
-        protected readonly IWebDriver _driver;
+#pragma warning disable SA1401 // Fields should be private
+        protected readonly IWebDriver driver;
+#pragma warning restore SA1401 // Fields should be private
+
         public BasePageObject(IWebDriver driver)
         {
-            _driver = driver;
+            this.driver = driver;
         }
+
         protected IWebElement? FindElementSafe(By locator)
         {
             try
             {
-                return _driver.FindElement(locator);
+                return driver.FindElement(locator);
             }
             catch (NoSuchElementException)
             {
                 return null;
             }
         }
+
         protected bool ElementIsVisible(By locator)
         {
             var element = FindElementSafe(locator);

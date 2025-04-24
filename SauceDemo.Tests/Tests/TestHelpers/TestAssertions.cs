@@ -6,10 +6,14 @@ public static class TestAssertions
     {
         Assert.Multiple(() =>
         {
-            Assert.That(isVisible, Is.True,
+            Assert.That(
+                isVisible,
+                Is.True,
                 $"Expected: true. Actual: {isVisible}");
 
-            Assert.That(actualText, Is.EqualTo(expectedText),
+            Assert.That(
+                actualText,
+                Is.EqualTo(expectedText),
                 $"Expected: '{expectedText}'. Actual: '{actualText}'");
         });
     }

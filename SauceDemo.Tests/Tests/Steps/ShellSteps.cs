@@ -1,32 +1,34 @@
-using SauceDemo.Tests.Pages;
-using SauceDemo.Tests.Tests.TestData;
-using TechTalk.SpecFlow;
-
-namespace SauceDemo.Tests.Tests.Steps;
-
-[Binding]
-public class ShellSteps: BaseSteps
+namespace SauceDemo.Tests.Tests.Steps
 {
-    private readonly ShellPageObject? _shellPage;
+    using SauceDemo.Tests.Pages;
+    using SauceDemo.Tests.Tests.TestData;
+    using TechTalk.SpecFlow;
 
-    public ShellSteps(ScenarioContext scenarioContext) : base(scenarioContext)
+    [Binding]
+    public class ShellSteps : BaseSteps
     {
-        _shellPage = Page<ShellPageObject>();
-    }
+        private readonly ShellPageObject? shellPage;
 
-    [Then(@"the ""(.*)"" page is displayed")]
-    public void ThePageIsDisplayed(string pageAlias)
-    {
-        var expected = PageExpectations.Get(pageAlias);
-        var actualUrl = _shellPage?.PageUrl;
-        Assert.Multiple(() =>
+        public ShellSteps(ScenarioContext scenarioContext)
+            : base(scenarioContext)
         {
-            Assert.That(actualUrl, Does.Contain(expected.UrlFragment), $"Expected URL to contain '{expected.UrlFragment}'");
+            shellPage = Page<ShellPageObject>();
+        }
 
-            if (expected.Title != null)
+        [Then(@"the ""(.*)"" page is displayed")]
+        public void ThePageIsDisplayed(string pageAlias)
+        {
+            var expected = PageExpectations.Get(pageAlias);
+            var actualUrl = shellPage?.PageUrl;
+            Assert.Multiple(() =>
             {
-                Assert.That(_shellPage?.PageTitle, Is.EqualTo(expected.Title), $"Expected page title '{expected.Title}'");
-            }
-        });
+                Assert.That(actualUrl, Does.Contain(expected.UrlFragment), $"Expected URL to contain '{expected.UrlFragment}'");
+
+                if (expected.Title != null)
+                {
+                    Assert.That(shellPage?.PageTitle, Is.EqualTo(expected.Title), $"Expected page title '{expected.Title}'");
+                }
+            });
+        }
     }
 }

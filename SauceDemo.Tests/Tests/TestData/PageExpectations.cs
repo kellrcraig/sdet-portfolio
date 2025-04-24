@@ -1,7 +1,7 @@
 namespace SauceDemo.Tests.Tests.TestData;
 public static class PageExpectations
 {
-    public static readonly Dictionary<string, PageMeta> Pages = new(StringComparer.OrdinalIgnoreCase)
+    public static readonly Dictionary<string, PageMeta> Pages = new (StringComparer.OrdinalIgnoreCase)
     {
         ["login"] = new PageMeta("/", null),
         ["inventory"] = new PageMeta("/inventory", "Products"),

@@ -1,33 +1,33 @@
-
-using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
-using TechTalk.SpecFlow;
-
-namespace SauceDemo.Tests.Tests.Steps;
-
-[Binding]
-public class DriverHooks
+namespace SauceDemo.Tests.Tests.Hooks
 {
-    private readonly ScenarioContext _scenarioContext;
+    using OpenQA.Selenium;
+    using OpenQA.Selenium.Chrome;
+    using TechTalk.SpecFlow;
 
-    public DriverHooks(ScenarioContext scenarioContext)
+    [Binding]
+    public class DriverHooks
     {
-        _scenarioContext = scenarioContext;
-    }
+        private readonly ScenarioContext scenarioContext;
 
-    [BeforeScenario]
-    public void SetUp()
-    {
-        var driver = new ChromeDriver();
-        _scenarioContext["driver"] = driver;
-    }
-
-    [AfterScenario]
-    public void TearDown()
-    {
-        if (_scenarioContext.TryGetValue("driver", out IWebDriver? driver))
+        public DriverHooks(ScenarioContext scenarioContext)
         {
-            driver?.Quit();
+            this.scenarioContext = scenarioContext;
+        }
+
+        [BeforeScenario]
+        public void SetUp()
+        {
+            var driver = new ChromeDriver();
+            scenarioContext["driver"] = driver;
+        }
+
+        [AfterScenario]
+        public void TearDown()
+        {
+            if (scenarioContext.TryGetValue("driver", out IWebDriver? driver))
+            {
+                driver?.Quit();
+            }
         }
     }
 }

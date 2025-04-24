@@ -1,17 +1,22 @@
-using OpenQA.Selenium;
-
-namespace SauceDemo.Tests.Pages;
-
-public class ErrorBannerPageObject : BasePageObject
+namespace SauceDemo.Tests.Pages
 {
-    private static By ErrorMessageLocator => By.CssSelector("h3[data-test='error']");
+    using OpenQA.Selenium;
 
-    public ErrorBannerPageObject(IWebDriver driver) : base(driver) { }
-
-    public string? GetErrorMessageText()
+    public class ErrorBannerPageObject : BasePageObject
     {
-        var element = FindElementSafe(ErrorMessageLocator);
-        return element?.Text;
+        public ErrorBannerPageObject(IWebDriver driver)
+            : base(driver)
+            {
+            }
+
+        private static By ErrorMessageLocator => By.CssSelector("h3[data-test='error']");
+
+        public string? GetErrorMessageText()
+        {
+            var element = FindElementSafe(ErrorMessageLocator);
+            return element?.Text;
+        }
+
+        public bool ErrorMessageIsVisible() => ElementIsVisible(ErrorMessageLocator);
     }
-    public bool ErrorMessageIsVisible() => ElementIsVisible(ErrorMessageLocator);
 }

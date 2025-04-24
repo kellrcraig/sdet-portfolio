@@ -1,12 +1,15 @@
-namespace SauceDemo.Tests.Tests.TestData;
-public class PageMeta
+namespace SauceDemo.Tests.Tests.TestData
 {
-    public string UrlFragment { get; }
-    public string? Title { get; }
-
-    public PageMeta(string urlFragment, string? title = null)
+    public class PageMeta
     {
-        UrlFragment = urlFragment;
-        Title = title;
+        public PageMeta(string urlFragment, string? title = null)
+        {
+            UrlFragment = urlFragment;
+            Title = title;
+        }
+
+        public string UrlFragment { get; }
+
+        public string? Title { get; }
     }
 }

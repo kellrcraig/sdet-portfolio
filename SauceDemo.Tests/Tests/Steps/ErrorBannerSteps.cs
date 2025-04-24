@@ -1,27 +1,26 @@
-using OpenQA.Selenium;
-using SauceDemo.Tests.Pages;
-using SauceDemo.Tests.Tests.TestHelpers;
-using TechTalk.SpecFlow;
-
-namespace SauceDemo.Tests.Tests.Steps;
-
-[Binding]
-public class ErrorBannerSteps : BaseSteps
+namespace SauceDemo.Tests.Tests.Steps
 {
-    private ErrorBannerPageObject? _errorBanner;
-    public ErrorBannerSteps(ScenarioContext scenarioContext) : base(scenarioContext)
+    using SauceDemo.Tests.Pages;
+    using SauceDemo.Tests.Tests.TestHelpers;
+    using TechTalk.SpecFlow;
+
+    [Binding]
+    public class ErrorBannerSteps : BaseSteps
     {
-        _errorBanner = Page<ErrorBannerPageObject>();
+        private readonly ErrorBannerPageObject? errorBanner;
+
+        public ErrorBannerSteps(ScenarioContext scenarioContext)
+            : base(scenarioContext)
+        {
+            errorBanner = Page<ErrorBannerPageObject>();
+        }
+
+        [Then(@"the ""(.*)"" message is displayed")]
+        public void TheMessageIsDisplayed(string expectedErrorMessage)
+        {
+            var isVisible = errorBanner?.ErrorMessageIsVisible();
+            var actualText = errorBanner?.GetErrorMessageText();
+            TestAssertions.AssertErrorMessage(isVisible, actualText, expectedErrorMessage);
+        }
     }
-
-
-    [Then(@"the ""(.*)"" message is displayed")]
-    public void TheMessageIsDisplayed(string expectedErrorMessage)
-    {
-        var isVisible = _errorBanner?.ErrorMessageIsVisible();
-        var actualText = _errorBanner?.GetErrorMessageText();
-        TestAssertions.AssertErrorMessage(isVisible, actualText, expectedErrorMessage);
-    }
-
-    public void 
 }
