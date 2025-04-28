@@ -263,8 +263,8 @@ namespace SauceDemo.Tests.Tests.Features
         testRunner.Then("the \"login\" page is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 36
-        testRunner.And("the \"Epic sadface: Username and password do not match any user in this service\" m" +
-                        "essage is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+        testRunner.And("the \"Epic sadface: Username and password do not match any user in this service \" " +
+                        "message is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
             this.ScenarioCleanup();

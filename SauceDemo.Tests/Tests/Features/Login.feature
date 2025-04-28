@@ -33,7 +33,7 @@ Feature: Login
         Given I open the login page
         When I log in with username "standard_user" and password "incorrect_password"
         Then the "login" page is displayed
-        And the "Epic sadface: Username and password do not match any user in this service" message is displayed
+        And the "Epic sadface: Username and password do not match any user in this service " message is displayed
 
     Scenario: Login error is cleared after closing the message
         Given I open the login page
