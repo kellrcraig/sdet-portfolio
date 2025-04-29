@@ -21,7 +21,6 @@ namespace SauceDemo.Tests.Pages
         public void Login(string username, string password)
         {
             FindElementSafe(UsernameInputLocator)?.Clear();
-            FindElementSafe(UsernameInputLocator)?.Clear();
             FindElementSafe(UsernameInputLocator)?.SendKeys(username);
             FindElementSafe(PasswordInputLocator)?.Clear();
             FindElementSafe(PasswordInputLocator)?.SendKeys(password);
