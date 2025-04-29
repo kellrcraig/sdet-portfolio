@@ -12,7 +12,7 @@ namespace SauceDemo.Tests.Tests.Steps
         public ErrorFeedbackSteps(ScenarioContext scenarioContext)
             : base(scenarioContext)
         {
-            errorFeedback = Page<ErrorFeedbackPageObject>();
+            errorFeedback = PageObject<ErrorFeedbackPageObject>();
         }
 
         [When(@"I dismiss the error message")]

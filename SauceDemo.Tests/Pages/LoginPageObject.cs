@@ -1,13 +1,14 @@
 namespace SauceDemo.Tests.Pages
 {
     using OpenQA.Selenium;
+    using SauceDemo.Tests.Helpers;
 
     public class LoginPageObject : BasePageObject
     {
         public LoginPageObject(IWebDriver driver)
             : base(driver)
-            {
-            }
+        {
+        }
 
         private static By UsernameInputLocator => By.Id("user-name");
 
@@ -15,7 +16,7 @@ namespace SauceDemo.Tests.Pages
 
         private static By LoginButtonLocator => By.Id("login-button");
 
-        public void NavigateTo() => driver.Navigate().GoToUrl("https://www.saucedemo.com/");
+        public void NavigateTo() => BrowserHelper.NavigateTo(driver, "https://www.saucedemo.com/");
 
         public void Login(string username, string password)
         {

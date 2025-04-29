@@ -12,7 +12,7 @@ namespace SauceDemo.Tests.Tests.Steps
         public LoginSteps(ScenarioContext scenarioContext)
             : base(scenarioContext)
         {
-            loginPage = Page<LoginPageObject>();
+            loginPage = PageObject<LoginPageObject>();
         }
 
         [Given(@"I am on the login page")]
