@@ -1,0 +1,21 @@
+test: Add logout scenarios for basic logout, redirect, and access control (#3)
+Adds supporting utilities:
+- BrowserHelper: browser-level controls (url navigation, back button, etc)
+- WaitHelper: wait for the menu to open before clicking the logout
+
+Adds new POMs and Step Binding:
+- LogoutSteps: step bindings for logout scenarios
+- ProductsSteps: step binding for accessing products page
+- ProductsPageObject: enables "open products page" step
+
+Modifies existing code:
+- LoginPageObject and MenuPageObject: now use BrowserHelper
+- BaseSteps:
+  - Renamed `Page` to `PageObject` for clarity (esp. when working with MenuPageObject)
+  - Changed `driver` to protected so steps can use BrowserHelper
+- ErrorFeedbackSteps, LoginSteps, ShellSteps: renamed member `Page` to `PageObject`
+
+- Modifies Logout.feature to validate:
+  - Logout link redirecting user to the login page
+  - Logged out users cannot access protected pages via back button
+  - Logged out users cannot access protected pages via direct URL
