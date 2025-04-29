@@ -1,6 +1,7 @@
 namespace SauceDemo.Tests.Pages
 {
     using OpenQA.Selenium;
+    using SauceDemo.Tests.Helpers;
 
     public class MenuPageObject : BasePageObject
     {
@@ -43,7 +44,7 @@ namespace SauceDemo.Tests.Pages
 
         public void ClickLogoutLink()
         {
-            FindElementSafe(LogoutLinkLocator)?.Click();
+            WaitHelper.WaitForElementToBeClickable(driver, FindElementSafe, LogoutLinkLocator)?.Click();
         }
 
         public void ClickResetLink()

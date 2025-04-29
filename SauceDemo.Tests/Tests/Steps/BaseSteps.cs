@@ -6,7 +6,9 @@ namespace SauceDemo.Tests.Tests.Steps
 
     public abstract class BaseSteps
     {
-        private readonly IWebDriver driver;
+#pragma warning disable SA1401 // Fields should be private
+        protected readonly IWebDriver driver;
+#pragma warning restore SA1401 // Fields should be private
 
         protected BaseSteps(ScenarioContext scenarioContext)
         {
@@ -14,10 +16,10 @@ namespace SauceDemo.Tests.Tests.Steps
                       ?? throw new InvalidOperationException("WebDriver not found in ScenarioContext.");
         }
 
-        protected TPage Page<TPage>()
-            where TPage : BasePageObject
+        protected TPageObject PageObject<TPageObject>()
+            where TPageObject : BasePageObject
         {
-            return (TPage)Activator.CreateInstance(typeof(TPage), driver) !;
+            return (TPageObject)Activator.CreateInstance(typeof(TPageObject), driver) !;
         }
     }
 }
