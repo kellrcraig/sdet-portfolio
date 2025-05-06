@@ -1,17 +1,17 @@
 namespace SauceDemo.Tests.StepDefinitions.Steps
 {
-    using SauceDemo.Tests.PageObjects;
+    using SauceDemo.Tests.UI.Components;
     using TechTalk.SpecFlow;
 
     [Binding]
     public class MenuSteps : BaseSteps
     {
-        private readonly MenuPageObject? menu;
+        private readonly MenuComponent? menu;
 
         public MenuSteps(ScenarioContext scenarioContext)
             : base(scenarioContext)
         {
-            menu = PageObject<MenuPageObject>();
+            menu = Component<MenuComponent>();
         }
 
         [Given(@"I open the menu")]

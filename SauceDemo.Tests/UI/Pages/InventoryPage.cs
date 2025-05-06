@@ -1,9 +1,9 @@
-namespace SauceDemo.Tests.PageObjects
+namespace SauceDemo.Tests.UI.Pages
 {
     using OpenQA.Selenium;
     using SauceDemo.Tests.Helpers;
 
-    public class InventoryPage : BasePageObject
+    public class InventoryPage : BasePage
     {
         public InventoryPage(IWebDriver driver)
             : base(driver)

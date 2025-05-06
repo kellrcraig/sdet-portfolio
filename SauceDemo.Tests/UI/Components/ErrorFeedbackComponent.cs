@@ -1,10 +1,11 @@
-namespace SauceDemo.Tests.PageObjects
+namespace SauceDemo.Tests.UI.Components
 {
     using OpenQA.Selenium;
+    using SauceDemo.Tests.Extensions;
 
-    public class ErrorFeedbackPageObject : BasePageObject
+    public class ErrorFeedbackComponent : BaseComponent
     {
-        public ErrorFeedbackPageObject(IWebDriver driver)
+        public ErrorFeedbackComponent(IWebDriver driver)
             : base(driver)
         {
         }
@@ -13,11 +14,9 @@ namespace SauceDemo.Tests.PageObjects
 
         public string? GetErrorMessageText()
         {
-            var element = FindElementSafe(ErrorMessageLocator);
+            var element = Driver.FindElementSafe(ErrorMessageLocator);
             return element?.Text;
         }
-
-        public bool ErrorMessageIsVisible() => ElementIsVisible(ErrorMessageLocator);
 
         public bool UsernameErrorIconIsVisible() => ErrorIconIsVisible(By.CssSelector("#user-name ~ svg.error_icon"));
 
@@ -29,18 +28,18 @@ namespace SauceDemo.Tests.PageObjects
 
         public void DismissErrorFeedback()
         {
-            FindElementSafe(By.ClassName("error-button"))?.Click();
+            Driver.FindRequiredElement(By.ClassName("error-button"))?.Click();
         }
 
         private bool ErrorIconIsVisible(By locator)
         {
-            var element = FindElementSafe(locator);
+            var element = Driver.FindElementSafe(locator);
             return element != null && element.Displayed;
         }
 
         private string? GetInputBottomBorderColor(string id)
         {
-            var element = FindElementSafe(By.Id(id));
+            var element = Driver.FindRequiredElement(By.Id(id));
             return element?.GetCssValue("border-bottom-color");
         }
     }

@@ -11,7 +11,7 @@ namespace SauceDemo.Tests.StepDefinitions.Steps
         public CartIconSteps(ScenarioContext scenarioContext)
             : base(scenarioContext)
         {
-            cartIconComponent = DriverComponent<CartIconComponent>();
+            cartIconComponent = Component<CartIconComponent>();
         }
 
         [When(@"I click the cart icon")]

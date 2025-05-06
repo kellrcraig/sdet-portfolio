@@ -1,6 +1,6 @@
 namespace SauceDemo.Tests.StepDefinitions.Steps
 {
-    using SauceDemo.Tests.PageObjects;
+    using SauceDemo.Tests.UI.Pages;
     using TechTalk.SpecFlow;
 
     [Binding]
@@ -11,7 +11,7 @@ namespace SauceDemo.Tests.StepDefinitions.Steps
         public InventorySteps(ScenarioContext scenarioContext)
             : base(scenarioContext)
         {
-            inventoryPage = PageObject<InventoryPage>();
+            inventoryPage = Page<InventoryPage>();
         }
 
         [When(@"I open the inventory page")]

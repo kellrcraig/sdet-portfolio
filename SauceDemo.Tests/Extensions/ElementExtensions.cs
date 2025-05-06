@@ -45,5 +45,17 @@ namespace SauceDemo.Tests.Extensions
                 return null;
             }
         }
+
+        public static IWebElement? FindElementSafe(this IWebDriver driver, By locator)
+        {
+            try
+            {
+                return driver.FindElement(locator);
+            }
+            catch (NoSuchElementException)
+            {
+                return null;
+            }
+        }
     }
 }
