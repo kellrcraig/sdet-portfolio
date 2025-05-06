@@ -10,6 +10,6 @@ namespace SauceDemo.Tests.UI.Pages
         {
         }
 
-        public void NavigateTo() => BrowserHelper.NavigateTo(driver, "https://www.saucedemo.com/inventory.html");
+        public void NavigateTo() => BrowserHelper.NavigateTo(Driver, "https://www.saucedemo.com/inventory.html");
     }
 }

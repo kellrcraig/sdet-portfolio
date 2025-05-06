@@ -1,6 +1,7 @@
 namespace SauceDemo.Tests.UI.Pages
 {
     using OpenQA.Selenium;
+    using SauceDemo.Tests.Extensions;
     using SauceDemo.Tests.Helpers;
 
     public class LoginPage : BasePage
@@ -16,15 +17,15 @@ namespace SauceDemo.Tests.UI.Pages
 
         private static By LoginButtonLocator => By.Id("login-button");
 
-        public void NavigateTo() => BrowserHelper.NavigateTo(driver, "https://www.saucedemo.com/");
+        public void NavigateTo() => BrowserHelper.NavigateTo(Driver, "https://www.saucedemo.com/");
 
         public void Login(string username, string password)
         {
-            FindElementSafe(UsernameInputLocator)?.Clear();
-            FindElementSafe(UsernameInputLocator)?.SendKeys(username);
-            FindElementSafe(PasswordInputLocator)?.Clear();
-            FindElementSafe(PasswordInputLocator)?.SendKeys(password);
-            FindElementSafe(LoginButtonLocator)?.Click();
+            Driver.FindElementSafe(UsernameInputLocator)?.Clear();
+            Driver.FindElementSafe(UsernameInputLocator)?.SendKeys(username);
+            Driver.FindElementSafe(PasswordInputLocator)?.Clear();
+            Driver.FindElementSafe(PasswordInputLocator)?.SendKeys(password);
+            Driver.FindElementSafe(LoginButtonLocator)?.Click();
         }
     }
 }

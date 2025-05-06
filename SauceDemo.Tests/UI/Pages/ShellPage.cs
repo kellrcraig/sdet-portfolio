@@ -1,6 +1,7 @@
 namespace SauceDemo.Tests.UI.Pages
 {
     using OpenQA.Selenium;
+    using SauceDemo.Tests.Extensions;
 
     public class ShellPage : BasePage
     {
@@ -9,8 +10,8 @@ namespace SauceDemo.Tests.UI.Pages
         {
         }
 
-        public string? PageTitle => FindElementSafe(By.ClassName("title"))?.Text;
+        public string? PageTitle => Driver.FindElementSafe(By.ClassName("title"))?.Text;
 
-        public string? PageUrl => driver!.Url;
+        public string? PageUrl => Driver!.Url;
     }
 }
