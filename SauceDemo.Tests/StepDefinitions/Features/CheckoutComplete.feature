@@ -2,7 +2,7 @@
 Feature: Checkout Complete
 
     @page-navigation
-    Scenario: Back Home button navigates to Products page with empty cart
+    Scenario: Back Home button navigates to Inventory page with empty cart
     
     #Thank you for your order message and icon
     Scenario: Thank you message and confirmation icon are displayed

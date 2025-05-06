@@ -2,6 +2,7 @@ namespace SauceDemo.Tests.StepDefinitions.Steps
 {
     using OpenQA.Selenium;
     using SauceDemo.Tests.PageObjects;
+    using SauceDemo.Tests.UI.Components;
     using TechTalk.SpecFlow;
 
     public abstract class BaseSteps
@@ -19,7 +20,17 @@ namespace SauceDemo.Tests.StepDefinitions.Steps
         protected TPageObject PageObject<TPageObject>()
             where TPageObject : BasePageObject
         {
-            return (TPageObject)Activator.CreateInstance(typeof(TPageObject), driver) !;
+            var instance = Activator.CreateInstance(typeof(TPageObject), driver)
+                ?? throw new InvalidOperationException($"Could not create instance of {typeof(TPageObject).Name}");
+            return (TPageObject)instance;
+        }
+
+        protected TComponent DriverComponent<TComponent>()
+            where TComponent : BaseComponent
+        {
+            var instance = Activator.CreateInstance(typeof(TComponent), driver)
+                ?? throw new InvalidOperationException($"Could not create instance of {typeof(TComponent).Name}");
+            return (TComponent)instance;
         }
     }
 }

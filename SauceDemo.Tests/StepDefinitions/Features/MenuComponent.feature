@@ -9,7 +9,7 @@ Feature: Menu Component
 
     Scenario: Close button hides the menu
     @page-navigation
-    Scenario: All Items link navigates to Products page
+    Scenario: All Items link navigates to Inventory page
     @page-navigation
     Scenario: About link navigates to the Sauce Labs website
 

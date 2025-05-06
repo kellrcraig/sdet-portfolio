@@ -20,9 +20,9 @@ namespace SauceDemo.Tests.StepDefinitions.Features
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.9.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("Products")]
+    [NUnit.Framework.DescriptionAttribute("Inventory")]
     [NUnit.Framework.CategoryAttribute("wip")]
-    public partial class ProductsFeature
+    public partial class InventoryFeature
     {
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
@@ -30,14 +30,14 @@ namespace SauceDemo.Tests.StepDefinitions.Features
         private static string[] featureTags = new string[] {
                 "wip"};
         
-#line 1 "Products.feature"
+#line 1 "Inventory.feature"
 #line hidden
         
         [NUnit.Framework.OneTimeSetUpAttribute()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "StepDefinitions/Features", "Products", null, ProgrammingLanguage.CSharp, featureTags);
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "StepDefinitions/Features", "Inventory", null, ProgrammingLanguage.CSharp, featureTags);
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -76,12 +76,12 @@ namespace SauceDemo.Tests.StepDefinitions.Features
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Products page loads with default items, sorting option, and empty cart")]
-        public void ProductsPageLoadsWithDefaultItemsSortingOptionAndEmptyCart()
+        [NUnit.Framework.DescriptionAttribute("Inventory page loads with default items, sorting option, and empty cart")]
+        public void InventoryPageLoadsWithDefaultItemsSortingOptionAndEmptyCart()
         {
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Products page loads with default items, sorting option, and empty cart", null, tagsOfScenario, argumentsOfScenario, featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Inventory page loads with default items, sorting option, and empty cart", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 4
     this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -223,14 +223,14 @@ namespace SauceDemo.Tests.StepDefinitions.Features
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Back to products link navigates from the Item detail screen to Products page")]
+        [NUnit.Framework.DescriptionAttribute("Back to products link navigates from the Item detail screen to Inventory page")]
         [NUnit.Framework.CategoryAttribute("page-navigation")]
-        public void BackToProductsLinkNavigatesFromTheItemDetailScreenToProductsPage()
+        public void BackToProductsLinkNavigatesFromTheItemDetailScreenToInventoryPage()
         {
             string[] tagsOfScenario = new string[] {
                     "page-navigation"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Back to products link navigates from the Item detail screen to Products page", null, tagsOfScenario, argumentsOfScenario, featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Back to products link navigates from the Item detail screen to Inventory page", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 12
     this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -271,12 +271,12 @@ namespace SauceDemo.Tests.StepDefinitions.Features
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Items and sorting option persist when returning to Products page")]
-        public void ItemsAndSortingOptionPersistWhenReturningToProductsPage()
+        [NUnit.Framework.DescriptionAttribute("Items and sorting option persist when returning to Inventory page")]
+        public void ItemsAndSortingOptionPersistWhenReturningToInventoryPage()
         {
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Items and sorting option persist when returning to Products page", null, tagsOfScenario, argumentsOfScenario, featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Items and sorting option persist when returning to Inventory page", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 15
     this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -315,16 +315,16 @@ namespace SauceDemo.Tests.StepDefinitions.Features
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Add to cart button displays Remove on Products page after adding from item detail" +
-            "")]
+        [NUnit.Framework.DescriptionAttribute("Add to cart button displays Remove on Inventory page after adding from item detai" +
+            "l")]
         [NUnit.Framework.CategoryAttribute("cart-button-state")]
-        public void AddToCartButtonDisplaysRemoveOnProductsPageAfterAddingFromItemDetail()
+        public void AddToCartButtonDisplaysRemoveOnInventoryPageAfterAddingFromItemDetail()
         {
             string[] tagsOfScenario = new string[] {
                     "cart-button-state"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Add to cart button displays Remove on Products page after adding from item detail" +
-                    "", null, tagsOfScenario, argumentsOfScenario, featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Add to cart button displays Remove on Inventory page after adding from item detai" +
+                    "l", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 19
     this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -340,16 +340,16 @@ namespace SauceDemo.Tests.StepDefinitions.Features
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Add to cart button displays Add to cart on Products page after removing from item" +
-            " detail")]
+        [NUnit.Framework.DescriptionAttribute("Add to cart button displays Add to cart on Inventory page after removing from ite" +
+            "m detail")]
         [NUnit.Framework.CategoryAttribute("cart-button-state")]
-        public void AddToCartButtonDisplaysAddToCartOnProductsPageAfterRemovingFromItemDetail()
+        public void AddToCartButtonDisplaysAddToCartOnInventoryPageAfterRemovingFromItemDetail()
         {
             string[] tagsOfScenario = new string[] {
                     "cart-button-state"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Add to cart button displays Add to cart on Products page after removing from item" +
-                    " detail", null, tagsOfScenario, argumentsOfScenario, featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Add to cart button displays Add to cart on Inventory page after removing from ite" +
+                    "m detail", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 21
     this.ScenarioInitialize(scenarioInfo);
 #line hidden

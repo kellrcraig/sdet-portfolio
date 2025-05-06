@@ -97,14 +97,14 @@ namespace SauceDemo.Tests.StepDefinitions.Features
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("All Items link navigates to Products page")]
+        [NUnit.Framework.DescriptionAttribute("All Items link navigates to Inventory page")]
         [NUnit.Framework.CategoryAttribute("page-navigation")]
-        public void AllItemsLinkNavigatesToProductsPage()
+        public void AllItemsLinkNavigatesToInventoryPage()
         {
             string[] tagsOfScenario = new string[] {
                     "page-navigation"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("All Items link navigates to Products page", null, tagsOfScenario, argumentsOfScenario, featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("All Items link navigates to Inventory page", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 12
     this.ScenarioInitialize(scenarioInfo);
 #line hidden
