@@ -76,14 +76,14 @@ namespace SauceDemo.Tests.StepDefinitions.Features
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Back Home button navigates to Products page with empty cart")]
+        [NUnit.Framework.DescriptionAttribute("Back Home button navigates to Inventory page with empty cart")]
         [NUnit.Framework.CategoryAttribute("page-navigation")]
-        public void BackHomeButtonNavigatesToProductsPageWithEmptyCart()
+        public void BackHomeButtonNavigatesToInventoryPageWithEmptyCart()
         {
             string[] tagsOfScenario = new string[] {
                     "page-navigation"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Back Home button navigates to Products page with empty cart", null, tagsOfScenario, argumentsOfScenario, featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Back Home button navigates to Inventory page with empty cart", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 5
     this.ScenarioInitialize(scenarioInfo);
 #line hidden

@@ -1,21 +1,21 @@
 namespace SauceDemo.Tests.StepDefinitions.Steps
 {
-    using SauceDemo.Tests.Helpers;
     using SauceDemo.Tests.PageObjects;
     using TechTalk.SpecFlow;
 
     [Binding]
-    public class LogoutSteps : BaseSteps
+    public class MenuSteps : BaseSteps
     {
         private readonly MenuPageObject? menu;
 
-        public LogoutSteps(ScenarioContext scenarioContext)
+        public MenuSteps(ScenarioContext scenarioContext)
             : base(scenarioContext)
         {
             menu = PageObject<MenuPageObject>();
         }
 
         [Given(@"I open the menu")]
+        [When(@"I open the menu")]
         public void IOpenTheMenu()
         {
             menu?.OpenMenu();
@@ -25,12 +25,6 @@ namespace SauceDemo.Tests.StepDefinitions.Steps
         public void IClickTheLogoutLink()
         {
             menu?.ClickLogoutLink();
-        }
-
-        [When(@"I click the back button")]
-        public void IClickTheBackButton()
-        {
-            BrowserHelper.GoBack(driver);
         }
     }
 }

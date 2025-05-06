@@ -1,4 +1,4 @@
-test: Add logout scenarios for basic logout, redirect, and access control (#3)
+test: Add logout scenarios for basic logout, redirect, and access control
 Adds supporting utilities:
 - BrowserHelper: browser-level controls (url navigation, back button, etc)
 - WaitHelper: wait for the menu to open before clicking the logout
@@ -19,3 +19,43 @@ Modifies existing code:
   - Logout link redirecting user to the login page
   - Logged out users cannot access protected pages via back button
   - Logged out users cannot access protected pages via direct URL
+
+
+
+
+test: Add scenarios for cart content preservation after logout (includes framework for validating product data across all 4 pages)
+- Adds product validation framework:
+  - ProductMeta: model representing a product’s display data
+  - ProductName: parses and validates test-input product names
+  - ProductNames: known product constants used in validation
+  - ProductExpectations: source of expected product values for tests
+  - ProductAreaComponent: COM for interacting with product DOM across 4 pages
+  - ProductAreaSteps: step bindings for asserting product data
+
+- Adds new cart + logout scenarios:
+  - Logout.feature: new tests verifying cart contents persist after logout
+
+- Adds common utilities and components:
+  - ElementExtensions: generic helpers for querying elements in COMs/POMs (BasePageObject usage to be deprecated)
+  - BaseComponent: base class for all COMs
+  - CartIconComponent: COM for interacting with the cart icon
+  - BaseSteps: adds generic COM creation
+  - BrowserSteps: handles browser-level steps (navigation, reload, etc.)
+  - CartIconSteps: step bindings for cart icon
+  - InventorySteps: step bindings for Inventory page
+  - MenuSteps: step bindings for menu interactions
+
+- Refactors and cleans up existing code:
+  - LogoutSteps: deleted and its logic moved into BrowserSteps and MenuSteps
+
+- Renames Products → Inventory for clarity:
+  To clarify the overloaded use of "Product", ProductsPageObject and related step files/features were renamed:
+  - InventoryPage.cs, ProductsPageObject.cs
+  - CheckoutComplete.feature, CheckoutOverview.feature, Inventory.feature, MenuComponent.feature, Products.feature, ProductsSteps.cs
+
+- Configuration changes:
+  - .editorconfig: disables SA1649FileNameMustMatchTypeName due to StyleCop not supporting record types properly
+  - specflow.json: configures SpecFlow to fail tests on missing or pending steps
+
+- Adds another commit message:
+  - sample-commit-message.txt

@@ -20,14 +20,31 @@ Feature: Logout
         And I log in as "standard_user"
         And I open the menu
         When I click the logout link
-        And I open the products page
+        And I open the inventory page
         Then the "Epic sadface: You can only access '/inventory.html' when you are logged in." message is displayed
+    
+    Scenario: Cart icon count is preserved after logout
+        Given I open the login page
+        And I log in as "standard_user"
+        And I add "Sauce Labs Backpack" to the cart
+        When I open the menu
+        And I click the logout link
+        And I log in as "standard_user"
+        Then the cart icon displays "1"
+    
+    Scenario: Item in cart is preserved after logout
+        Given I open the login page
+        And I log in as "standard_user"
+        And I add "Sauce Labs Backpack" to the cart
+        When I open the menu
+        And I click the logout link
+        And I log in as "standard_user"
+        And I click the cart icon
+        Then the product area displays "1" "Sauce Labs Backpack"
+
     @wip
     Scenario: User who is actively using the app is not automatically logged out after 10 minutes
 
     @wip
     #we are going to navigate to the cart. Maybe back button?
     Scenario: Idle user cannot cannot modify cart after automatic logout
-    
-    @wip
-    Scenario: Cart contents are preserved after logout
