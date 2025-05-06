@@ -1,18 +1,18 @@
 namespace SauceDemo.Tests.StepDefinitions.Steps
 {
-    using SauceDemo.Tests.PageObjects;
     using SauceDemo.Tests.StepDefinitions.TestData;
+    using SauceDemo.Tests.UI.Pages;
     using TechTalk.SpecFlow;
 
     [Binding]
     public class LoginSteps : BaseSteps
     {
-        private readonly LoginPageObject? loginPage;
+        private readonly LoginPage? loginPage;
 
         public LoginSteps(ScenarioContext scenarioContext)
             : base(scenarioContext)
         {
-            loginPage = PageObject<LoginPageObject>();
+            loginPage = Page<LoginPage>();
         }
 
         [Given(@"I am on the login page")]

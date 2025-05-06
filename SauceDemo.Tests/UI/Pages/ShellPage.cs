@@ -1,10 +1,10 @@
-namespace SauceDemo.Tests.PageObjects
+namespace SauceDemo.Tests.UI.Pages
 {
     using OpenQA.Selenium;
 
-    public class ShellPageObject : BasePageObject
+    public class ShellPage : BasePage
     {
-        public ShellPageObject(IWebDriver driver)
+        public ShellPage(IWebDriver driver)
             : base(driver)
         {
         }

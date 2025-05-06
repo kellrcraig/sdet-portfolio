@@ -1,11 +1,12 @@
-namespace SauceDemo.Tests.PageObjects
+namespace SauceDemo.Tests.UI.Components
 {
     using OpenQA.Selenium;
+    using SauceDemo.Tests.Extensions;
     using SauceDemo.Tests.Helpers;
 
-    public class MenuPageObject : BasePageObject
+    public class MenuComponent : BaseComponent
     {
-        public MenuPageObject(IWebDriver driver)
+        public MenuComponent(IWebDriver driver)
             : base(driver)
         {
         }
@@ -24,32 +25,32 @@ namespace SauceDemo.Tests.PageObjects
 
         public void OpenMenu()
         {
-            FindElementSafe(OpenMenuButtonLocator)?.Click();
+            Driver.FindRequiredElement(OpenMenuButtonLocator)?.Click();
         }
 
         public void CloseMenu()
         {
-            FindElementSafe(CloseMenuButtonLocator)?.Click();
+            Driver.FindRequiredElement(CloseMenuButtonLocator)?.Click();
         }
 
         public void ClickInventoryLink()
         {
-            FindElementSafe(InventoryLinkLocator)?.Click();
+            Driver.FindRequiredElement(InventoryLinkLocator)?.Click();
         }
 
         public void ClickAboutLink()
         {
-            FindElementSafe(AboutLinkLocator)?.Click();
+            Driver.FindRequiredElement(AboutLinkLocator)?.Click();
         }
 
         public void ClickLogoutLink()
         {
-            WaitHelper.WaitForElementToBeClickable(driver, FindElementSafe, LogoutLinkLocator)?.Click();
+            WaitHelper.WaitForElementToBeClickable(Driver, Driver.FindRequiredElement, LogoutLinkLocator)?.Click();
         }
 
         public void ClickResetLink()
         {
-            FindElementSafe(ResetLinkLocator)?.Click();
+            Driver.FindRequiredElement(ResetLinkLocator)?.Click();
         }
     }
 }

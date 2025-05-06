@@ -1,18 +1,18 @@
 namespace SauceDemo.Tests.StepDefinitions.Steps
 {
-    using SauceDemo.Tests.PageObjects;
     using SauceDemo.Tests.StepDefinitions.TestData;
+    using SauceDemo.Tests.UI.Pages;
     using TechTalk.SpecFlow;
 
     [Binding]
     public class ShellSteps : BaseSteps
     {
-        private readonly ShellPageObject? shellPage;
+        private readonly ShellPage? shellPage;
 
         public ShellSteps(ScenarioContext scenarioContext)
             : base(scenarioContext)
         {
-            shellPage = PageObject<ShellPageObject>();
+            shellPage = Page<ShellPage>();
         }
 
         [Then(@"the ""(.*)"" page is displayed")]

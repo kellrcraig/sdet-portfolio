@@ -1,18 +1,18 @@
 namespace SauceDemo.Tests.StepDefinitions.Steps
 {
-    using SauceDemo.Tests.PageObjects;
     using SauceDemo.Tests.StepDefinitions.TestHelpers;
+    using SauceDemo.Tests.UI.Components;
     using TechTalk.SpecFlow;
 
     [Binding]
     public class ErrorFeedbackSteps : BaseSteps
     {
-        private readonly ErrorFeedbackPageObject? errorFeedback;
+        private readonly ErrorFeedbackComponent? errorFeedback;
 
         public ErrorFeedbackSteps(ScenarioContext scenarioContext)
             : base(scenarioContext)
         {
-            errorFeedback = PageObject<ErrorFeedbackPageObject>();
+            errorFeedback = Component<ErrorFeedbackComponent>();
         }
 
         [When(@"I dismiss the error message")]
