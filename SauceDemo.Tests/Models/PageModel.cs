@@ -1,6 +1,6 @@
 namespace SauceDemo.Tests.Models
 {
-    public class PageModel
+    public record PageModel
     {
         public PageModel(string urlFragment, string? title = null)
         {
