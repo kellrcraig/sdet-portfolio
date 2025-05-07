@@ -1,8 +1,8 @@
-namespace SauceDemo.Tests.StepDefinitions.TestData
+namespace SauceDemo.Tests.Models
 {
-    public class PageMeta
+    public class PageModel
     {
-        public PageMeta(string urlFragment, string? title = null)
+        public PageModel(string urlFragment, string? title = null)
         {
             UrlFragment = urlFragment;
             Title = title;

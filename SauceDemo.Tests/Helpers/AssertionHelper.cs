@@ -1,6 +1,6 @@
-namespace SauceDemo.Tests.StepDefinitions.TestHelpers;
+namespace SauceDemo.Tests.Helpers;
 
-public static class TestAssertions
+public static class AssertionHelper
 {
     public static void AssertErrorState(
             bool shouldBeVisible,

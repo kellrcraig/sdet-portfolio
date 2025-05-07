@@ -1,6 +1,6 @@
 namespace SauceDemo.Tests.StepDefinitions.Steps
 {
-    using SauceDemo.Tests.StepDefinitions.TestData;
+    using SauceDemo.Tests.Data;
     using SauceDemo.Tests.UI.Components;
     using TechTalk.SpecFlow;
 
@@ -18,16 +18,16 @@ namespace SauceDemo.Tests.StepDefinitions.Steps
         [Given(@"I add ""(.*)"" to the cart")]
         public void IAddItemToTheCart(string productName)
         {
-            var validProductName = new ProductNames().Get(productName);
+            var validProductName = new ProductNameData().Get(productName);
             productAreaComponent.ClickAddToCart(validProductName);
         }
 
         [Then(@"the product area displays ""(.*)"" ""(.*)""")]
         public void TheProductAreaDisplays(string quantity, string productName)
         {
-            var validProductName = new ProductNames().Get(productName);
+            var validProductName = new ProductNameData().Get(productName);
             var actual = productAreaComponent.GetProductMeta(validProductName);
-            var expected = new ProductExpectations().GetProductMetaForCheckout(quantity, validProductName);
+            var expected = new ProductData().GetProductForCheckout(quantity, validProductName);
             Assert.That(
                 actual,
                 Is.EqualTo(expected),

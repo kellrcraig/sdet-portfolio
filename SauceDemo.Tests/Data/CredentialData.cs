@@ -1,6 +1,6 @@
-namespace SauceDemo.Tests.StepDefinitions.TestData
+namespace SauceDemo.Tests.Data
 {
-    public class LoginUsers
+    public class CredentialData
     {
         public const string CorrectPassword = "secret_sauce";
         private static readonly HashSet<string> ValidUsers = new (StringComparer.OrdinalIgnoreCase)

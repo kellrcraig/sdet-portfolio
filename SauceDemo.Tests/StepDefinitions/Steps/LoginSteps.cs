@@ -1,6 +1,6 @@
 namespace SauceDemo.Tests.StepDefinitions.Steps
 {
-    using SauceDemo.Tests.StepDefinitions.TestData;
+    using SauceDemo.Tests.Data;
     using SauceDemo.Tests.UI.Pages;
     using TechTalk.SpecFlow;
 
@@ -22,8 +22,8 @@ namespace SauceDemo.Tests.StepDefinitions.Steps
         [When(@"I log in with username ""(.*)"" and password ""(.*)""")]
         public void ILogInWithUsernameAndPassword(string username, string password)
         {
-            var validUserName = LoginUsers.ValidateUserName(username);
-            var validPassword = LoginUsers.ValidatePassword(password);
+            var validUserName = CredentialData.ValidateUserName(username);
+            var validPassword = CredentialData.ValidatePassword(password);
             loginPage?.Login(validUserName, validPassword);
         }
 
@@ -31,8 +31,8 @@ namespace SauceDemo.Tests.StepDefinitions.Steps
         [When(@"I log in as ""(.*)""")]
         public void ILogInAs(string username)
         {
-            var validUserName = LoginUsers.ValidateUserName(username);
-            loginPage?.Login(validUserName, LoginUsers.CorrectPassword);
+            var validUserName = CredentialData.ValidateUserName(username);
+            loginPage?.Login(validUserName, CredentialData.CorrectPassword);
         }
     }
 }
