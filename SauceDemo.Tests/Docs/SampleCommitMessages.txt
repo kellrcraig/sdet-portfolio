@@ -22,7 +22,6 @@ Modifies existing code:
 
 
 
-
 test: Add scenarios for cart content preservation after logout (includes framework for validating product data across all 4 pages)
 - Adds product validation framework:
   - ProductMeta: model representing a product’s display data
