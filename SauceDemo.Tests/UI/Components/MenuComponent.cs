@@ -1,5 +1,6 @@
 namespace SauceDemo.Tests.UI.Components
 {
+    using System;
     using OpenQA.Selenium;
     using SauceDemo.Tests.Extensions;
     using SauceDemo.Tests.Helpers;
@@ -11,46 +12,42 @@ namespace SauceDemo.Tests.UI.Components
         {
         }
 
-        private static By OpenMenuButtonLocator => By.Id("react-burger-menu-btn");
-
-        private static By CloseMenuButtonLocator => By.Id("react-burger-cross-btn");
-
-        private static By InventoryLinkLocator => By.Id("inventory_sidebar_link");
-
-        private static By AboutLinkLocator => By.Id("about_sidebar_link");
-
-        private static By LogoutLinkLocator => By.Id("logout_sidebar_link");
-
-        private static By ResetLinkLocator => By.Id("reset_sidebar_link");
-
         public void OpenMenu()
         {
-            Driver.FindRequiredElement(OpenMenuButtonLocator)?.Click();
+            Driver.FindRequiredElement(By.Id("react-burger-menu-btn"))?.Click();
         }
 
         public void CloseMenu()
         {
-            Driver.FindRequiredElement(CloseMenuButtonLocator)?.Click();
+            WaitHelper.WaitForElementToBeClickable(Driver, By.Id("react-burger-cross-btn"))?.Click();
         }
 
-        public void ClickInventoryLink()
+        public void ClickAllItemsLink()
         {
-            Driver.FindRequiredElement(InventoryLinkLocator)?.Click();
+            WaitHelper.WaitForElementToBeClickable(Driver, By.Id("inventory_sidebar_link"))?.Click();
         }
 
         public void ClickAboutLink()
         {
-            Driver.FindRequiredElement(AboutLinkLocator)?.Click();
+            WaitHelper.WaitForElementToBeClickable(Driver, By.Id("about_sidebar_link"))?.Click();
         }
 
         public void ClickLogoutLink()
         {
-            WaitHelper.WaitForElementToBeClickable(Driver, Driver.FindElementSafe, LogoutLinkLocator)?.Click();
+            WaitHelper.WaitForElementToBeClickable(Driver, By.Id("logout_sidebar_link"))?.Click();
         }
 
         public void ClickResetLink()
         {
-            Driver.FindRequiredElement(ResetLinkLocator)?.Click();
+            WaitHelper.WaitForElementToBeClickable(Driver, By.Id("reset_sidebar_link"))?.Click();
+        }
+
+        public bool MenuIsVisible()
+        {
+            var locator = By.ClassName("bm-menu-wrap");
+            WaitHelper.WaitForElementToDisappear(Driver, locator);
+            var element = Driver.FindElementSafe(locator);
+            return element != null && element.Displayed;
         }
     }
 }

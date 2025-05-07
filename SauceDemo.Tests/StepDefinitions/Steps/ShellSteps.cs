@@ -18,15 +18,21 @@ namespace SauceDemo.Tests.StepDefinitions.Steps
         [Then(@"the ""(.*)"" page is displayed")]
         public void ThePageIsDisplayed(string pageAlias)
         {
-            var expected = PageData.Get(pageAlias);
+            var expected = new PageData().Get(pageAlias);
             var actualUrl = shellPage?.PageUrl;
             Assert.Multiple(() =>
             {
-                Assert.That(actualUrl, Does.Contain(expected.UrlFragment), $"Expected URL to contain '{expected.UrlFragment}'");
+                Assert.That(
+                    actualUrl,
+                    Does.Contain(expected.UrlFragment),
+                    $"Expected URL to contain:'{expected.UrlFragment}', Actual: '{actualUrl}'");
 
                 if (expected.Title != null)
                 {
-                    Assert.That(shellPage?.PageTitle, Is.EqualTo(expected.Title), $"Expected page title '{expected.Title}'");
+                    Assert.That(
+                        shellPage?.PageTitle,
+                        Is.EqualTo(expected.Title),
+                        $"Expected: '{expected.Title}', Actual: '{shellPage?.PageTitle}'");
                 }
             });
         }

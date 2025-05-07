@@ -2,9 +2,9 @@ namespace SauceDemo.Tests.Data
 {
     using SauceDemo.Tests.Models;
 
-    public static class PageData
+    public class PageData
     {
-        public static readonly Dictionary<string, PageModel> Pages = new (StringComparer.OrdinalIgnoreCase)
+        private readonly Dictionary<string, PageModel> pages = new (StringComparer.OrdinalIgnoreCase)
         {
             ["login"] = new PageModel("/", null),
             ["inventory"] = new PageModel("/inventory", "Products"),
@@ -13,14 +13,15 @@ namespace SauceDemo.Tests.Data
             ["checkout overview"] = new PageModel("/checkout-step-two", "Checkout: Overview"),
             ["checkout complete"] = new PageModel("/checkout-complete", "Checkout: Complete!"),
             ["item detail"] = new PageModel("/inventory-item", null), // no title here
+            ["sauce labs"] = new PageModel("saucelabs.com", null),
         };
 
-        public static PageModel Get(string alias)
+        public PageModel Get(string alias)
         {
-            if (!Pages.TryGetValue(alias, out var page))
+            if (!pages.TryGetValue(alias, out var page))
             {
                 throw new ArgumentException(
-                    $"Unknown page alias '{alias}'. Available options: {string.Join(", ", Pages.Keys)}");
+                    $"Unknown page alias '{alias}'. Available options: {string.Join(", ", pages.Keys)}");
             }
 
             return page;
