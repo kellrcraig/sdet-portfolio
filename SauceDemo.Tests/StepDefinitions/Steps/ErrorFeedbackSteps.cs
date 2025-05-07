@@ -1,6 +1,6 @@
 namespace SauceDemo.Tests.StepDefinitions.Steps
 {
-    using SauceDemo.Tests.StepDefinitions.TestHelpers;
+    using SauceDemo.Tests.Helpers;
     using SauceDemo.Tests.UI.Components;
     using TechTalk.SpecFlow;
 
@@ -24,7 +24,7 @@ namespace SauceDemo.Tests.StepDefinitions.Steps
         [Then(@"the ""(.*)"" message is displayed")]
         public void TheMessageIsDisplayed(string expectedErrorMessage)
         {
-            TestAssertions.AssertErrorState(
+            AssertionHelper.AssertErrorState(
                 shouldBeVisible: true,
                 actualErrorText: errorFeedback?.GetErrorMessageText(),
                 expectedErrorText: expectedErrorMessage,
@@ -37,7 +37,7 @@ namespace SauceDemo.Tests.StepDefinitions.Steps
         [Then(@"the error message is not displayed")]
         public void TheErrorMessageIsNotDisplayed()
         {
-            TestAssertions.AssertErrorState(
+            AssertionHelper.AssertErrorState(
                 shouldBeVisible: false,
                 actualErrorText: errorFeedback?.GetErrorMessageText(),
                 expectedErrorText: null,  // Message should be null when invisible

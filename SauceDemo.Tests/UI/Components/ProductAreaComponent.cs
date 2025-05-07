@@ -2,9 +2,7 @@ namespace SauceDemo.Tests.UI.Components
 {
     using OpenQA.Selenium;
     using SauceDemo.Tests.Extensions;
-
-    using SauceDemo.Tests.StepDefinitions.TestData;
-    using SauceDemo.Tests.StepDefinitions.TestData.Models;
+    using SauceDemo.Tests.Models;
 
     public class ProductAreaComponent : BaseComponent
     {
@@ -13,21 +11,21 @@ namespace SauceDemo.Tests.UI.Components
         {
         }
 
-        public void ClickAddToCart(ProductName productName)
+        public void ClickAddToCart(ProductNameModel productName)
         {
             var productContainer = GetProductContainer(productName);
             var buttonLocator = By.Id($"add-to-cart-{productName.InternalName}");
             productContainer.FindRequiredElement(buttonLocator).Click();
         }
 
-        public void ClickRemove(ProductName productName)
+        public void ClickRemove(ProductNameModel productName)
         {
             var productContainer = GetProductContainer(productName);
             var buttonLocator = By.Id($"remove-{productName.InternalName}");
             productContainer.FindRequiredElement(buttonLocator).Click();
         }
 
-        public ProductMeta GetProductMeta(ProductName productName)
+        public ProductModel GetProductMeta(ProductNameModel productName)
         {
             var productContainer = GetProductContainer(productName);
 
@@ -43,7 +41,7 @@ namespace SauceDemo.Tests.UI.Components
             var imageAlt = productContainer.FindElementSafe(By.CssSelector($"[data-test='{imageLocatorText}']"))?.GetAttribute("alt");
             var imageSource = productContainer.FindElementSafe(By.CssSelector($"[data-test='{imageLocatorText}']"))?.GetAttribute("src");
 
-            return new ProductMeta
+            return new ProductModel
             {
                 Name = name,
                 Description = description,
@@ -54,7 +52,7 @@ namespace SauceDemo.Tests.UI.Components
             };
         }
 
-        private IWebElement GetProductContainer(ProductName productName)
+        private IWebElement GetProductContainer(ProductNameModel productName)
         {
             var nameLocator = By.XPath($"//div[@data-test='inventory-item-name' and normalize-space(text())='{productName.DisplayName}']");
             var nameElement = Driver.FindRequiredElement(nameLocator);

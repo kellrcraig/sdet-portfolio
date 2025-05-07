@@ -1,8 +1,8 @@
-namespace SauceDemo.Tests.StepDefinitions.TestData.Models
+namespace SauceDemo.Tests.Models
 {
-    public sealed class ProductName
+    public sealed class ProductNameModel
     {
-        public ProductName(string displayName)
+        public ProductNameModel(string displayName)
         {
             DisplayName = displayName;
             InternalName = GetInternalName(displayName);

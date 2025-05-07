@@ -1,6 +1,6 @@
 namespace SauceDemo.Tests.StepDefinitions.Steps
 {
-    using SauceDemo.Tests.StepDefinitions.TestData;
+    using SauceDemo.Tests.Data;
     using SauceDemo.Tests.UI.Pages;
     using TechTalk.SpecFlow;
 
@@ -18,7 +18,7 @@ namespace SauceDemo.Tests.StepDefinitions.Steps
         [Then(@"the ""(.*)"" page is displayed")]
         public void ThePageIsDisplayed(string pageAlias)
         {
-            var expected = PageExpectations.Get(pageAlias);
+            var expected = PageData.Get(pageAlias);
             var actualUrl = shellPage?.PageUrl;
             Assert.Multiple(() =>
             {
