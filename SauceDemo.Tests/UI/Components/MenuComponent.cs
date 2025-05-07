@@ -45,7 +45,7 @@ namespace SauceDemo.Tests.UI.Components
 
         public void ClickLogoutLink()
         {
-            WaitHelper.WaitForElementToBeClickable(Driver, Driver.FindRequiredElement, LogoutLinkLocator)?.Click();
+            WaitHelper.WaitForElementToBeClickable(Driver, Driver.FindElementSafe, LogoutLinkLocator)?.Click();
         }
 
         public void ClickResetLink()
