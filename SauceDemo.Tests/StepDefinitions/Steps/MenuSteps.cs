@@ -26,5 +26,33 @@ namespace SauceDemo.Tests.StepDefinitions.Steps
         {
             menu?.ClickLogoutLink();
         }
+
+        [When(@"I click the all items link")]
+        public void IClickTheAllItemsLink()
+        {
+            menu?.ClickAllItemsLink();
+        }
+
+        [When(@"I click the about link")]
+        public void IClickTheAboutLink()
+        {
+            menu?.ClickAboutLink();
+        }
+
+        [When(@"I close the menu")]
+        public void ICloseTheMenu()
+        {
+            menu?.CloseMenu();
+        }
+
+        [Then(@"the menu is not displayed")]
+        public void TheMenuIsNotDisplayed()
+        {
+            var actual = menu?.MenuIsVisible();
+            Assert.That(
+                actual,
+                Is.False,
+                $"Expected: '{Is.False}', Actual: '{actual}'");
+        }
     }
 }

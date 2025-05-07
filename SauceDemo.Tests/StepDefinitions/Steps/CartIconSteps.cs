@@ -14,6 +14,7 @@ namespace SauceDemo.Tests.StepDefinitions.Steps
             cartIconComponent = Component<CartIconComponent>();
         }
 
+        [Given(@"I click the cart icon")]
         [When(@"I click the cart icon")]
         public void IClickTheCartIcon() => cartIconComponent.ClickCartIcon();
 
