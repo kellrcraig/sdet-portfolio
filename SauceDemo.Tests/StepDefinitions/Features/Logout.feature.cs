@@ -190,12 +190,12 @@ namespace SauceDemo.Tests.StepDefinitions.Features
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Cart icon count is preserved after logout")]
-        public void CartIconCountIsPreservedAfterLogout()
+        [NUnit.Framework.DescriptionAttribute("Cart badge count is preserved after logout")]
+        public void CartBadgeCountIsPreservedAfterLogout()
         {
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Cart icon count is preserved after logout", null, tagsOfScenario, argumentsOfScenario, featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Cart badge count is preserved after logout", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 26
     this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -225,7 +225,7 @@ namespace SauceDemo.Tests.StepDefinitions.Features
         testRunner.And("I log in as \"standard_user\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 33
-        testRunner.Then("the cart icon displays \"1\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+        testRunner.Then("the cart badge displays \"1\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

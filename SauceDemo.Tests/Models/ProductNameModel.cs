@@ -11,9 +11,6 @@ namespace SauceDemo.Tests.Models
 
         public string InternalName => DisplayName
                 .ToLowerInvariant()
-                .Replace(" ", "-")
-                .Replace(".", string.Empty)
-                .Replace("(", string.Empty)
-                .Replace(")", string.Empty).ToLower();
+                .Replace(" ", "-").ToLower();
     }
 }

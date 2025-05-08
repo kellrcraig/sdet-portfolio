@@ -28,7 +28,7 @@ namespace SauceDemo.Tests.Data
 
         public IReadOnlyCollection<ProductNameModel> All => allByDisplayName.Values;
 
-        public ProductNameModel Get(string displayName)
+        public ProductNameModel GetValidatedProductName(string displayName)
         {
             if (!allByDisplayName.TryGetValue(displayName, out var product))
             {
@@ -37,6 +37,11 @@ namespace SauceDemo.Tests.Data
             }
 
             return product;
+        }
+
+        public List<ProductNameModel> GetValidatedProductNames(IEnumerable<string> displayNames)
+        {
+            return displayNames.Select(GetValidatedProductName).ToList();
         }
     }
 }

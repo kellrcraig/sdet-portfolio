@@ -1,6 +1,7 @@
 namespace SauceDemo.Tests.UI.Pages
 {
     using OpenQA.Selenium;
+    using SauceDemo.Tests.Extensions;
     using SauceDemo.Tests.Helpers;
 
     public class InventoryPage : BasePage
@@ -11,5 +12,7 @@ namespace SauceDemo.Tests.UI.Pages
         }
 
         public void NavigateTo() => BrowserHelper.NavigateTo(Driver, "https://www.saucedemo.com/inventory.html");
+
+        public string ActiveSortOption() => Driver.FindRequiredElement(By.CssSelector("[data-test='active-option']")).Text;
     }
 }

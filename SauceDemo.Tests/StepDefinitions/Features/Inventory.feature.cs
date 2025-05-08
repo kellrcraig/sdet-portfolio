@@ -21,14 +21,12 @@ namespace SauceDemo.Tests.StepDefinitions.Features
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
     [NUnit.Framework.DescriptionAttribute("Inventory")]
-    [NUnit.Framework.CategoryAttribute("wip")]
     public partial class InventoryFeature
     {
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
         
-        private static string[] featureTags = new string[] {
-                "wip"};
+        private static string[] featureTags = ((string[])(null));
         
 #line 1 "Inventory.feature"
 #line hidden
@@ -82,7 +80,7 @@ namespace SauceDemo.Tests.StepDefinitions.Features
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Inventory page loads with default items, sorting option, and empty cart", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 4
+#line 3
     this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
@@ -92,18 +90,56 @@ namespace SauceDemo.Tests.StepDefinitions.Features
             else
             {
                 this.ScenarioStart();
+#line 4
+        testRunner.Given("I open the login page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 5
+        testRunner.When("I log in as \"standard_user\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 6
+        testRunner.Then("the cart badge is not displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 7
+        testRunner.And("the sort dropdown displays \"Name (A to Z)\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+                TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Product",
+                            "Order"});
+                table1.AddRow(new string[] {
+                            "Sauce Labs Backpack",
+                            "1"});
+                table1.AddRow(new string[] {
+                            "Sauce Labs Bike Light",
+                            "2"});
+                table1.AddRow(new string[] {
+                            "Sauce Labs Bolt T-Shirt",
+                            "3"});
+                table1.AddRow(new string[] {
+                            "Sauce Labs Fleece Jacket",
+                            "4"});
+                table1.AddRow(new string[] {
+                            "Sauce Labs Onesie",
+                            "5"});
+                table1.AddRow(new string[] {
+                            "Test.allTheThings() T-Shirt (Red)",
+                            "6"});
+#line 8
+        testRunner.And("the inventory product area displays the following items:", ((string)(null)), table1, "And ");
+#line hidden
             }
             this.ScenarioCleanup();
         }
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Sorting by Name (A to Z) orders items alphabetically")]
+        [NUnit.Framework.CategoryAttribute("wip")]
         public void SortingByNameAToZOrdersItemsAlphabetically()
         {
-            string[] tagsOfScenario = ((string[])(null));
+            string[] tagsOfScenario = new string[] {
+                    "wip"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Sorting by Name (A to Z) orders items alphabetically", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 5
+#line 18
     this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
@@ -119,12 +155,14 @@ namespace SauceDemo.Tests.StepDefinitions.Features
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Sorting by Name (Z to A) orders items in reverse alphabetical order")]
+        [NUnit.Framework.CategoryAttribute("wip")]
         public void SortingByNameZToAOrdersItemsInReverseAlphabeticalOrder()
         {
-            string[] tagsOfScenario = ((string[])(null));
+            string[] tagsOfScenario = new string[] {
+                    "wip"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Sorting by Name (Z to A) orders items in reverse alphabetical order", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 6
+#line 20
     this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
@@ -140,12 +178,14 @@ namespace SauceDemo.Tests.StepDefinitions.Features
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Sorting by Price (low to high) orders items from cheapest to most expensive")]
+        [NUnit.Framework.CategoryAttribute("wip")]
         public void SortingByPriceLowToHighOrdersItemsFromCheapestToMostExpensive()
         {
-            string[] tagsOfScenario = ((string[])(null));
+            string[] tagsOfScenario = new string[] {
+                    "wip"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Sorting by Price (low to high) orders items from cheapest to most expensive", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 7
+#line 22
     this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
@@ -161,12 +201,14 @@ namespace SauceDemo.Tests.StepDefinitions.Features
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Sorting by Price (high to low) orders items from most to least expensive")]
+        [NUnit.Framework.CategoryAttribute("wip")]
         public void SortingByPriceHighToLowOrdersItemsFromMostToLeastExpensive()
         {
-            string[] tagsOfScenario = ((string[])(null));
+            string[] tagsOfScenario = new string[] {
+                    "wip"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Sorting by Price (high to low) orders items from most to least expensive", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 8
+#line 24
     this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
@@ -181,13 +223,15 @@ namespace SauceDemo.Tests.StepDefinitions.Features
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Add to cart button updates cart icon count")]
-        public void AddToCartButtonUpdatesCartIconCount()
+        [NUnit.Framework.DescriptionAttribute("Add to cart button updates cart badge count")]
+        [NUnit.Framework.CategoryAttribute("wip")]
+        public void AddToCartButtonUpdatesCartBadgeCount()
         {
-            string[] tagsOfScenario = ((string[])(null));
+            string[] tagsOfScenario = new string[] {
+                    "wip"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Add to cart button updates cart icon count", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 9
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Add to cart button updates cart badge count", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 26
     this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
@@ -202,13 +246,15 @@ namespace SauceDemo.Tests.StepDefinitions.Features
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Remove button updates cart icon count")]
-        public void RemoveButtonUpdatesCartIconCount()
+        [NUnit.Framework.DescriptionAttribute("Remove button updates cart badge count")]
+        [NUnit.Framework.CategoryAttribute("wip")]
+        public void RemoveButtonUpdatesCartBadgeCount()
         {
-            string[] tagsOfScenario = ((string[])(null));
+            string[] tagsOfScenario = new string[] {
+                    "wip"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Remove button updates cart icon count", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 10
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Remove button updates cart badge count", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 28
     this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
@@ -225,13 +271,15 @@ namespace SauceDemo.Tests.StepDefinitions.Features
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Back to products link navigates from the Item detail screen to Inventory page")]
         [NUnit.Framework.CategoryAttribute("page-navigation")]
+        [NUnit.Framework.CategoryAttribute("wip")]
         public void BackToProductsLinkNavigatesFromTheItemDetailScreenToInventoryPage()
         {
             string[] tagsOfScenario = new string[] {
-                    "page-navigation"};
+                    "page-navigation",
+                    "wip"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Back to products link navigates from the Item detail screen to Inventory page", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 12
+#line 31
     this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
@@ -246,17 +294,19 @@ namespace SauceDemo.Tests.StepDefinitions.Features
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Reset App State link reverts items, sorting option, and cart icon count to defaul" +
-            "ts")]
+        [NUnit.Framework.DescriptionAttribute("Reset App State link reverts items, sorting option, and cart badge count to defau" +
+            "lts")]
         [NUnit.Framework.CategoryAttribute("reset-app-state")]
-        public void ResetAppStateLinkRevertsItemsSortingOptionAndCartIconCountToDefaults()
+        [NUnit.Framework.CategoryAttribute("wip")]
+        public void ResetAppStateLinkRevertsItemsSortingOptionAndCartBadgeCountToDefaults()
         {
             string[] tagsOfScenario = new string[] {
-                    "reset-app-state"};
+                    "reset-app-state",
+                    "wip"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Reset App State link reverts items, sorting option, and cart icon count to defaul" +
-                    "ts", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 14
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Reset App State link reverts items, sorting option, and cart badge count to defau" +
+                    "lts", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 34
     this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
@@ -272,12 +322,14 @@ namespace SauceDemo.Tests.StepDefinitions.Features
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Items and sorting option persist when returning to Inventory page")]
+        [NUnit.Framework.CategoryAttribute("wip")]
         public void ItemsAndSortingOptionPersistWhenReturningToInventoryPage()
         {
-            string[] tagsOfScenario = ((string[])(null));
+            string[] tagsOfScenario = new string[] {
+                    "wip"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Items and sorting option persist when returning to Inventory page", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 15
+#line 36
     this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
@@ -294,13 +346,15 @@ namespace SauceDemo.Tests.StepDefinitions.Features
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Remove button displays Add to cart after removing item from the cart")]
         [NUnit.Framework.CategoryAttribute("cart-button-state")]
+        [NUnit.Framework.CategoryAttribute("wip")]
         public void RemoveButtonDisplaysAddToCartAfterRemovingItemFromTheCart()
         {
             string[] tagsOfScenario = new string[] {
-                    "cart-button-state"};
+                    "cart-button-state",
+                    "wip"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Remove button displays Add to cart after removing item from the cart", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 17
+#line 39
     this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
@@ -318,14 +372,16 @@ namespace SauceDemo.Tests.StepDefinitions.Features
         [NUnit.Framework.DescriptionAttribute("Add to cart button displays Remove on Inventory page after adding from item detai" +
             "l")]
         [NUnit.Framework.CategoryAttribute("cart-button-state")]
+        [NUnit.Framework.CategoryAttribute("wip")]
         public void AddToCartButtonDisplaysRemoveOnInventoryPageAfterAddingFromItemDetail()
         {
             string[] tagsOfScenario = new string[] {
-                    "cart-button-state"};
+                    "cart-button-state",
+                    "wip"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Add to cart button displays Remove on Inventory page after adding from item detai" +
                     "l", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 19
+#line 41
     this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
@@ -343,14 +399,16 @@ namespace SauceDemo.Tests.StepDefinitions.Features
         [NUnit.Framework.DescriptionAttribute("Add to cart button displays Add to cart on Inventory page after removing from ite" +
             "m detail")]
         [NUnit.Framework.CategoryAttribute("cart-button-state")]
+        [NUnit.Framework.CategoryAttribute("wip")]
         public void AddToCartButtonDisplaysAddToCartOnInventoryPageAfterRemovingFromItemDetail()
         {
             string[] tagsOfScenario = new string[] {
-                    "cart-button-state"};
+                    "cart-button-state",
+                    "wip"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Add to cart button displays Add to cart on Inventory page after removing from ite" +
                     "m detail", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 21
+#line 43
     this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))

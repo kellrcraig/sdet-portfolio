@@ -4,7 +4,7 @@ namespace SauceDemo.Tests.Data
 
     public class ProductData
     {
-        private readonly Dictionary<string, ProductModel> productMetas = new ()
+        private readonly Dictionary<string, ProductModel> validProducts = new ()
         {
             [ProductNameData.Backpack.DisplayName] = new ProductModel
             {
@@ -62,11 +62,11 @@ namespace SauceDemo.Tests.Data
             },
         };
 
-        public ProductModel GetProductForCheckout(string quantity, ProductNameModel productName)
+        public ProductModel GetExpectedProductForCheckout(string quantity, ProductNameModel productName)
         {
-            var productMeta = GetProduct(productName);
+            var validProduct = GetValidatedProduct(productName);
 
-            return productMeta with
+            return validProduct with
             {
                 Quantity = quantity,
                 ImageAlt = null,
@@ -74,25 +74,30 @@ namespace SauceDemo.Tests.Data
             };
         }
 
-        public ProductModel GetProductForInventory(ProductNameModel productName)
+        public ProductModel GetExpectedProductForInventory(ProductNameModel productName)
         {
-            var productMeta = GetProduct(productName);
+            var validProduct = GetValidatedProduct(productName);
 
-            return productMeta with
+            return validProduct with
             {
                 Quantity = null,
             };
         }
 
-        private ProductModel GetProduct(ProductNameModel productName)
+        public List<ProductModel> GetExpectedProductsForInventory(IEnumerable<ProductNameModel> productNames)
         {
-            if (!productMetas.TryGetValue(productName.DisplayName, out var productMeta))
+            return productNames.Select(GetExpectedProductForInventory).ToList();
+        }
+
+        private ProductModel GetValidatedProduct(ProductNameModel productName)
+        {
+            if (!validProducts.TryGetValue(productName.DisplayName, out var productModel))
             {
                 throw new ArgumentException(
-                    $"Unknown product '{productName}'. Available options = {string.Join(", ", productMetas.Keys)}");
+                    $"Unknown product '{productName}'. Available options = {string.Join(", ", validProducts.Keys)}");
             }
 
-            return productMeta;
+            return productModel;
         }
     }
 }
