@@ -34,6 +34,19 @@ namespace SauceDemo.Tests.Extensions
             }
         }
 
+        public static IReadOnlyCollection<IWebElement> FindRequiredElements(this IWebElement element, By locator)
+        {
+            var elements = element.FindElements(locator);
+            if (elements is null || elements.Count == 0)
+            {
+                throw new NoSuchElementException(
+                    $"No child elements found using locator: {locator}. " +
+                    $"Make sure the elements exist and the selector is correct.");
+            }
+
+            return elements;
+        }
+
         public static IWebElement? FindElementSafe(this IWebElement element, By locator)
         {
             try

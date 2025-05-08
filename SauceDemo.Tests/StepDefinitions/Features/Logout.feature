@@ -23,14 +23,14 @@ Feature: Logout
         And I open the inventory page
         Then the "Epic sadface: You can only access '/inventory.html' when you are logged in." message is displayed
     
-    Scenario: Cart icon count is preserved after logout
+    Scenario: Cart badge count is preserved after logout
         Given I open the login page
         And I log in as "standard_user"
         And I add "Sauce Labs Backpack" to the cart
         When I open the menu
         And I click the logout link
         And I log in as "standard_user"
-        Then the cart icon displays "1"
+        Then the cart badge displays "1"
     
     Scenario: Item in cart is preserved after logout
         Given I open the login page
