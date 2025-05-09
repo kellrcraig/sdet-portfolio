@@ -14,7 +14,7 @@ namespace SauceDemo.Tests.StepDefinitions.Steps
         public ProductAreaSteps(ScenarioContext scenarioContext)
             : base(scenarioContext)
         {
-            productAreaComponent = new ProductAreaComponent(driver);
+            productAreaComponent = Component<ProductAreaComponent>();
             productNameData = new ProductNameData();
             productData = new ProductData();
         }
@@ -27,8 +27,44 @@ namespace SauceDemo.Tests.StepDefinitions.Steps
             productAreaComponent.ClickAddToCart(validProductName);
         }
 
+        [Given(@"I add the following items to the cart:")]
+        [When(@"I add the following items to the cart:")]
+        public void IAddTheFollowingItemsToTheCart(Table table)
+        {
+            var displayNames = GetProductNamesFromTable(table);
+            var validProductNames = productNameData.GetValidatedProductNames(displayNames);
+            validProductNames.ForEach(productAreaComponent.ClickAddToCart);
+        }
+
+        [Given(@"I click Add to cart")]
+        public void IClickAddToCart()
+        {
+            productAreaComponent.ClickAddToCart();
+        }
+
+        [Given(@"I remove ""(.*)"" from the cart")]
+        public void IRemoveItemFromTheCart(string displayName)
+        {
+            var validProductName = productNameData.GetValidatedProductName(displayName);
+            productAreaComponent.ClickRemove(validProductName);
+        }
+
+        [When(@"I remove the following items from the cart:")]
+        public void IRemoveTheFollowingItemsFromTheCart(Table table)
+        {
+            var displayNames = GetProductNamesFromTable(table);
+            var validProductNames = productNameData.GetValidatedProductNames(displayNames);
+            validProductNames.ForEach(productAreaComponent.ClickRemove);
+        }
+
+        [Given(@"I click Remove")]
+        public void IClickRemove()
+        {
+            productAreaComponent.ClickRemove();
+        }
+
         [Then(@"the product area displays ""(.*)"" ""(.*)""")]
-        public void TheProductAreaDisplays(string quantity, string displayName)
+        public void TheProductAreaDisplaysItemWithQuantity(string quantity, string displayName)
         {
             var validProductName = productNameData.GetValidatedProductName(displayName);
             var actual = productAreaComponent.GetActualProduct(validProductName);
@@ -58,6 +94,30 @@ namespace SauceDemo.Tests.StepDefinitions.Steps
                 actual,
                 Is.EqualTo(expected),
                 $"Expected: '{expected}', Actual: '{actual}'");
+        }
+
+        [Then(@"the ""(.*)"" cart button displays ""(.*)""")]
+        public void TheItemCartButtonDisplays(string displayName, string buttonText)
+        {
+            var validatedProductName = productNameData.GetValidatedProductName(displayName);
+            var actual = productAreaComponent.GetCartButtonText(validatedProductName);
+            var expected = CartButtonData.GetValidatedCartButtonText(buttonText);
+            Assert.That(
+                actual,
+                Is.EqualTo(expected),
+                $"Expected: '{expected}', Actual: '{actual}'");
+        }
+
+        [Given(@"I click the ""(.*)"" link")]
+        public void IClickTheItemLink(string displayName)
+        {
+            var validProductName = productNameData.GetValidatedProductName(displayName);
+            productAreaComponent.ClickItemName(validProductName);
+        }
+
+        private List<string> GetProductNamesFromTable(Table table)
+        {
+            return table.Rows.Select(row => row["Product"]).ToList();
         }
     }
 }

@@ -1,6 +1,5 @@
 namespace SauceDemo.Tests.UI.Components
 {
-    using System;
     using OpenQA.Selenium;
     using SauceDemo.Tests.Extensions;
     using SauceDemo.Tests.Helpers;

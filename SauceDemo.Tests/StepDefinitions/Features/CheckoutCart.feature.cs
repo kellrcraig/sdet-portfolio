@@ -30,7 +30,7 @@ namespace SauceDemo.Tests.StepDefinitions.Features
         private static string[] featureTags = new string[] {
                 "wip"};
         
-#line 1 "CheckoutYourCart.feature"
+#line 1 "CheckoutCart.feature"
 #line hidden
         
         [NUnit.Framework.OneTimeSetUpAttribute()]

@@ -18,7 +18,7 @@ namespace SauceDemo.Tests.StepDefinitions.Steps
         [Then(@"the ""(.*)"" page is displayed")]
         public void ThePageIsDisplayed(string pageAlias)
         {
-            var expected = new PageData().Get(pageAlias);
+            var expected = new PageData().GetValidatedPage(pageAlias);
             var actualUrl = shellPage?.PageUrl;
             Assert.Multiple(() =>
             {
