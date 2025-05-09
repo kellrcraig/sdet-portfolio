@@ -1,5 +1,6 @@
 namespace SauceDemo.Tests.StepDefinitions.Steps
 {
+    using SauceDemo.Tests.Data;
     using SauceDemo.Tests.UI.Pages;
     using TechTalk.SpecFlow;
 
@@ -18,13 +19,21 @@ namespace SauceDemo.Tests.StepDefinitions.Steps
         public void IOpenTheInventoryPage() => inventoryPage?.NavigateTo();
 
         [Then(@"the sort dropdown displays ""(.*)""")]
-        public void TheSortDropdownDisplays(string expectedSortOption)
+        public void TheSortDropdownDisplays(string sortText)
         {
-            var actual = inventoryPage.ActiveSortOption();
+            var expected = SortOptionData.GetValidatedSortOption(sortText);
+            var actual = inventoryPage.ActiveSortText();
             Assert.That(
                 actual,
-                Is.EqualTo(expectedSortOption),
-                $"Expected: '{expectedSortOption}', Actual: '{actual}'");
+                Is.EqualTo(expected.Text),
+                $"Expected: '{expected}', Actual: '{actual}'");
+        }
+
+        [When(@"I sort by ""(.*)""")]
+        public void ISortBy(string sortText)
+        {
+            var validSortOption = SortOptionData.GetValidatedSortOption(sortText);
+            inventoryPage.SelectSortOption(validSortOption);
         }
     }
 }

@@ -14,26 +14,66 @@ Feature: Inventory
             | Sauce Labs Onesie                 | 5     |
             | Test.allTheThings() T-Shirt (Red) | 6     |
 
-    @wip
     Scenario: Sorting by Name (A to Z) orders items alphabetically
-    @wip
+        Given I open the login page
+        And I log in as "standard_user"
+        When I sort by "Name (Z to A)" 
+        And I sort by "Name (A to Z)"
+        Then the inventory product area displays the following items:
+            | Product                           | Order |
+            | Sauce Labs Backpack               | 1     |
+            | Sauce Labs Bike Light             | 2     |
+            | Sauce Labs Bolt T-Shirt           | 3     |
+            | Sauce Labs Fleece Jacket          | 4     |
+            | Sauce Labs Onesie                 | 5     |
+            | Test.allTheThings() T-Shirt (Red) | 6     |      
+
     Scenario: Sorting by Name (Z to A) orders items in reverse alphabetical order
-    @wip
+        Given I open the login page
+        And I log in as "standard_user"
+        When I sort by "Name (Z to A)"
+        Then the inventory product area displays the following items:
+            | Product                           | Order |
+            | Sauce Labs Backpack               | 6     |
+            | Sauce Labs Bike Light             | 5     |
+            | Sauce Labs Bolt T-Shirt           | 4     |
+            | Sauce Labs Fleece Jacket          | 3     |
+            | Sauce Labs Onesie                 | 2     |
+            | Test.allTheThings() T-Shirt (Red) | 1     |
+
     Scenario: Sorting by Price (low to high) orders items from cheapest to most expensive
-    @wip
+        Given I open the login page
+        And I log in as "standard_user"
+        When I sort by "Price (low to high)"
+        Then the inventory product area displays the following items:
+            | Product                           | Order |
+            | Sauce Labs Backpack               | 5     |
+            | Sauce Labs Bike Light             | 2     |
+            | Sauce Labs Bolt T-Shirt           | 3     |
+            | Sauce Labs Fleece Jacket          | 6     |
+            | Sauce Labs Onesie                 | 1     |
+            | Test.allTheThings() T-Shirt (Red) | 4     |
+
     Scenario: Sorting by Price (high to low) orders items from most to least expensive
+        Given I open the login page
+        And I log in as "standard_user"
+        When I sort by "Price (high to low)"
+        Then the inventory product area displays the following items:
+            | Product                           | Order |
+            | Sauce Labs Backpack               | 2     |
+            | Sauce Labs Bike Light             | 5     |
+            | Sauce Labs Bolt T-Shirt           | 3     |
+            | Sauce Labs Fleece Jacket          | 1     |
+            | Sauce Labs Onesie                 | 6     |
+            | Test.allTheThings() T-Shirt (Red) | 4     |
+
     @wip
-    Scenario: Add to cart button updates cart badge count
+    Scenario: Add to cart button increases cart badge count
     @wip
-    Scenario: Remove button updates cart badge count
+    Scenario: Remove button decreases cart badge count
 
     @page-navigation @wip
     Scenario: Back to products link navigates from the Item detail screen to Inventory page
-
-    @reset-app-state @wip
-    Scenario: Reset App State link reverts items, sorting option, and cart badge count to defaults
-    @wip
-    Scenario: Items and sorting option persist when returning to Inventory page
 
     @cart-button-state @wip
     Scenario: Remove button displays Add to cart after removing item from the cart
