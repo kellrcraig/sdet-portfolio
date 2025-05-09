@@ -1,10 +1,11 @@
 Feature: Inventory
 
-    Scenario: Inventory page loads with default items, sorting option, and empty cart
+    Scenario: Inventory page loads with default items, cart button state, sorting option, and empty cart
         Given I open the login page
         When I log in as "standard_user"
         Then the cart badge is not displayed
         And the sort dropdown displays "Name (A to Z)"
+        And the "Sauce Labs Bolt T-Shirt" cart button displays "Add to cart"
         And the inventory product area displays the following items:
             | Product                           | Order |
             | Sauce Labs Backpack               | 1     |
@@ -29,7 +30,7 @@ Feature: Inventory
             | Test.allTheThings() T-Shirt (Red) | 6     |      
 
     Scenario: Sorting by Name (Z to A) orders items in reverse alphabetical order
-        Given I open the login page
+        Given I open the login page        
         And I log in as "standard_user"
         When I sort by "Name (Z to A)"
         Then the inventory product area displays the following items:
@@ -67,17 +68,71 @@ Feature: Inventory
             | Sauce Labs Onesie                 | 6     |
             | Test.allTheThings() T-Shirt (Red) | 4     |
 
-    @wip
     Scenario: Add to cart button increases cart badge count
-    @wip
+        Given I open the login page
+        And I log in as "standard_user"
+        When I add the following items to the cart:
+            | Product                           |
+            | Sauce Labs Backpack               |
+            | Sauce Labs Bike Light             |
+            | Sauce Labs Fleece Jacket          |
+        Then the cart badge displays "3"
+
     Scenario: Remove button decreases cart badge count
+        Given I open the login page
+        And I log in as "standard_user"
+        When I add the following items to the cart:
+            | Product                           |
+            | Sauce Labs Bolt T-Shirt           |
+            | Sauce Labs Bike Light             |
+            | Sauce Labs Fleece Jacket          |
+            | Sauce Labs Onesie                 |
+        And I remove the following items from the cart:
+            | Product                           |
+            | Sauce Labs Fleece Jacket          |
+            | Sauce Labs Onesie                 |
+        Then the cart badge displays "2"
 
-    @page-navigation @wip
+    @page-navigation
     Scenario: Back to products link navigates from the Item detail screen to Inventory page
+        Given I open the login page
+        And I log in as "standard_user"
+        And I click the "Test.allTheThings() T-Shirt (Red)" link
+        When I click Back to products
+        Then the "inventory" page is displayed
 
-    @cart-button-state @wip
+    @cart-button-state
+    Scenario: Cart button displays Remove after adding item to the cart
+        Given I open the login page
+        And I log in as "standard_user"
+        When I add "Sauce Labs Onesie" to the cart
+        Then the "Sauce Labs Onesie" cart button displays "Remove"
+
+    @cart-button-state
     Scenario: Remove button displays Add to cart after removing item from the cart
-    @cart-button-state @wip
+        Given I open the login page
+        And I log in as "standard_user"
+        And I add "Sauce Labs Bolt T-Shirt" to the cart
+        And I click the cart icon
+        And I remove "Sauce Labs Bolt T-Shirt" from the cart
+        When I click Continue Shopping
+        Then the "Sauce Labs Bolt T-Shirt" cart button displays "Add to cart"
+
+    @cart-button-state
     Scenario: Add to cart button displays Remove on Inventory page after adding from item detail
-    @cart-button-state @wip
+        Given I open the login page
+        And I log in as "standard_user"
+        And I click the "Sauce Labs Bolt T-Shirt" link
+        And I click Add to cart
+        When I click Back to products
+        Then the "Sauce Labs Bolt T-Shirt" cart button displays "Remove"
+
+    @cart-button-state
     Scenario: Add to cart button displays Add to cart on Inventory page after removing from item detail
+        Given I open the login page
+        And I log in as "standard_user"
+        And I add "Sauce Labs Fleece Jacket" to the cart
+        And I click the "Sauce Labs Fleece Jacket" link
+        And I click Remove
+        When I click Back to products
+        Then the "Sauce Labs Fleece Jacket" cart button displays "Add to cart"

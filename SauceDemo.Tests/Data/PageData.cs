@@ -16,7 +16,7 @@ namespace SauceDemo.Tests.Data
             ["sauce labs"] = new PageModel("saucelabs.com", null),
         };
 
-        public PageModel Get(string alias)
+        public PageModel GetValidatedPage(string alias)
         {
             if (!pages.TryGetValue(alias, out var page))
             {

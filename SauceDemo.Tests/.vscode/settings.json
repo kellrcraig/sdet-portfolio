@@ -1,9 +1,18 @@
 {
-    "cucumberautocomplete.steps": [
-      "Tests/Steps/**/*.cs"
-    ],
-    "cucumberautocomplete.syncfeatures": "SauceDemo.Tests/Tests/Features",
-    "cucumberautocomplete.strictGherkinCompletion": true,
-    "cucumberautocomplete.smartSnippets": true
-  }
-  
+  "cucumberautocomplete.steps": [
+    "StepDefinitions/Steps/*.cs"
+  ],
+  "cucumberautocomplete.syncfeatures": "StepDefinitions/Features/*.feature",
+  "cucumberautocomplete.strictGherkinCompletion": false,
+  "cucumberautocomplete.smartSnippets": true,
+  "cucumberautocomplete.stepsInvariants": true,
+  "editor.quickSuggestions": {
+    "strings": true
+  },
+  "cucumberautocomplete.customParameters": [
+    {
+      "parameter": "\"(.*)\"",
+      "value": "{string}"
+    }
+  ]
+}

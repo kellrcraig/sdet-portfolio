@@ -76,14 +76,14 @@ namespace SauceDemo.Tests.StepDefinitions.Features
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Item Detail page displays correct item after selecting from Inventory")]
+        [NUnit.Framework.DescriptionAttribute("Item Detail page displays correct item after selecting item name from Inventory")]
         [NUnit.Framework.CategoryAttribute("page-navigation")]
-        public void ItemDetailPageDisplaysCorrectItemAfterSelectingFromInventory()
+        public void ItemDetailPageDisplaysCorrectItemAfterSelectingItemNameFromInventory()
         {
             string[] tagsOfScenario = new string[] {
                     "page-navigation"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Item Detail page displays correct item after selecting from Inventory", null, tagsOfScenario, argumentsOfScenario, featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Item Detail page displays correct item after selecting item name from Inventory", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 6
     this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -99,15 +99,41 @@ namespace SauceDemo.Tests.StepDefinitions.Features
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Item Detail page displays correct item after selecting from Cart")]
+        [NUnit.Framework.DescriptionAttribute("Item Detail page displays correct item after selecting image from Inventory")]
         [NUnit.Framework.CategoryAttribute("page-navigation")]
-        public void ItemDetailPageDisplaysCorrectItemAfterSelectingFromCart()
+        public void ItemDetailPageDisplaysCorrectItemAfterSelectingImageFromInventory()
         {
             string[] tagsOfScenario = new string[] {
                     "page-navigation"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Item Detail page displays correct item after selecting from Cart", null, tagsOfScenario, argumentsOfScenario, featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Item Detail page displays correct item after selecting image from Inventory", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 8
+    this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+#line 9
+        testRunner.When("I click the \"Sauce Labs Backpack\" image", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Item Detail page displays correct item after selecting item name from Cart")]
+        [NUnit.Framework.CategoryAttribute("page-navigation")]
+        public void ItemDetailPageDisplaysCorrectItemAfterSelectingItemNameFromCart()
+        {
+            string[] tagsOfScenario = new string[] {
+                    "page-navigation"};
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Item Detail page displays correct item after selecting item name from Cart", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 12
     this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
@@ -130,7 +156,7 @@ namespace SauceDemo.Tests.StepDefinitions.Features
                     "reset-app-state"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Reset App State link reverts item state and cart icon count to defaults", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 11
+#line 15
     this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
@@ -155,7 +181,7 @@ namespace SauceDemo.Tests.StepDefinitions.Features
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Remove button displays Add to cart on Item Detail page after removing item from t" +
                     "he cart", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 13
+#line 17
     this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
@@ -180,7 +206,7 @@ namespace SauceDemo.Tests.StepDefinitions.Features
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Add to cart button displays Remove on Item Detail page after adding from inventor" +
                     "y", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 15
+#line 19
     this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
@@ -205,7 +231,7 @@ namespace SauceDemo.Tests.StepDefinitions.Features
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Add to cart button displays Add to cart on Item Detail page after removing from i" +
                     "nventory", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 17
+#line 21
     this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
@@ -228,7 +254,7 @@ namespace SauceDemo.Tests.StepDefinitions.Features
                     "cart-button-state"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Item Detail page loads Remove button if item is already in cart on page load", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 19
+#line 23
     this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
