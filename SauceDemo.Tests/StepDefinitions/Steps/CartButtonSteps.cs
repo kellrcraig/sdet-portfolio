@@ -1,5 +1,6 @@
 namespace SauceDemo.Tests.StepDefinitions.Steps
 {
+    using SauceDemo.Tests.Helpers;
     using SauceDemo.Tests.UI.Components;
     using TechTalk.SpecFlow;
 
@@ -27,20 +28,14 @@ namespace SauceDemo.Tests.StepDefinitions.Steps
                 Assert.Fail("Cart badge was not found, but an item count was expected.");
             }
 
-            Assert.That(
-                actualCount,
-                Is.EqualTo(expectedCount),
-                $"Expected count: '{expectedCount}', Actual: '{actualCount}'");
+            AssertionHelper.AssertEqual(actualCount, expectedCount, "Cart badge count");
         }
 
         [Then(@"the cart badge is not displayed")]
         public void TheCartBadgeIsNotDisplayed()
         {
             var actual = cartButtonComponent.CartBadgeIsVisible();
-            Assert.That(
-                actual,
-                Is.False,
-                $"Expected: '{Is.False}', Actual: '{actual}'");
+            AssertionHelper.AssertFalse(actual, "Cart badge is not displayed");
         }
     }
 }

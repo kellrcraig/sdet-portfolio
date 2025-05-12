@@ -1,6 +1,7 @@
 namespace SauceDemo.Tests.StepDefinitions.Steps
 {
     using SauceDemo.Tests.Data;
+    using SauceDemo.Tests.Helpers;
     using SauceDemo.Tests.UI.Components;
     using TechTalk.SpecFlow;
 
@@ -69,10 +70,7 @@ namespace SauceDemo.Tests.StepDefinitions.Steps
             var validProductName = productNameData.GetValidatedProductName(displayName);
             var actual = productAreaComponent.GetActualProduct(validProductName);
             var expected = productData.GetExpectedProductForCheckout(quantity, validProductName);
-            Assert.That(
-                actual,
-                Is.EqualTo(expected),
-                $"Expected: '{expected}', Actual: '{actual}'");
+            AssertionHelper.AssertEqual(actual, expected, "Checkout product area");
         }
 
         [Then(@"the inventory product area displays the following items:")]
@@ -90,10 +88,7 @@ namespace SauceDemo.Tests.StepDefinitions.Steps
             var validProductNames = productNameData.GetValidatedProductNames(displayNames);
             var actual = productAreaComponent.GetActualProductsForInventory();
             var expected = productData.GetExpectedProductsForInventory(validProductNames);
-            Assert.That(
-                actual,
-                Is.EqualTo(expected),
-                $"Expected: '{expected}', Actual: '{actual}'");
+            AssertionHelper.AssertEqual(actual, expected, "Inventory product area");
         }
 
         [Then(@"the ""(.*)"" cart button displays ""(.*)""")]
@@ -102,10 +97,7 @@ namespace SauceDemo.Tests.StepDefinitions.Steps
             var validatedProductName = productNameData.GetValidatedProductName(displayName);
             var actual = productAreaComponent.GetCartButtonText(validatedProductName);
             var expected = CartButtonData.GetValidatedCartButtonText(buttonText);
-            Assert.That(
-                actual,
-                Is.EqualTo(expected),
-                $"Expected: '{expected}', Actual: '{actual}'");
+            AssertionHelper.AssertEqual(actual, expected, "Cart button text");
         }
 
         [Given(@"I click the ""(.*)"" link")]

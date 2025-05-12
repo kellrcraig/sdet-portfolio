@@ -1,6 +1,7 @@
 namespace SauceDemo.Tests.StepDefinitions.Steps
 {
     using SauceDemo.Tests.Data;
+    using SauceDemo.Tests.Helpers;
     using SauceDemo.Tests.UI.Pages;
     using TechTalk.SpecFlow;
 
@@ -23,10 +24,7 @@ namespace SauceDemo.Tests.StepDefinitions.Steps
         {
             var expected = SortOptionData.GetValidatedSortOption(sortText);
             var actual = inventoryPage.ActiveSortText();
-            Assert.That(
-                actual,
-                Is.EqualTo(expected.Text),
-                $"Expected: '{expected}', Actual: '{actual}'");
+            AssertionHelper.AssertEqual(actual, expected.Text, "Active sort text");
         }
 
         [When(@"I sort by ""(.*)""")]
