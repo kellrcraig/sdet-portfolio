@@ -19,6 +19,9 @@ jobs:
       with:
         dotnet-version: '7.0.x'
 
+    - name: Clean build artifacts
+      run: dotnet clean SauceDemo.Tests/SauceDemo.Tests.csproj        
+
     - name: Restore dependencies
       run: dotnet restore SauceDemo.Tests/SauceDemo.Tests.csproj
 
