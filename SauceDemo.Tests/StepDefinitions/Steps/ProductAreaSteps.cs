@@ -64,11 +64,11 @@ namespace SauceDemo.Tests.StepDefinitions.Steps
             productAreaComponent.ClickRemove();
         }
 
-        [Then(@"the product area displays ""(.*)"" ""(.*)""")]
-        public void TheProductAreaDisplaysItemWithQuantity(string quantity, string displayName)
+        [Then(@"the checkout product area displays ""(.*)"" ""(.*)""")]
+        public void TheCheckoutProductAreaDisplaysItemWithQuantity(string quantity, string displayName)
         {
             var validProductName = productNameData.GetValidatedProductName(displayName);
-            var actual = productAreaComponent.GetActualProduct(validProductName);
+            var actual = productAreaComponent.GetProduct(validProductName);
             var expected = productData.GetExpectedProductForCheckout(quantity, validProductName);
             AssertionHelper.AssertEqual(actual, expected, "Checkout product area");
         }
@@ -86,7 +86,7 @@ namespace SauceDemo.Tests.StepDefinitions.Steps
                 .Select(p => p.Name)
                 .ToList();
             var validProductNames = productNameData.GetValidatedProductNames(displayNames);
-            var actual = productAreaComponent.GetActualProductsForInventory();
+            var actual = productAreaComponent.GetProductsForInventory();
             var expected = productData.GetExpectedProductsForInventory(validProductNames);
             AssertionHelper.AssertEqual(actual, expected, "Inventory product area");
         }
@@ -95,8 +95,8 @@ namespace SauceDemo.Tests.StepDefinitions.Steps
         public void TheItemCartButtonDisplays(string displayName, string buttonText)
         {
             var validatedProductName = productNameData.GetValidatedProductName(displayName);
-            var actual = productAreaComponent.GetCartButtonText(validatedProductName);
-            var expected = CartButtonData.GetValidatedCartButtonText(buttonText);
+            var actual = productAreaComponent.GetAddRemoveButtonText(validatedProductName);
+            var expected = AddRemoveButtonData.GetValidatedAddRemoveButtonText(buttonText);
             AssertionHelper.AssertEqual(actual, expected, "Cart button text");
         }
 
