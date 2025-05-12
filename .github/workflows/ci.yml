@@ -19,17 +19,11 @@ jobs:
       with:
         dotnet-version: '7.0.x'
 
-    - name: Clean build artifacts
-      run: dotnet clean SauceDemo.Tests/SauceDemo.Tests.csproj        
+    - name: Run build script
+      run: pwsh SauceDemo.Tests/Scripts/build.ps1
 
-    - name: Restore dependencies
-      run: dotnet restore SauceDemo.Tests/SauceDemo.Tests.csproj
-
-    - name: Build the project
-      run: dotnet build SauceDemo.Tests/SauceDemo.Tests.csproj --configuration Release --no-restore
-
-    - name: Run tests excluding @wip scenarios
-      run: dotnet test SauceDemo.Tests/SauceDemo.Tests.csproj --configuration Release --no-build --logger "trx;LogFileName=test-results.trx" --filter "TestCategory!=wip"
+    - name: Run test script
+      run: pwsh SauceDemo.Tests/Scripts/test.ps1
 
     - name: Upload Test Results as Artifact
       if: always()

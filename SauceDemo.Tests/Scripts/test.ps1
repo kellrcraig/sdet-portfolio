@@ -1,0 +1,1 @@
+dotnet test ./SauceDemo.Tests.csproj --configuration Release --no-build --logger "trx;LogFileName=test-results.trx" --filter "TestCategory!=wip"
