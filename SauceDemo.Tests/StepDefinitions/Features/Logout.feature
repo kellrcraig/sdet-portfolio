@@ -40,7 +40,7 @@ Feature: Logout
         And I click the logout link
         And I log in as "standard_user"
         And I click the cart icon
-        Then the product area displays "1" "Sauce Labs Backpack"
+        Then the checkout product area displays "1" "Sauce Labs Backpack"
 
     @wip
     Scenario: User who is actively using the app is not automatically logged out after 10 minutes

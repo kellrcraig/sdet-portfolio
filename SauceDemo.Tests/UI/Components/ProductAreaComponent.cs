@@ -41,7 +41,7 @@ namespace SauceDemo.Tests.UI.Components
             productContainer.FindRequiredElement(By.CssSelector($"[data-test='{InventoryItemNameKey}']")).Click();
         }
 
-        public CartButtonData GetCartButtonText(ProductNameModel productName)
+        public AddRemoveButtonData GetAddRemoveButtonText(ProductNameModel productName)
         {
             var productContainer = GetProductContainerByAncestor(productName);
 
@@ -50,7 +50,7 @@ namespace SauceDemo.Tests.UI.Components
             var addButton = productContainer.FindElementSafe(addLocator);
             if (addButton is not null)
             {
-                return CartButtonData.GetValidatedCartButtonText(addButton.Text);
+                return AddRemoveButtonData.GetValidatedAddRemoveButtonText(addButton.Text);
             }
 
             // If not found, fall back to the Remove button
@@ -58,34 +58,34 @@ namespace SauceDemo.Tests.UI.Components
             var removeButton = productContainer.FindElementSafe(removeLocator);
             if (removeButton is not null)
             {
-                return CartButtonData.GetValidatedCartButtonText(removeButton.Text);
+                return AddRemoveButtonData.GetValidatedAddRemoveButtonText(removeButton.Text);
             }
 
             throw new InvalidOperationException($"Neither 'Add to cart' nor 'Remove' button was found for product '{productName.DisplayName}'.");
         }
 
-        public ProductModel GetActualProduct(ProductNameModel productName)
+        public ProductModel GetProduct(ProductNameModel productName)
         {
             var productContainer = GetProductContainerByAncestor(productName);
-            return GetActualProductFromContainer(productContainer);
+            return GetProductFromContainer(productContainer);
         }
 
-        public List<ProductModel> GetActualProductsForInventory()
+        public List<ProductModel> GetProductsForInventory()
         {
             var productListContainer = Driver.FindRequiredElement(By.CssSelector("[data-test='inventory-list']"));
-            return GetActualProducts(productListContainer);
+            return GetProducts(productListContainer);
         }
 
-        public List<ProductModel> GetActualProductsForCheckout()
+        public List<ProductModel> GetProductsForCheckout()
         {
             var productListContainer = Driver.FindRequiredElement(By.CssSelector("[data-test='cart-list']"));
-            return GetActualProducts(productListContainer);
+            return GetProducts(productListContainer);
         }
 
-        private List<ProductModel> GetActualProducts(IWebElement productListContainer)
+        private List<ProductModel> GetProducts(IWebElement productListContainer)
         {
             var productContainers = productListContainer.FindRequiredElements(By.CssSelector($"[data-test='{InventoryItemKey}']"));
-            return productContainers.Select(GetActualProductFromContainer).ToList();
+            return productContainers.Select(GetProductFromContainer).ToList();
         }
 
         private IWebElement GetProductContainerByAncestor(ProductNameModel productName)
@@ -95,7 +95,7 @@ namespace SauceDemo.Tests.UI.Components
             return nameElement.FindRequiredElement(By.XPath($"./ancestor::div[@data-test='{InventoryItemKey}']"));
         }
 
-        private ProductModel GetActualProductFromContainer(IWebElement productContainer)
+        private ProductModel GetProductFromContainer(IWebElement productContainer)
         {
             // Global elements
             var name = productContainer.FindRequiredElement(By.CssSelector($"[data-test='{InventoryItemNameKey}']")).Text;
