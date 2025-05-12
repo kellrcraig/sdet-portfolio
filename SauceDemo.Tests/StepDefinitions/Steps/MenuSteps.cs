@@ -1,12 +1,13 @@
 namespace SauceDemo.Tests.StepDefinitions.Steps
 {
+    using SauceDemo.Tests.Helpers;
     using SauceDemo.Tests.UI.Components;
     using TechTalk.SpecFlow;
 
     [Binding]
     public class MenuSteps : BaseSteps
     {
-        private readonly MenuComponent? menu;
+        private readonly MenuComponent menu;
 
         public MenuSteps(ScenarioContext scenarioContext)
             : base(scenarioContext)
@@ -18,41 +19,38 @@ namespace SauceDemo.Tests.StepDefinitions.Steps
         [When(@"I open the menu")]
         public void IOpenTheMenu()
         {
-            menu?.OpenMenu();
+            menu.OpenMenu();
         }
 
         [When(@"I click the logout link")]
         public void IClickTheLogoutLink()
         {
-            menu?.ClickLogoutLink();
+            menu.ClickLogoutLink();
         }
 
         [When(@"I click the all items link")]
         public void IClickTheAllItemsLink()
         {
-            menu?.ClickAllItemsLink();
+            menu.ClickAllItemsLink();
         }
 
         [When(@"I click the about link")]
         public void IClickTheAboutLink()
         {
-            menu?.ClickAboutLink();
+            menu.ClickAboutLink();
         }
 
         [When(@"I close the menu")]
         public void ICloseTheMenu()
         {
-            menu?.CloseMenu();
+            menu.CloseMenu();
         }
 
         [Then(@"the menu is not displayed")]
         public void TheMenuIsNotDisplayed()
         {
-            var actual = menu?.MenuIsVisible();
-            Assert.That(
-                actual,
-                Is.False,
-                $"Expected: '{Is.False}', Actual: '{actual}'");
+            var actual = menu.MenuIsVisible();
+            AssertionHelper.AssertFalse(actual, "Menu is not displayed");
         }
     }
 }

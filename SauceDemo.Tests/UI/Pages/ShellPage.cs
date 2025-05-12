@@ -12,6 +12,6 @@ namespace SauceDemo.Tests.UI.Pages
 
         public string? PageTitle => Driver.FindElementSafe(By.ClassName("title"))?.Text;
 
-        public string? PageUrl => Driver!.Url;
+        public string PageUrl => Driver.Url;
     }
 }
