@@ -1,27 +1,27 @@
 namespace SauceDemo.Tests.Data
 {
-    public sealed record AddRemoveButtonData
+    public sealed record ProductAddRemoveData
     {
-        private static readonly AddRemoveButtonData AddToCart = new ("Add to cart");
-        private static readonly AddRemoveButtonData Remove = new ("Remove");
+        private static readonly ProductAddRemoveData AddToCart = new ("Add to cart");
+        private static readonly ProductAddRemoveData Remove = new ("Remove");
 
-        private static readonly Dictionary<string, AddRemoveButtonData> AllByText =
+        private static readonly Dictionary<string, ProductAddRemoveData> AllByText =
             new (StringComparer.Ordinal)
             {
                 [AddToCart.Text] = AddToCart,
                 [Remove.Text] = Remove,
             };
 
-        private AddRemoveButtonData(string text)
+        private ProductAddRemoveData(string text)
         {
             Text = text;
         }
 
-        public static IEnumerable<AddRemoveButtonData> All => AllByText.Values;
+        public static IEnumerable<ProductAddRemoveData> All => AllByText.Values;
 
         public string Text { get; }
 
-        public static AddRemoveButtonData GetValidatedAddRemoveButtonText(string text)
+        public static ProductAddRemoveData GetValidatedAddRemoveText(string text)
         {
             if (!AllByText.TryGetValue(text, out var validText))
             {
