@@ -13,7 +13,7 @@ namespace SauceDemo.Tests.StepDefinitions.Steps
         public ShellSteps(ScenarioContext scenarioContext)
             : base(scenarioContext)
         {
-            shellPage = Page<ShellPage>();
+            shellPage = PageComponent<ShellPage>();
         }
 
         [Then(@"the ""(.*)"" page is displayed")]

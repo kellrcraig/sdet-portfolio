@@ -3,8 +3,9 @@ namespace SauceDemo.Tests.UI.Components
     using OpenQA.Selenium;
     using SauceDemo.Tests.Extensions;
     using SauceDemo.Tests.Helpers;
+    using SauceDemo.Tests.UI.Shared;
 
-    public class MenuComponent : BaseComponent
+    public class MenuComponent : UiObjectBase
     {
         public MenuComponent(IWebDriver driver)
             : base(driver)

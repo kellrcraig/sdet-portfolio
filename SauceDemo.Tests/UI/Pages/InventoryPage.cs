@@ -4,8 +4,9 @@ namespace SauceDemo.Tests.UI.Pages
     using SauceDemo.Tests.Data;
     using SauceDemo.Tests.Extensions;
     using SauceDemo.Tests.Helpers;
+    using SauceDemo.Tests.UI.Shared;
 
-    public class InventoryPage : BasePage
+    public class InventoryPage : UiObjectBase
     {
         public InventoryPage(IWebDriver driver)
             : base(driver)

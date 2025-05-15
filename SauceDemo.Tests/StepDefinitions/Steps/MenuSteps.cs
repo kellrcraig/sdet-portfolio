@@ -12,7 +12,7 @@ namespace SauceDemo.Tests.StepDefinitions.Steps
         public MenuSteps(ScenarioContext scenarioContext)
             : base(scenarioContext)
         {
-            menu = Component<MenuComponent>();
+            menu = PageComponent<MenuComponent>();
         }
 
         [Given(@"I open the menu")]

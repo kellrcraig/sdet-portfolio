@@ -12,7 +12,7 @@ namespace SauceDemo.Tests.StepDefinitions.Steps
         public CartButtonSteps(ScenarioContext scenarioContext)
             : base(scenarioContext)
         {
-            cartButtonComponent = Component<CartButtonComponent>();
+            cartButtonComponent = PageComponent<CartButtonComponent>();
         }
 
         [Given(@"I click the cart icon")]

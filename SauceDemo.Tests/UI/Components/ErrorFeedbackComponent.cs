@@ -2,8 +2,9 @@ namespace SauceDemo.Tests.UI.Components
 {
     using OpenQA.Selenium;
     using SauceDemo.Tests.Extensions;
+    using SauceDemo.Tests.UI.Shared;
 
-    public class ErrorFeedbackComponent : BaseComponent
+    public class ErrorFeedbackComponent : UiObjectBase
     {
         public ErrorFeedbackComponent(IWebDriver driver)
             : base(driver)
