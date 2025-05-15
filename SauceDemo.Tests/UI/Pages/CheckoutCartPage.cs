@@ -2,8 +2,9 @@ namespace SauceDemo.Tests.UI.Pages
 {
     using OpenQA.Selenium;
     using SauceDemo.Tests.Extensions;
+    using SauceDemo.Tests.UI.Shared;
 
-    public class CheckoutCartPage : BasePage
+    public class CheckoutCartPage : UiObjectBase
     {
         public CheckoutCartPage(IWebDriver driver)
             : base(driver)

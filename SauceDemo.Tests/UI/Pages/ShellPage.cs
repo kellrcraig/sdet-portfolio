@@ -2,8 +2,9 @@ namespace SauceDemo.Tests.UI.Pages
 {
     using OpenQA.Selenium;
     using SauceDemo.Tests.Extensions;
+    using SauceDemo.Tests.UI.Shared;
 
-    public class ShellPage : BasePage
+    public class ShellPage : UiObjectBase
     {
         public ShellPage(IWebDriver driver)
             : base(driver)

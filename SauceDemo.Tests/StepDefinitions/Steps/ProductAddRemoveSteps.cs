@@ -16,8 +16,8 @@ namespace SauceDemo.Tests.StepDefinitions.Steps
             : base(scenarioContext)
         {
             productNameData = new ProductNameData();
-            productAddRemoveDetailComponent = Component<ProductAddRemoveDetailComponent>();
-            productAddRemoveListComponent = Component<ProductAddRemoveListComponent>();
+            productAddRemoveDetailComponent = PageComponent<ProductAddRemoveDetailComponent>();
+            productAddRemoveListComponent = PageComponent<ProductAddRemoveListComponent>();
         }
 
         [Given(@"I add ""(.*)"" to the cart")]

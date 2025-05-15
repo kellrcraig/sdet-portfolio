@@ -3,8 +3,9 @@ namespace SauceDemo.Tests.UI.Pages
     using OpenQA.Selenium;
     using SauceDemo.Tests.Extensions;
     using SauceDemo.Tests.Helpers;
+    using SauceDemo.Tests.UI.Shared;
 
-    public class LoginPage : BasePage
+    public class LoginPage : UiObjectBase
     {
         public LoginPage(IWebDriver driver)
             : base(driver)

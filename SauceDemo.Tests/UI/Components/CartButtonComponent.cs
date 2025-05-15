@@ -2,8 +2,9 @@ namespace SauceDemo.Tests.UI.Components
 {
     using OpenQA.Selenium;
     using SauceDemo.Tests.Extensions;
+    using SauceDemo.Tests.UI.Shared;
 
-    public class CartButtonComponent : BaseComponent
+    public class CartButtonComponent : UiObjectBase
     {
         private readonly By cartBadgeLocator = By.CssSelector("[data-test='shopping-cart-badge']");
 

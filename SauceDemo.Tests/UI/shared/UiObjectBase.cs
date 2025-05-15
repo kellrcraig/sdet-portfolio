@@ -1,10 +1,10 @@
-namespace SauceDemo.Tests.UI.Components
+namespace SauceDemo.Tests.UI.Shared
 {
     using OpenQA.Selenium;
 
-    public abstract class BaseComponent
+    public abstract class UiObjectBase
     {
-        public BaseComponent(IWebDriver driver)
+        public UiObjectBase(IWebDriver driver)
         {
             Driver = driver;
         }

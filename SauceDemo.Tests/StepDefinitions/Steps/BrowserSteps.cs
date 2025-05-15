@@ -14,7 +14,7 @@ namespace SauceDemo.Tests.StepDefinitions.Steps
         [When(@"I click the back button")]
         public void IClickTheBackButton()
         {
-            BrowserHelper.GoBack(driver);
+            BrowserHelper.GoBack(Driver);
         }
     }
 }
