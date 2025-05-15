@@ -3,8 +3,9 @@ namespace SauceDemo.Tests.UI.Components
     using OpenQA.Selenium;
     using SauceDemo.Tests.Extensions;
     using SauceDemo.Tests.Models;
+    using SauceDemo.Tests.UI.Shared;
 
-    public class ProductSharedComponent : BaseComponent
+    public class ProductSharedComponent : UiObjectBase
     {
         protected const string InventoryItemKey = "inventory-item";
         protected const string InventoryItemNameKey = "inventory-item-name";

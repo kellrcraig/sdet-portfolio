@@ -11,7 +11,7 @@ namespace SauceDemo.Tests.StepDefinitions.Steps
         public ItemDetailSteps(ScenarioContext scenarioContext)
             : base(scenarioContext)
         {
-            itemDetailPage = Page<ItemDetailPage>();
+            itemDetailPage = PageComponent<ItemDetailPage>();
         }
 
         [When(@"I click Back to products")]

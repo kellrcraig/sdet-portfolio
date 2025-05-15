@@ -13,7 +13,7 @@ namespace SauceDemo.Tests.StepDefinitions.Steps
         public InventorySteps(ScenarioContext scenarioContext)
             : base(scenarioContext)
         {
-            inventoryPage = Page<InventoryPage>();
+            inventoryPage = PageComponent<InventoryPage>();
         }
 
         [When(@"I open the inventory page")]

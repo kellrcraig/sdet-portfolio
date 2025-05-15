@@ -11,7 +11,7 @@ namespace SauceDemo.Tests.StepDefinitions.Steps
         public CheckoutCartSteps(ScenarioContext scenarioContext)
             : base(scenarioContext)
         {
-            checkoutCartPage = Page<CheckoutCartPage>();
+            checkoutCartPage = PageComponent<CheckoutCartPage>();
         }
 
         [When(@"I click Continue Shopping")]

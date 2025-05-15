@@ -17,9 +17,9 @@ namespace SauceDemo.Tests.StepDefinitions.Steps
         public ProductSteps(ScenarioContext scenarioContext)
             : base(scenarioContext)
         {
-            productBrowsingComponent = Component<ProductBrowsingComponent>();
-            productCheckoutComponent = Component<ProductCheckoutComponent>();
-            productComponent = Component<ProductComponent>();
+            productBrowsingComponent = PageComponent<ProductBrowsingComponent>();
+            productCheckoutComponent = PageComponent<ProductCheckoutComponent>();
+            productComponent = PageComponent<ProductComponent>();
             productNameData = new ProductNameData();
             productData = new ProductData();
         }
