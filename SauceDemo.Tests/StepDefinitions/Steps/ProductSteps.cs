@@ -51,11 +51,29 @@ namespace SauceDemo.Tests.StepDefinitions.Steps
             AssertionHelper.AssertEqual(actual, expected, "Inventory product area");
         }
 
+        [Then(@"the item detail product area displays the ""(.*)""")]
+        public void TheItemDetailProductAreaDisplaysTheItem(string displayName)
+        {
+            var validProductName = productNameData.GetValidatedProductName(displayName);
+            var actual = productBrowsingComponent.GetProduct(validProductName);
+            var expected = productData.GetExpectedProductForInventory(validProductName);
+            AssertionHelper.AssertEqual(actual, expected, "Item Detail product area");
+        }
+
         [Given(@"I click the ""(.*)"" link")]
+        [When(@"I click the ""(.*)"" link")]
         public void IClickTheItemLink(string displayName)
         {
             var validProductName = productNameData.GetValidatedProductName(displayName);
             productComponent.ClickItemName(validProductName);
+        }
+
+        [Given(@"I click the ""(.*)"" image")]
+        [When(@"I click the ""(.*)"" image")]
+        public void IClickTheItemImage(string displayName)
+        {
+            var validProductName = productNameData.GetValidatedProductName(displayName);
+            productComponent.ClickItemImage(validProductName);
         }
     }
 }
