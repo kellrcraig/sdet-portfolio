@@ -3,6 +3,7 @@ namespace SauceDemo.Tests.UI.Components
     using OpenQA.Selenium;
     using SauceDemo.Tests.Data;
     using SauceDemo.Tests.Extensions;
+    using SauceDemo.Tests.Helpers;
     using SauceDemo.Tests.Models;
 
     public class ProductComponent : ProductSharedComponent
@@ -16,6 +17,14 @@ namespace SauceDemo.Tests.UI.Components
         {
             var productContainer = GetProductContainerByAncestor(productName);
             productContainer.FindRequiredElement(By.CssSelector($"[data-test='{InventoryItemNameKey}']")).Click();
+        }
+
+        public void ClickItemImage(ProductNameModel productName)
+        {
+            var productContainer = GetProductContainerByAncestor(productName);
+            var imageDataTestValue = BuildImageDataTestValue(productName);
+            var imageSelector = CssSelectorHelper.DataTestEndsWith(imageDataTestValue);
+            productContainer.FindRequiredElement(By.CssSelector(imageSelector)).Click();
         }
 
         public ProductModel GetProduct(ProductNameModel productName)
@@ -41,13 +50,11 @@ namespace SauceDemo.Tests.UI.Components
             var quantity = productContainer.FindElementSafe(By.CssSelector("[data-test='item-quantity']"))?.Text;
 
             var validProductName = new ProductNameData().GetValidatedProductName(name);
-            var imageLocatorText = $"inventory-item-{validProductName.InternalName}-img";
-            var imageAlt = productContainer.
-                FindElementSafe(By.CssSelector($"[data-test='{imageLocatorText}']"))?
-                .GetAttribute("alt");
-            var imageSource = productContainer
-                .FindElementSafe(By.CssSelector($"[data-test='{imageLocatorText}']"))?
-                .GetAttribute("src")?
+            var imageDataTestValue = BuildImageDataTestValue(validProductName);
+            var imageSelector = CssSelectorHelper.DataTestEndsWith(imageDataTestValue);
+            var imageElement = productContainer.FindElementSafe(By.CssSelector(imageSelector));
+            var imageAlt = imageElement?.GetAttribute("alt");
+            var imageSource = imageElement?.GetAttribute("src")?
                 .Replace("https://www.saucedemo.com", string.Empty);
 
             return new ProductModel
@@ -59,6 +66,11 @@ namespace SauceDemo.Tests.UI.Components
                 ImageSource = imageSource,
                 Quantity = quantity,
             };
+        }
+
+        private string BuildImageDataTestValue(ProductNameModel productName)
+        {
+            return $"item-{productName.InternalName}-img";
         }
     }
 }
