@@ -122,6 +122,83 @@ namespace SauceDemo.Tests.StepDefinitions.Features
             }
             this.ScenarioCleanup();
         }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Continue Shopping button navigates back to previous page")]
+        [NUnit.Framework.CategoryAttribute("page-navigation")]
+        [NUnit.Framework.CategoryAttribute("wip")]
+        public void ContinueShoppingButtonNavigatesBackToPreviousPage()
+        {
+            string[] tagsOfScenario = new string[] {
+                    "page-navigation",
+                    "wip"};
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Continue Shopping button navigates back to previous page", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 10
+    this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Checkout button navigates to Checkout: Your Information page when the cart is not" +
+            " empty")]
+        [NUnit.Framework.CategoryAttribute("page-navigation")]
+        [NUnit.Framework.CategoryAttribute("wip")]
+        public void CheckoutButtonNavigatesToCheckoutYourInformationPageWhenTheCartIsNotEmpty()
+        {
+            string[] tagsOfScenario = new string[] {
+                    "page-navigation",
+                    "wip"};
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Checkout button navigates to Checkout: Your Information page when the cart is not" +
+                    " empty", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 12
+    this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Checkout button does not navigate when the cart is empty")]
+        [NUnit.Framework.CategoryAttribute("page-navigation")]
+        [NUnit.Framework.CategoryAttribute("wip")]
+        public void CheckoutButtonDoesNotNavigateWhenTheCartIsEmpty()
+        {
+            string[] tagsOfScenario = new string[] {
+                    "page-navigation",
+                    "wip"};
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Checkout button does not navigate when the cart is empty", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 14
+    this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+            }
+            this.ScenarioCleanup();
+        }
     }
 }
 #pragma warning restore

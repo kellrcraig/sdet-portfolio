@@ -13,5 +13,7 @@ namespace SauceDemo.Tests.UI.Pages
         }
 
         public void ClickContinueShopping() => Driver.FindRequiredElement(LocatorHelper.ById("continue-shopping")).Click();
+
+        public void ClickCheckout() => Driver.FindRequiredElement(LocatorHelper.ById("checkout")).Click();
     }
 }
