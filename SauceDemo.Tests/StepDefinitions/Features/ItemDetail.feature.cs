@@ -194,16 +194,16 @@ namespace SauceDemo.Tests.StepDefinitions.Features
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Reset App State link reverts item state and cart icon count to defaults")]
-        [NUnit.Framework.CategoryAttribute("reset-app-state")]
-        [NUnit.Framework.CategoryAttribute("wip")]
-        public void ResetAppStateLinkRevertsItemStateAndCartIconCountToDefaults()
+        [NUnit.Framework.DescriptionAttribute("Remove button displays Add to cart on Item Detail page after removing item from t" +
+            "he cart")]
+        [NUnit.Framework.CategoryAttribute("cart-button-state")]
+        public void RemoveButtonDisplaysAddToCartOnItemDetailPageAfterRemovingItemFromTheCart()
         {
             string[] tagsOfScenario = new string[] {
-                    "reset-app-state",
-                    "wip"};
+                    "cart-button-state"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Reset App State link reverts item state and cart icon count to defaults", null, tagsOfScenario, argumentsOfScenario, featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Remove button displays Add to cart on Item Detail page after removing item from t" +
+                    "he cart", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 30
     this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -214,33 +214,36 @@ namespace SauceDemo.Tests.StepDefinitions.Features
             else
             {
                 this.ScenarioStart();
-            }
-            this.ScenarioCleanup();
-        }
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Remove button displays Add to cart on Item Detail page after removing item from t" +
-            "he cart")]
-        [NUnit.Framework.CategoryAttribute("cart-button-state")]
-        [NUnit.Framework.CategoryAttribute("wip")]
-        public void RemoveButtonDisplaysAddToCartOnItemDetailPageAfterRemovingItemFromTheCart()
-        {
-            string[] tagsOfScenario = new string[] {
-                    "cart-button-state",
-                    "wip"};
-            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Remove button displays Add to cart on Item Detail page after removing item from t" +
-                    "he cart", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 32
-    this.ScenarioInitialize(scenarioInfo);
+#line 31
+        testRunner.Given("I open the login page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-            if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
-            {
-                testRunner.SkipScenario();
-            }
-            else
-            {
-                this.ScenarioStart();
+#line 32
+        testRunner.And("I log in as \"standard_user\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 33
+        testRunner.And("I add \"Test.allTheThings() T-Shirt (Red)\" to the cart", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 34
+        testRunner.And("I click the cart icon", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 35
+        testRunner.And("I remove \"Test.allTheThings() T-Shirt (Red)\" from the cart", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 36
+        testRunner.And("I click Continue Shopping", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 37
+        testRunner.When("I click the \"Test.allTheThings() T-Shirt (Red)\" link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 38
+        testRunner.Then("the \"item detail\" page is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 39
+        testRunner.And("the item detail product area displays the \"Test.allTheThings() T-Shirt (Red)\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 40
+        testRunner.And("the cart button displays \"Add to cart\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
             }
             this.ScenarioCleanup();
         }
@@ -249,16 +252,14 @@ namespace SauceDemo.Tests.StepDefinitions.Features
         [NUnit.Framework.DescriptionAttribute("Add to cart button displays Remove on Item Detail page after adding from inventor" +
             "y")]
         [NUnit.Framework.CategoryAttribute("cart-button-state")]
-        [NUnit.Framework.CategoryAttribute("wip")]
         public void AddToCartButtonDisplaysRemoveOnItemDetailPageAfterAddingFromInventory()
         {
             string[] tagsOfScenario = new string[] {
-                    "cart-button-state",
-                    "wip"};
+                    "cart-button-state"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Add to cart button displays Remove on Item Detail page after adding from inventor" +
                     "y", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 34
+#line 43
     this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
@@ -268,6 +269,27 @@ namespace SauceDemo.Tests.StepDefinitions.Features
             else
             {
                 this.ScenarioStart();
+#line 44
+        testRunner.Given("I open the login page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 45
+        testRunner.And("I log in as \"standard_user\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 46
+        testRunner.And("I add \"Sauce Labs Bike Light\" to the cart", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 47
+        testRunner.When("I click the \"Sauce Labs Bike Light\" link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 48
+        testRunner.Then("the \"item detail\" page is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 49
+        testRunner.And("the item detail product area displays the \"Sauce Labs Bike Light\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 50
+        testRunner.And("the cart button displays \"Remove\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
             }
             this.ScenarioCleanup();
         }
@@ -276,16 +298,14 @@ namespace SauceDemo.Tests.StepDefinitions.Features
         [NUnit.Framework.DescriptionAttribute("Add to cart button displays Add to cart on Item Detail page after removing from i" +
             "nventory")]
         [NUnit.Framework.CategoryAttribute("cart-button-state")]
-        [NUnit.Framework.CategoryAttribute("wip")]
         public void AddToCartButtonDisplaysAddToCartOnItemDetailPageAfterRemovingFromInventory()
         {
             string[] tagsOfScenario = new string[] {
-                    "cart-button-state",
-                    "wip"};
+                    "cart-button-state"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Add to cart button displays Add to cart on Item Detail page after removing from i" +
                     "nventory", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 36
+#line 53
     this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
@@ -295,22 +315,49 @@ namespace SauceDemo.Tests.StepDefinitions.Features
             else
             {
                 this.ScenarioStart();
+#line 54
+        testRunner.Given("I open the login page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 55
+        testRunner.And("I log in as \"standard_user\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 56
+        testRunner.And("I add \"Sauce Labs Backpack\" to the cart", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 57
+        testRunner.And("the \"Sauce Labs Backpack\" cart button displays \"Remove\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 58
+        testRunner.And("I remove \"Sauce Labs Backpack\" from the cart", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 59
+        testRunner.When("I click the \"Sauce Labs Backpack\" image", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 60
+        testRunner.Then("the \"item detail\" page is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 61
+        testRunner.And("the item detail product area displays the \"Sauce Labs Backpack\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 62
+        testRunner.And("the cart button displays \"Add to cart\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
             }
             this.ScenarioCleanup();
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Item Detail page loads Remove button if item is already in cart on page load")]
-        [NUnit.Framework.CategoryAttribute("cart-button-state")]
+        [NUnit.Framework.DescriptionAttribute("Reset App State link reverts item state and cart icon count to defaults")]
+        [NUnit.Framework.CategoryAttribute("reset-app-state")]
         [NUnit.Framework.CategoryAttribute("wip")]
-        public void ItemDetailPageLoadsRemoveButtonIfItemIsAlreadyInCartOnPageLoad()
+        public void ResetAppStateLinkRevertsItemStateAndCartIconCountToDefaults()
         {
             string[] tagsOfScenario = new string[] {
-                    "cart-button-state",
+                    "reset-app-state",
                     "wip"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Item Detail page loads Remove button if item is already in cart on page load", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 38
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Reset App State link reverts item state and cart icon count to defaults", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 65
     this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
