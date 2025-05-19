@@ -3,6 +3,7 @@ namespace SauceDemo.Tests.UI.Components
     using OpenQA.Selenium;
     using SauceDemo.Tests.Data;
     using SauceDemo.Tests.Extensions;
+    using SauceDemo.Tests.Helpers;
     using SauceDemo.Tests.Models;
 
     public class ProductAddRemoveListComponent : ProductAddRemoveComponent
@@ -15,14 +16,14 @@ namespace SauceDemo.Tests.UI.Components
         public void ClickAddToCart(ProductNameModel productName)
         {
             var productContainer = GetProductContainerByAncestor(productName);
-            var buttonLocator = By.Id($"{AddToCartItemKey}-{productName.InternalName}");
+            var buttonLocator = LocatorHelper.ById($"{AddToCartItemKey}-{productName.InternalName}");
             productContainer.FindRequiredElement(buttonLocator).Click();
         }
 
         public void ClickRemove(ProductNameModel productName)
         {
             var productContainer = GetProductContainerByAncestor(productName);
-            var buttonLocator = By.Id($"{RemoveItemKey}-{productName.InternalName}");
+            var buttonLocator = LocatorHelper.ById($"{RemoveItemKey}-{productName.InternalName}");
             productContainer.FindRequiredElement(buttonLocator).Click();
         }
 
@@ -30,10 +31,10 @@ namespace SauceDemo.Tests.UI.Components
         {
             var productContainer = GetProductContainerByAncestor(productName);
 
-            var addLocator = By.Id($"{AddToCartItemKey}-{productName.InternalName}");
+            var addLocator = LocatorHelper.ById($"{AddToCartItemKey}-{productName.InternalName}");
             var addButton = productContainer.FindElementSafe(addLocator);
 
-            var removeLocator = By.Id($"{RemoveItemKey}-{productName.InternalName}");
+            var removeLocator = LocatorHelper.ById($"{RemoveItemKey}-{productName.InternalName}");
             var removeButton = productContainer.FindElementSafe(removeLocator);
             return GetAddRemoveButtonText(addButton, removeButton, productName.DisplayName);
         }

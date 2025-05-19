@@ -7,25 +7,25 @@ namespace SauceDemo.Tests.Helpers
 
     public static class WaitHelper
     {
-        public static IWebElement? WaitForElementToBeClickable(
+        public static IWebElement WaitForElementToBeClickableInDom(
             IWebDriver driver,
             By locator,
-            int timeoutSeconds = 5)
-        {
-            var wait = new WebDriverWait(driver, TimeSpan.FromSeconds(timeoutSeconds));
-            return wait.Until(_ =>
-            {
-                var element = driver.FindElementSafe(locator);
-                return (element != null && element.Displayed && element.Enabled) ? element : null;
-            });
-        }
+            int timeoutSeconds = 5) =>
+            WaitForElementToBeClickable(driver, locator, driver.FindRequiredElement, timeoutSeconds);
+
+        public static IWebElement WaitForElementToBeClickableInContainer(
+            IWebDriver driver,
+            IWebElement container,
+            By locator,
+            int timeoutSeconds = 5) =>
+            WaitForElementToBeClickable(driver, locator, container.FindRequiredElement, timeoutSeconds);
 
         public static void WaitForElementToDisappear(
             IWebDriver driver,
             By locator,
             int timeoutSeconds = 2)
         {
-            var wait = new WebDriverWait(driver, TimeSpan.FromSeconds(timeoutSeconds));
+            var wait = GetWait(driver, timeoutSeconds);
             wait.Until(_ =>
             {
                 var element = driver.FindElementSafe(locator);
@@ -39,12 +39,51 @@ namespace SauceDemo.Tests.Helpers
             string expectedText,
             int timeoutSeconds = 5)
         {
-            var wait = new WebDriverWait(driver, TimeSpan.FromSeconds(timeoutSeconds));
+            var wait = GetWait(driver, timeoutSeconds);
             return wait.Until(_ =>
             {
                 var element = driver.FindElementSafe(locator);
                 return element?.Text.Contains(expectedText) ?? false;
             });
+        }
+
+        private static IWebElement WaitForElementToBeClickable(
+            IWebDriver driver,
+            By locator,
+            Func<By, IWebElement> elementFinder,
+            int timeoutSeconds = 5)
+        {
+            var wait = GetWait(driver, timeoutSeconds);
+            Exception? lastException = null;
+            try
+            {
+                return wait.Until(_ =>
+                {
+                    try
+                    {
+                        var element = elementFinder(locator);
+                        return (element.Displayed && element.Enabled) ? element : null;
+                    }
+                    catch (Exception ex) when (
+                        ex is NoSuchElementException ||
+                        ex is StaleElementReferenceException)
+                    {
+                        lastException = ex;
+                        return null;
+                    }
+                });
+            }
+            catch (WebDriverTimeoutException)
+            {
+                throw new WebDriverTimeoutException(
+                    $"Timed out waiting for element to be clickable inside container. Locator: {locator}",
+                    lastException);
+            }
+        }
+
+        private static WebDriverWait GetWait(IWebDriver driver, int timeoutSeconds)
+        {
+            return new WebDriverWait(driver, TimeSpan.FromSeconds(timeoutSeconds));
         }
     }
 }

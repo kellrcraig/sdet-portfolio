@@ -12,11 +12,11 @@ namespace SauceDemo.Tests.UI.Pages
         {
         }
 
-        private static By UsernameInputLocator => By.Id("user-name");
+        private static By UsernameInputLocator => LocatorHelper.ById("user-name");
 
-        private static By PasswordInputLocator => By.Id("password");
+        private static By PasswordInputLocator => LocatorHelper.ById("password");
 
-        private static By LoginButtonLocator => By.Id("login-button");
+        private static By LoginButtonLocator => LocatorHelper.ById("login-button");
 
         public void NavigateTo() => BrowserHelper.NavigateTo(Driver, "https://www.saucedemo.com/");
 

@@ -2,6 +2,7 @@ namespace SauceDemo.Tests.UI.Components
 {
     using OpenQA.Selenium;
     using SauceDemo.Tests.Extensions;
+    using SauceDemo.Tests.Helpers;
     using SauceDemo.Tests.UI.Shared;
 
     public class ErrorFeedbackComponent : UiObjectBase
@@ -11,7 +12,7 @@ namespace SauceDemo.Tests.UI.Components
         {
         }
 
-        private static By ErrorMessageLocator => By.CssSelector("h3[data-test='error']");
+        private static By ErrorMessageLocator => LocatorHelper.ByCssSelector($"h3{CssSelectorHelper.DataTestExact("error")}");
 
         public string? GetErrorMessageText()
         {
@@ -19,9 +20,9 @@ namespace SauceDemo.Tests.UI.Components
             return element?.Text;
         }
 
-        public bool UsernameErrorIconIsVisible() => ErrorIconIsVisible(By.CssSelector("#user-name ~ svg.error_icon"));
+        public bool UsernameErrorIconIsVisible() => ErrorIconIsVisible(LocatorHelper.ByCssSelector("#user-name ~ svg.error_icon"));
 
-        public bool PasswordErrorIconIsVisible() => ErrorIconIsVisible(By.CssSelector("#password ~ svg.error_icon"));
+        public bool PasswordErrorIconIsVisible() => ErrorIconIsVisible(LocatorHelper.ByCssSelector("#password ~ svg.error_icon"));
 
         public string? GetUsernameBorderColor() => GetInputBottomBorderColor("user-name");
 
@@ -29,7 +30,7 @@ namespace SauceDemo.Tests.UI.Components
 
         public void DismissErrorFeedback()
         {
-            Driver.FindRequiredElement(By.ClassName("error-button"))?.Click();
+            Driver.FindRequiredElement(LocatorHelper.ByClassName("error-button"))?.Click();
         }
 
         private bool ErrorIconIsVisible(By locator)
@@ -40,7 +41,8 @@ namespace SauceDemo.Tests.UI.Components
 
         private string? GetInputBottomBorderColor(string id)
         {
-            var element = Driver.FindRequiredElement(By.Id(id));
+            var locator = LocatorHelper.ById(id);
+            var element = Driver.FindRequiredElement(locator);
             return element?.GetCssValue("border-bottom-color");
         }
     }

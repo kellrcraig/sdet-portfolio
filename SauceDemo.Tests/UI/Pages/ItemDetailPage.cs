@@ -2,6 +2,7 @@ namespace SauceDemo.Tests.UI.Pages
 {
     using OpenQA.Selenium;
     using SauceDemo.Tests.Extensions;
+    using SauceDemo.Tests.Helpers;
     using SauceDemo.Tests.UI.Shared;
 
     public class ItemDetailPage : UiObjectBase
@@ -11,6 +12,6 @@ namespace SauceDemo.Tests.UI.Pages
         {
         }
 
-        public void ClickBackToProducts() => Driver.FindRequiredElement(By.Id("back-to-products")).Click();
+        public void ClickBackToProducts() => Driver.FindRequiredElement(LocatorHelper.ById("back-to-products")).Click();
     }
 }

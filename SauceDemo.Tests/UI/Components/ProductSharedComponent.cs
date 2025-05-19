@@ -2,6 +2,7 @@ namespace SauceDemo.Tests.UI.Components
 {
     using OpenQA.Selenium;
     using SauceDemo.Tests.Extensions;
+    using SauceDemo.Tests.Helpers;
     using SauceDemo.Tests.Models;
     using SauceDemo.Tests.UI.Shared;
 
@@ -17,9 +18,9 @@ namespace SauceDemo.Tests.UI.Components
 
         protected IWebElement GetProductContainerByAncestor(ProductNameModel productName)
         {
-            var nameLocator = By.XPath($"//div[@data-test='{InventoryItemNameKey}' and normalize-space(text())='{productName.DisplayName}']");
+            var nameLocator = LocatorHelper.ByXPath($"//div[@data-test='{InventoryItemNameKey}' and normalize-space(text())='{productName.DisplayName}']");
             var nameElement = Driver.FindRequiredElement(nameLocator);
-            return nameElement.FindRequiredElement(By.XPath($"./ancestor::div[@data-test='{InventoryItemKey}']"));
+            return nameElement.FindRequiredElement(LocatorHelper.ByXPath($"./ancestor::div[@data-test='{InventoryItemKey}']"));
         }
     }
 }

@@ -2,6 +2,7 @@ namespace SauceDemo.Tests.UI.Pages
 {
     using OpenQA.Selenium;
     using SauceDemo.Tests.Extensions;
+    using SauceDemo.Tests.Helpers;
     using SauceDemo.Tests.UI.Shared;
 
     public class CheckoutCartPage : UiObjectBase
@@ -11,6 +12,6 @@ namespace SauceDemo.Tests.UI.Pages
         {
         }
 
-        public void ClickContinueShopping() => Driver.FindRequiredElement(By.Id("continue-shopping")).Click();
+        public void ClickContinueShopping() => Driver.FindRequiredElement(LocatorHelper.ById("continue-shopping")).Click();
     }
 }
