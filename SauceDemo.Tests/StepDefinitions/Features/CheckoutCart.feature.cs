@@ -21,14 +21,12 @@ namespace SauceDemo.Tests.StepDefinitions.Features
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
     [NUnit.Framework.DescriptionAttribute("Your Cart")]
-    [NUnit.Framework.CategoryAttribute("wip")]
     public partial class YourCartFeature
     {
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
         
-        private static string[] featureTags = new string[] {
-                "wip"};
+        private static string[] featureTags = ((string[])(null));
         
 #line 1 "CheckoutCart.feature"
 #line hidden
@@ -76,86 +74,64 @@ namespace SauceDemo.Tests.StepDefinitions.Features
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Resetting App State clears all items from the cart")]
-        [NUnit.Framework.CategoryAttribute("reset-app-state")]
-        public void ResettingAppStateClearsAllItemsFromTheCart()
+        [NUnit.Framework.DescriptionAttribute("Continue Shopping button navigates back to inventory page")]
+        [NUnit.Framework.CategoryAttribute("page-navigation")]
+        public void ContinueShoppingButtonNavigatesBackToInventoryPage()
         {
             string[] tagsOfScenario = new string[] {
-                    "reset-app-state"};
+                    "page-navigation"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Resetting App State clears all items from the cart", null, tagsOfScenario, argumentsOfScenario, featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Continue Shopping button navigates back to inventory page", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 4
+    this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
 #line 5
-    this.ScenarioInitialize(scenarioInfo);
+        testRunner.Given("I open the login page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-            if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
-            {
-                testRunner.SkipScenario();
-            }
-            else
-            {
-                this.ScenarioStart();
-            }
-            this.ScenarioCleanup();
-        }
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Continue Shopping button navigates back to previous page")]
-        [NUnit.Framework.CategoryAttribute("page-navigation")]
-        public void ContinueShoppingButtonNavigatesBackToPreviousPage()
-        {
-            string[] tagsOfScenario = new string[] {
-                    "page-navigation"};
-            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Continue Shopping button navigates back to previous page", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 9
-    this.ScenarioInitialize(scenarioInfo);
+#line 6
+        testRunner.And("I log in as \"standard_user\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
-            {
-                testRunner.SkipScenario();
-            }
-            else
-            {
-                this.ScenarioStart();
-            }
-            this.ScenarioCleanup();
-        }
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Checkout button navigates to Checkout: Your Information page when the cart is not" +
-            " empty")]
-        [NUnit.Framework.CategoryAttribute("page-navigation")]
-        public void CheckoutButtonNavigatesToCheckoutYourInformationPageWhenTheCartIsNotEmpty()
-        {
-            string[] tagsOfScenario = new string[] {
-                    "page-navigation"};
-            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Checkout button navigates to Checkout: Your Information page when the cart is not" +
-                    " empty", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 11
-    this.ScenarioInitialize(scenarioInfo);
+                TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Product"});
+                table1.AddRow(new string[] {
+                            "Sauce Labs Backpack"});
+                table1.AddRow(new string[] {
+                            "Sauce Labs Fleece Jacket"});
+                table1.AddRow(new string[] {
+                            "Test.allTheThings() T-Shirt (Red)"});
+#line 7
+        testRunner.And("I add the following items to the cart:", ((string)(null)), table1, "And ");
 #line hidden
-            if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
-            {
-                testRunner.SkipScenario();
-            }
-            else
-            {
-                this.ScenarioStart();
-            }
-            this.ScenarioCleanup();
-        }
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Checkout button does not navigate when the cart is empty")]
-        [NUnit.Framework.CategoryAttribute("page-navigation")]
-        public void CheckoutButtonDoesNotNavigateWhenTheCartIsEmpty()
-        {
-            string[] tagsOfScenario = new string[] {
-                    "page-navigation"};
-            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Checkout button does not navigate when the cart is empty", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 12
+        testRunner.And("I click the cart icon", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
 #line 13
+        testRunner.When("I click Continue Shopping", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 14
+        testRunner.Then("the \"inventory\" page is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Checkout button navigates to Checkout: Your Information page")]
+        [NUnit.Framework.CategoryAttribute("page-navigation")]
+        public void CheckoutButtonNavigatesToCheckoutYourInformationPage()
+        {
+            string[] tagsOfScenario = new string[] {
+                    "page-navigation"};
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Checkout button navigates to Checkout: Your Information page", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 17
     this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
@@ -165,6 +141,32 @@ namespace SauceDemo.Tests.StepDefinitions.Features
             else
             {
                 this.ScenarioStart();
+#line 18
+        testRunner.Given("I open the login page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 19
+        testRunner.And("I log in as \"standard_user\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+                TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Product"});
+                table2.AddRow(new string[] {
+                            "Sauce Labs Onesie"});
+                table2.AddRow(new string[] {
+                            "Sauce Labs Fleece Jacket"});
+                table2.AddRow(new string[] {
+                            "Test.allTheThings() T-Shirt (Red)"});
+#line 20
+        testRunner.And("I add the following items to the cart:", ((string)(null)), table2, "And ");
+#line hidden
+#line 25
+        testRunner.And("I click the cart icon", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 26
+        testRunner.When("I click Checkout", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 27
+        testRunner.Then("the \"checkout information\" page is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
             }
             this.ScenarioCleanup();
         }
@@ -172,13 +174,15 @@ namespace SauceDemo.Tests.StepDefinitions.Features
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Cart displays empty when there are no items in it")]
         [NUnit.Framework.CategoryAttribute("cart-contents")]
+        [NUnit.Framework.CategoryAttribute("wip")]
         public void CartDisplaysEmptyWhenThereAreNoItemsInIt()
         {
             string[] tagsOfScenario = new string[] {
-                    "cart-contents"};
+                    "cart-contents",
+                    "wip"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Cart displays empty when there are no items in it", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 15
+#line 30
     this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
@@ -195,13 +199,15 @@ namespace SauceDemo.Tests.StepDefinitions.Features
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Remove button removes item from cart")]
         [NUnit.Framework.CategoryAttribute("cart-contents")]
+        [NUnit.Framework.CategoryAttribute("wip")]
         public void RemoveButtonRemovesItemFromCart()
         {
             string[] tagsOfScenario = new string[] {
-                    "cart-contents"};
+                    "cart-contents",
+                    "wip"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Remove button removes item from cart", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 17
+#line 32
     this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
@@ -218,13 +224,15 @@ namespace SauceDemo.Tests.StepDefinitions.Features
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Cart displays all added items")]
         [NUnit.Framework.CategoryAttribute("cart-contents")]
+        [NUnit.Framework.CategoryAttribute("wip")]
         public void CartDisplaysAllAddedItems()
         {
             string[] tagsOfScenario = new string[] {
-                    "cart-contents"};
+                    "cart-contents",
+                    "wip"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Cart displays all added items", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 21
+#line 36
     this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
@@ -241,13 +249,15 @@ namespace SauceDemo.Tests.StepDefinitions.Features
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Cart displays previously added items after logout")]
         [NUnit.Framework.CategoryAttribute("cart-contents")]
+        [NUnit.Framework.CategoryAttribute("wip")]
         public void CartDisplaysPreviouslyAddedItemsAfterLogout()
         {
             string[] tagsOfScenario = new string[] {
-                    "cart-contents"};
+                    "cart-contents",
+                    "wip"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Cart displays previously added items after logout", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 24
+#line 39
     this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
@@ -264,13 +274,40 @@ namespace SauceDemo.Tests.StepDefinitions.Features
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Cart displays correct contents after returning via direct URL")]
         [NUnit.Framework.CategoryAttribute("cart-contents")]
+        [NUnit.Framework.CategoryAttribute("wip")]
         public void CartDisplaysCorrectContentsAfterReturningViaDirectURL()
         {
             string[] tagsOfScenario = new string[] {
-                    "cart-contents"};
+                    "cart-contents",
+                    "wip"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Cart displays correct contents after returning via direct URL", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 29
+#line 44
+    this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Resetting App State clears all items from the cart")]
+        [NUnit.Framework.CategoryAttribute("reset-app-state")]
+        [NUnit.Framework.CategoryAttribute("wip")]
+        public void ResettingAppStateClearsAllItemsFromTheCart()
+        {
+            string[] tagsOfScenario = new string[] {
+                    "reset-app-state",
+                    "wip"};
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Resetting App State clears all items from the cart", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 47
     this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))

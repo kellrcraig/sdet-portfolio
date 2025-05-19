@@ -20,5 +20,11 @@ namespace SauceDemo.Tests.StepDefinitions.Steps
         {
             checkoutCartPage.ClickContinueShopping();
         }
+
+        [When(@"I click Checkout")]
+        public void IClickCheckout()
+        {
+            checkoutCartPage.ClickCheckout();
+        }
     }
 }
