@@ -14,6 +14,7 @@ namespace SauceDemo.Tests.StepDefinitions.Steps
             checkoutCartPage = PageComponent<CheckoutCartPage>();
         }
 
+        [Given(@"I click Continue Shopping")]
         [When(@"I click Continue Shopping")]
         public void IClickContinueShopping()
         {

@@ -64,11 +64,20 @@ namespace SauceDemo.Tests.StepDefinitions.Steps
             validProductNames.ForEach(productAddRemoveListComponent.ClickRemove);
         }
 
+        [Given(@"the ""(.*)"" cart button displays ""(.*)""")]
         [Then(@"the ""(.*)"" cart button displays ""(.*)""")]
         public void TheItemCartButtonDisplays(string displayName, string buttonText)
         {
             var validatedProductName = productNameData.GetValidatedProductName(displayName);
             var actual = productAddRemoveListComponent.GetAddRemoveButtonText(validatedProductName);
+            var expected = ProductAddRemoveData.GetValidatedAddRemoveText(buttonText);
+            AssertionHelper.AssertEqual(actual, expected, "Cart button text");
+        }
+
+        [Then(@"the cart button displays ""(.*)""")]
+        public void TheCartButtonDisplays(string buttonText)
+        {
+            var actual = productAddRemoveDetailComponent.GetAddRemoveButtonText();
             var expected = ProductAddRemoveData.GetValidatedAddRemoveText(buttonText);
             AssertionHelper.AssertEqual(actual, expected, "Cart button text");
         }
