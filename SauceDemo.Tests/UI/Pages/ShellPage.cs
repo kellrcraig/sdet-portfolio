@@ -2,6 +2,7 @@ namespace SauceDemo.Tests.UI.Pages
 {
     using OpenQA.Selenium;
     using SauceDemo.Tests.Extensions;
+    using SauceDemo.Tests.Helpers;
     using SauceDemo.Tests.UI.Shared;
 
     public class ShellPage : UiObjectBase
@@ -11,7 +12,7 @@ namespace SauceDemo.Tests.UI.Pages
         {
         }
 
-        public string? PageTitle => Driver.FindElementSafe(By.ClassName("title"))?.Text;
+        public string? PageTitle => Driver.FindElementSafe(LocatorHelper.ByClassName("title"))?.Text;
 
         public string PageUrl => Driver.Url;
     }

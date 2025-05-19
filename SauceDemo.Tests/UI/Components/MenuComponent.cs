@@ -14,37 +14,37 @@ namespace SauceDemo.Tests.UI.Components
 
         public void OpenMenu()
         {
-            Driver.FindRequiredElement(By.Id("react-burger-menu-btn"))?.Click();
+            Driver.FindRequiredElement(LocatorHelper.ById("react-burger-menu-btn"))?.Click();
         }
 
         public void CloseMenu()
         {
-            WaitHelper.WaitForElementToBeClickable(Driver, By.Id("react-burger-cross-btn"))?.Click();
+            WaitHelper.WaitForElementToBeClickableInDom(Driver, LocatorHelper.ById("react-burger-cross-btn"))?.Click();
         }
 
         public void ClickAllItemsLink()
         {
-            WaitHelper.WaitForElementToBeClickable(Driver, By.Id("inventory_sidebar_link"))?.Click();
+            WaitHelper.WaitForElementToBeClickableInDom(Driver, LocatorHelper.ById("inventory_sidebar_link"))?.Click();
         }
 
         public void ClickAboutLink()
         {
-            WaitHelper.WaitForElementToBeClickable(Driver, By.Id("about_sidebar_link"))?.Click();
+            WaitHelper.WaitForElementToBeClickableInDom(Driver, LocatorHelper.ById("about_sidebar_link"))?.Click();
         }
 
         public void ClickLogoutLink()
         {
-            WaitHelper.WaitForElementToBeClickable(Driver, By.Id("logout_sidebar_link"))?.Click();
+            WaitHelper.WaitForElementToBeClickableInDom(Driver, LocatorHelper.ById("logout_sidebar_link"))?.Click();
         }
 
         public void ClickResetLink()
         {
-            WaitHelper.WaitForElementToBeClickable(Driver, By.Id("reset_sidebar_link"))?.Click();
+            WaitHelper.WaitForElementToBeClickableInDom(Driver, LocatorHelper.ById("reset_sidebar_link"))?.Click();
         }
 
         public bool MenuIsVisible()
         {
-            var locator = By.ClassName("bm-menu-wrap");
+            var locator = LocatorHelper.ByClassName("bm-menu-wrap");
             WaitHelper.WaitForElementToDisappear(Driver, locator);
             var element = Driver.FindElementSafe(locator);
             return element != null && element.Displayed;

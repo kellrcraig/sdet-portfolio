@@ -16,15 +16,16 @@ namespace SauceDemo.Tests.UI.Components
         public void ClickItemName(ProductNameModel productName)
         {
             var productContainer = GetProductContainerByAncestor(productName);
-            productContainer.FindRequiredElement(By.CssSelector($"[data-test='{InventoryItemNameKey}']")).Click();
+            var locator = LocatorHelper.ByCssDataTestExact(InventoryItemNameKey);
+            productContainer.FindRequiredElement(locator).Click();
         }
 
         public void ClickItemImage(ProductNameModel productName)
         {
             var productContainer = GetProductContainerByAncestor(productName);
             var imageDataTestValue = BuildImageDataTestValue(productName);
-            var imageSelector = CssSelectorHelper.DataTestEndsWith(imageDataTestValue);
-            productContainer.FindRequiredElement(By.CssSelector(imageSelector)).Click();
+            var locator = LocatorHelper.ByCssDataTestEndsWith(imageDataTestValue);
+            WaitHelper.WaitForElementToBeClickableInContainer(Driver, productContainer, locator).Click();
         }
 
         public ProductModel GetProduct(ProductNameModel productName)
@@ -35,24 +36,24 @@ namespace SauceDemo.Tests.UI.Components
 
         protected List<ProductModel> GetProducts(IWebElement productListContainer)
         {
-            var productContainers = productListContainer.FindRequiredElements(By.CssSelector($"[data-test='{InventoryItemKey}']"));
+            var locator = LocatorHelper.ByCssDataTestExact(InventoryItemKey);
+            var productContainers = productListContainer.FindRequiredElements(locator);
             return productContainers.Select(GetProductFromContainer).ToList();
         }
 
         private ProductModel GetProductFromContainer(IWebElement productContainer)
         {
             // Global elements
-            var name = productContainer.FindRequiredElement(By.CssSelector($"[data-test='{InventoryItemNameKey}']")).Text;
-            var description = productContainer.FindRequiredElement(By.CssSelector("[data-test='inventory-item-desc']")).Text;
-            var price = productContainer.FindRequiredElement(By.CssSelector("[data-test='inventory-item-price']")).Text;
+            var name = productContainer.FindRequiredElement(LocatorHelper.ByCssDataTestExact(InventoryItemNameKey)).Text;
+            var description = productContainer.FindRequiredElement(LocatorHelper.ByCssDataTestExact("inventory-item-desc")).Text;
+            var price = productContainer.FindRequiredElement(LocatorHelper.ByCssDataTestExact("inventory-item-price")).Text;
 
             // Optional elements
-            var quantity = productContainer.FindElementSafe(By.CssSelector("[data-test='item-quantity']"))?.Text;
+            var quantity = productContainer.FindElementSafe(LocatorHelper.ByCssDataTestExact("item-quantity"))?.Text;
 
             var validProductName = new ProductNameData().GetValidatedProductName(name);
             var imageDataTestValue = BuildImageDataTestValue(validProductName);
-            var imageSelector = CssSelectorHelper.DataTestEndsWith(imageDataTestValue);
-            var imageElement = productContainer.FindElementSafe(By.CssSelector(imageSelector));
+            var imageElement = productContainer.FindElementSafe(LocatorHelper.ByCssDataTestEndsWith(imageDataTestValue));
             var imageAlt = imageElement?.GetAttribute("alt");
             var imageSource = imageElement?.GetAttribute("src")?
                 .Replace("https://www.saucedemo.com", string.Empty);

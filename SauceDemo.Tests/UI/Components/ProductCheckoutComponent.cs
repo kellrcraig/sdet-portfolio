@@ -2,6 +2,7 @@ namespace SauceDemo.Tests.UI.Components
 {
     using OpenQA.Selenium;
     using SauceDemo.Tests.Extensions;
+    using SauceDemo.Tests.Helpers;
     using SauceDemo.Tests.Models;
 
     public class ProductCheckoutComponent : ProductComponent
@@ -13,7 +14,8 @@ namespace SauceDemo.Tests.UI.Components
 
         public List<ProductModel> GetProducts()
         {
-            var productListContainer = Driver.FindRequiredElement(By.CssSelector("[data-test='cart-list']"));
+            var locator = LocatorHelper.ByCssDataTestExact("cart-list");
+            var productListContainer = Driver.FindRequiredElement(locator);
             return GetProducts(productListContainer);
         }
     }
