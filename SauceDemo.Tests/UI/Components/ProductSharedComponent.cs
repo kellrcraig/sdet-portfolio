@@ -19,8 +19,8 @@ namespace SauceDemo.Tests.UI.Components
         protected IWebElement GetProductContainerByAncestor(ProductNameModel productName)
         {
             var nameLocator = LocatorHelper.ByXPath($"//div[@data-test='{InventoryItemNameKey}' and normalize-space(text())='{productName.DisplayName}']");
-            var nameElement = Driver.FindRequiredElement(nameLocator);
-            return nameElement.FindRequiredElement(LocatorHelper.ByXPath($"./ancestor::div[@data-test='{InventoryItemKey}']"));
+            var nameElement = Driver.FindElementRequired(nameLocator);
+            return nameElement.FindElementRequired(LocatorHelper.ByXPath($"./ancestor::div[@data-test='{InventoryItemKey}']"));
         }
     }
 }

@@ -11,14 +11,14 @@ namespace SauceDemo.Tests.Helpers
             IWebDriver driver,
             By locator,
             int timeoutSeconds = 5) =>
-            WaitForElementToBeClickable(driver, locator, driver.FindRequiredElement, timeoutSeconds);
+            WaitForElementToBeClickable(driver, locator, driver.FindElementRequired, timeoutSeconds);
 
         public static IWebElement WaitForElementToBeClickableInContainer(
             IWebDriver driver,
             IWebElement container,
             By locator,
             int timeoutSeconds = 5) =>
-            WaitForElementToBeClickable(driver, locator, container.FindRequiredElement, timeoutSeconds);
+            WaitForElementToBeClickable(driver, locator, container.FindElementRequired, timeoutSeconds);
 
         public static void WaitForElementToDisappear(
             IWebDriver driver,

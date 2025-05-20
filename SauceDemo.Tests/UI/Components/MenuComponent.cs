@@ -14,7 +14,7 @@ namespace SauceDemo.Tests.UI.Components
 
         public void OpenMenu()
         {
-            Driver.FindRequiredElement(LocatorHelper.ById("react-burger-menu-btn"))?.Click();
+            Driver.FindElementRequired(LocatorHelper.ById("react-burger-menu-btn"))?.Click();
         }
 
         public void CloseMenu()

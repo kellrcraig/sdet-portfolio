@@ -107,29 +107,29 @@ namespace SauceDemo.Tests.StepDefinitions.Features
 #line 8
         testRunner.And("the \"Sauce Labs Bolt T-Shirt\" cart button displays \"Add to cart\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
                             "Product",
                             "Order"});
-                table3.AddRow(new string[] {
+                table9.AddRow(new string[] {
                             "Sauce Labs Backpack",
                             "1"});
-                table3.AddRow(new string[] {
+                table9.AddRow(new string[] {
                             "Sauce Labs Bike Light",
                             "2"});
-                table3.AddRow(new string[] {
+                table9.AddRow(new string[] {
                             "Sauce Labs Bolt T-Shirt",
                             "3"});
-                table3.AddRow(new string[] {
+                table9.AddRow(new string[] {
                             "Sauce Labs Fleece Jacket",
                             "4"});
-                table3.AddRow(new string[] {
+                table9.AddRow(new string[] {
                             "Sauce Labs Onesie",
                             "5"});
-                table3.AddRow(new string[] {
+                table9.AddRow(new string[] {
                             "Test.allTheThings() T-Shirt (Red)",
                             "6"});
 #line 9
-        testRunner.And("the inventory product area displays the following items:", ((string)(null)), table3, "And ");
+        testRunner.And("the inventory product area displays the following items:", ((string)(null)), table9, "And ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -164,29 +164,29 @@ namespace SauceDemo.Tests.StepDefinitions.Features
 #line 22
         testRunner.And("I sort by \"Name (A to Z)\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table10 = new TechTalk.SpecFlow.Table(new string[] {
                             "Product",
                             "Order"});
-                table4.AddRow(new string[] {
+                table10.AddRow(new string[] {
                             "Sauce Labs Backpack",
                             "1"});
-                table4.AddRow(new string[] {
+                table10.AddRow(new string[] {
                             "Sauce Labs Bike Light",
                             "2"});
-                table4.AddRow(new string[] {
+                table10.AddRow(new string[] {
                             "Sauce Labs Bolt T-Shirt",
                             "3"});
-                table4.AddRow(new string[] {
+                table10.AddRow(new string[] {
                             "Sauce Labs Fleece Jacket",
                             "4"});
-                table4.AddRow(new string[] {
+                table10.AddRow(new string[] {
                             "Sauce Labs Onesie",
                             "5"});
-                table4.AddRow(new string[] {
+                table10.AddRow(new string[] {
                             "Test.allTheThings() T-Shirt (Red)",
                             "6"});
 #line 23
-        testRunner.Then("the inventory product area displays the following items:", ((string)(null)), table4, "Then ");
+        testRunner.Then("the inventory product area displays the following items:", ((string)(null)), table10, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -218,29 +218,29 @@ namespace SauceDemo.Tests.StepDefinitions.Features
 #line 35
         testRunner.When("I sort by \"Name (Z to A)\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table11 = new TechTalk.SpecFlow.Table(new string[] {
                             "Product",
                             "Order"});
-                table5.AddRow(new string[] {
+                table11.AddRow(new string[] {
                             "Sauce Labs Backpack",
                             "6"});
-                table5.AddRow(new string[] {
+                table11.AddRow(new string[] {
                             "Sauce Labs Bike Light",
                             "5"});
-                table5.AddRow(new string[] {
+                table11.AddRow(new string[] {
                             "Sauce Labs Bolt T-Shirt",
                             "4"});
-                table5.AddRow(new string[] {
+                table11.AddRow(new string[] {
                             "Sauce Labs Fleece Jacket",
                             "3"});
-                table5.AddRow(new string[] {
+                table11.AddRow(new string[] {
                             "Sauce Labs Onesie",
                             "2"});
-                table5.AddRow(new string[] {
+                table11.AddRow(new string[] {
                             "Test.allTheThings() T-Shirt (Red)",
                             "1"});
 #line 36
-        testRunner.Then("the inventory product area displays the following items:", ((string)(null)), table5, "Then ");
+        testRunner.Then("the inventory product area displays the following items:", ((string)(null)), table11, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -272,29 +272,29 @@ namespace SauceDemo.Tests.StepDefinitions.Features
 #line 48
         testRunner.When("I sort by \"Price (low to high)\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table12 = new TechTalk.SpecFlow.Table(new string[] {
                             "Product",
                             "Order"});
-                table6.AddRow(new string[] {
+                table12.AddRow(new string[] {
                             "Sauce Labs Backpack",
                             "5"});
-                table6.AddRow(new string[] {
+                table12.AddRow(new string[] {
                             "Sauce Labs Bike Light",
                             "2"});
-                table6.AddRow(new string[] {
+                table12.AddRow(new string[] {
                             "Sauce Labs Bolt T-Shirt",
                             "3"});
-                table6.AddRow(new string[] {
+                table12.AddRow(new string[] {
                             "Sauce Labs Fleece Jacket",
                             "6"});
-                table6.AddRow(new string[] {
+                table12.AddRow(new string[] {
                             "Sauce Labs Onesie",
                             "1"});
-                table6.AddRow(new string[] {
+                table12.AddRow(new string[] {
                             "Test.allTheThings() T-Shirt (Red)",
                             "4"});
 #line 49
-        testRunner.Then("the inventory product area displays the following items:", ((string)(null)), table6, "Then ");
+        testRunner.Then("the inventory product area displays the following items:", ((string)(null)), table12, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -326,29 +326,29 @@ namespace SauceDemo.Tests.StepDefinitions.Features
 #line 61
         testRunner.When("I sort by \"Price (high to low)\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table13 = new TechTalk.SpecFlow.Table(new string[] {
                             "Product",
                             "Order"});
-                table7.AddRow(new string[] {
+                table13.AddRow(new string[] {
                             "Sauce Labs Backpack",
                             "2"});
-                table7.AddRow(new string[] {
+                table13.AddRow(new string[] {
                             "Sauce Labs Bike Light",
                             "5"});
-                table7.AddRow(new string[] {
+                table13.AddRow(new string[] {
                             "Sauce Labs Bolt T-Shirt",
                             "3"});
-                table7.AddRow(new string[] {
+                table13.AddRow(new string[] {
                             "Sauce Labs Fleece Jacket",
                             "1"});
-                table7.AddRow(new string[] {
+                table13.AddRow(new string[] {
                             "Sauce Labs Onesie",
                             "6"});
-                table7.AddRow(new string[] {
+                table13.AddRow(new string[] {
                             "Test.allTheThings() T-Shirt (Red)",
                             "4"});
 #line 62
-        testRunner.Then("the inventory product area displays the following items:", ((string)(null)), table7, "Then ");
+        testRunner.Then("the inventory product area displays the following items:", ((string)(null)), table13, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -377,16 +377,20 @@ namespace SauceDemo.Tests.StepDefinitions.Features
 #line 73
         testRunner.And("I log in as \"standard_user\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Product"});
-                table8.AddRow(new string[] {
-                            "Sauce Labs Backpack"});
-                table8.AddRow(new string[] {
-                            "Sauce Labs Bike Light"});
-                table8.AddRow(new string[] {
-                            "Sauce Labs Fleece Jacket"});
+                TechTalk.SpecFlow.Table table14 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Product",
+                            "Order"});
+                table14.AddRow(new string[] {
+                            "Sauce Labs Backpack",
+                            "1"});
+                table14.AddRow(new string[] {
+                            "Sauce Labs Bike Light",
+                            "2"});
+                table14.AddRow(new string[] {
+                            "Sauce Labs Fleece Jacket",
+                            "3"});
 #line 74
-        testRunner.When("I add the following items to the cart:", ((string)(null)), table8, "When ");
+        testRunner.When("I add the following items to the cart:", ((string)(null)), table14, "When ");
 #line hidden
 #line 79
         testRunner.Then("the cart badge displays \"3\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -418,27 +422,32 @@ namespace SauceDemo.Tests.StepDefinitions.Features
 #line 83
         testRunner.And("I log in as \"standard_user\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Product"});
-                table9.AddRow(new string[] {
-                            "Sauce Labs Bolt T-Shirt"});
-                table9.AddRow(new string[] {
-                            "Sauce Labs Bike Light"});
-                table9.AddRow(new string[] {
-                            "Sauce Labs Fleece Jacket"});
-                table9.AddRow(new string[] {
-                            "Sauce Labs Onesie"});
+                TechTalk.SpecFlow.Table table15 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Product",
+                            "Order"});
+                table15.AddRow(new string[] {
+                            "Sauce Labs Bolt T-Shirt",
+                            "1"});
+                table15.AddRow(new string[] {
+                            "Sauce Labs Bike Light",
+                            "2"});
+                table15.AddRow(new string[] {
+                            "Sauce Labs Fleece Jacket",
+                            "3"});
+                table15.AddRow(new string[] {
+                            "Sauce Labs Onesie",
+                            "4"});
 #line 84
-        testRunner.When("I add the following items to the cart:", ((string)(null)), table9, "When ");
+        testRunner.When("I add the following items to the cart:", ((string)(null)), table15, "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table10 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table16 = new TechTalk.SpecFlow.Table(new string[] {
                             "Product"});
-                table10.AddRow(new string[] {
+                table16.AddRow(new string[] {
                             "Sauce Labs Fleece Jacket"});
-                table10.AddRow(new string[] {
+                table16.AddRow(new string[] {
                             "Sauce Labs Onesie"});
 #line 90
-        testRunner.And("I remove the following items from the cart:", ((string)(null)), table10, "And ");
+        testRunner.And("I remove the following items from the cart:", ((string)(null)), table16, "And ");
 #line hidden
 #line 94
         testRunner.Then("the cart badge displays \"2\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");

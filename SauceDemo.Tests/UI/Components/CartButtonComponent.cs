@@ -14,7 +14,7 @@ namespace SauceDemo.Tests.UI.Components
         {
         }
 
-        public string CartBadgeCount => Driver.FindRequiredElement(cartBadgeLocator).Text;
+        public string CartBadgeCount => Driver.FindElementRequired(cartBadgeLocator).Text;
 
         public bool CartBadgeIsVisible()
         {
@@ -25,7 +25,7 @@ namespace SauceDemo.Tests.UI.Components
         public void ClickCartIcon()
         {
             var locator = LocatorHelper.ByCssDataTestExact("shopping-cart-link");
-            Driver.FindRequiredElement(locator).Click();
+            Driver.FindElementRequired(locator).Click();
         }
     }
 }

@@ -24,31 +24,34 @@ namespace SauceDemo.Tests.StepDefinitions.Steps
             productData = new ProductData();
         }
 
-        [Then(@"the checkout product area displays ""(.*)"" ""(.*)""")]
-        public void TheCheckoutProductAreaDisplaysItemWithQuantity(string quantity, string displayName)
-        {
-            var validProductName = productNameData.GetValidatedProductName(displayName);
-            var actual = productCheckoutComponent.GetProduct(validProductName);
-            var expected = productData.GetExpectedProductForCheckout(quantity, validProductName);
-            AssertionHelper.AssertEqual(actual, expected, "Checkout product area");
-        }
-
         [Then(@"the inventory product area displays the following items:")]
         public void TheInventoryProductAreaDisplaysTheFollowingItems(Table table)
         {
-            var displayNames = table.Rows
-                .Select(row => new
-                {
-                    Name = row["Product"],
-                    Order = int.Parse(row["Order"]),
-                })
-                .OrderBy(p => p.Order)
-                .Select(p => p.Name)
-                .ToList();
+            var displayNames = StepTableHelper.GetProductNamesFromTableOrdered(table);
             var validProductNames = productNameData.GetValidatedProductNames(displayNames);
             var actual = productBrowsingComponent.GetProducts();
             var expected = productData.GetExpectedProductsForInventory(validProductNames);
             AssertionHelper.AssertEqual(actual, expected, "Inventory product area");
+        }
+
+        [Then(@"the checkout product area displays the following items:")]
+        public void TheCheckoutProductAreaDisplaysTheFollowingItems(Table table)
+        {
+            var displayNames = StepTableHelper.GetProductNamesFromTableOrdered(table);
+            var validProductNames = productNameData.GetValidatedProductNames(displayNames);
+            var actual = productCheckoutComponent.GetProducts();
+            var expected = productData.GetExpectedProductsForCheckout(validProductNames);
+            AssertionHelper.AssertEqual(actual, expected, "Checkout product area");
+        }
+
+        [Then(@"the checkout product area displays empty")]
+        public void TheCheckoutProductAreaDisplaysEmpty()
+        {
+            var emptyList = new List<string>();
+            var validProductNames = productNameData.GetValidatedProductNames(emptyList);
+            var actual = productCheckoutComponent.GetProducts();
+            var expected = productData.GetExpectedProductsForCheckout(validProductNames);
+            AssertionHelper.AssertEqual(actual, expected, "Checkout product area");
         }
 
         [Then(@"the item detail product area displays the ""(.*)""")]

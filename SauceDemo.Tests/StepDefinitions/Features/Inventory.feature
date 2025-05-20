@@ -18,7 +18,7 @@ Feature: Inventory
     Scenario: Sorting by Name (A to Z) orders items alphabetically
         Given I open the login page
         And I log in as "standard_user"
-        When I sort by "Name (Z to A)" 
+        When I sort by "Name (Z to A)"
         And I sort by "Name (A to Z)"
         Then the inventory product area displays the following items:
             | Product                           | Order |
@@ -27,10 +27,10 @@ Feature: Inventory
             | Sauce Labs Bolt T-Shirt           | 3     |
             | Sauce Labs Fleece Jacket          | 4     |
             | Sauce Labs Onesie                 | 5     |
-            | Test.allTheThings() T-Shirt (Red) | 6     |      
+            | Test.allTheThings() T-Shirt (Red) | 6     |
 
     Scenario: Sorting by Name (Z to A) orders items in reverse alphabetical order
-        Given I open the login page        
+        Given I open the login page
         And I log in as "standard_user"
         When I sort by "Name (Z to A)"
         Then the inventory product area displays the following items:
@@ -72,25 +72,25 @@ Feature: Inventory
         Given I open the login page
         And I log in as "standard_user"
         When I add the following items to the cart:
-            | Product                           |
-            | Sauce Labs Backpack               |
-            | Sauce Labs Bike Light             |
-            | Sauce Labs Fleece Jacket          |
+            | Product                  | Order |
+            | Sauce Labs Backpack      | 1     |
+            | Sauce Labs Bike Light    | 2     |
+            | Sauce Labs Fleece Jacket | 3     |
         Then the cart badge displays "3"
 
     Scenario: Remove button decreases cart badge count
         Given I open the login page
         And I log in as "standard_user"
         When I add the following items to the cart:
-            | Product                           |
-            | Sauce Labs Bolt T-Shirt           |
-            | Sauce Labs Bike Light             |
-            | Sauce Labs Fleece Jacket          |
-            | Sauce Labs Onesie                 |
+            | Product                  | Order |
+            | Sauce Labs Bolt T-Shirt  | 1     |
+            | Sauce Labs Bike Light    | 2     |
+            | Sauce Labs Fleece Jacket | 3     |
+            | Sauce Labs Onesie        | 4     |
         And I remove the following items from the cart:
-            | Product                           |
-            | Sauce Labs Fleece Jacket          |
-            | Sauce Labs Onesie                 |
+            | Product                  |
+            | Sauce Labs Fleece Jacket |
+            | Sauce Labs Onesie        |
         Then the cart badge displays "2"
 
     @page-navigation

@@ -12,6 +12,6 @@ namespace SauceDemo.Tests.UI.Pages
         {
         }
 
-        public void ClickBackToProducts() => Driver.FindRequiredElement(LocatorHelper.ById("back-to-products")).Click();
+        public void ClickBackToProducts() => Driver.FindElementRequired(LocatorHelper.ById("back-to-products")).Click();
     }
 }

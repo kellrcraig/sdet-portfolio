@@ -17,7 +17,7 @@ namespace SauceDemo.Tests.UI.Components
         {
             var productContainer = GetProductContainerByAncestor(productName);
             var locator = LocatorHelper.ByCssDataTestExact(InventoryItemNameKey);
-            productContainer.FindRequiredElement(locator).Click();
+            productContainer.FindElementRequired(locator).Click();
         }
 
         public void ClickItemImage(ProductNameModel productName)
@@ -34,19 +34,22 @@ namespace SauceDemo.Tests.UI.Components
             return GetProductFromContainer(productContainer);
         }
 
-        protected List<ProductModel> GetProducts(IWebElement productListContainer)
+        protected IReadOnlyCollection<IWebElement> GetProductItemContainers(
+            string listContainerKey,
+            Func<IWebElement, By, IReadOnlyCollection<IWebElement>> findItemElements)
         {
-            var locator = LocatorHelper.ByCssDataTestExact(InventoryItemKey);
-            var productContainers = productListContainer.FindRequiredElements(locator);
-            return productContainers.Select(GetProductFromContainer).ToList();
+            var listContainerLocator = LocatorHelper.ByCssDataTestExact(listContainerKey);
+            var productListContainer = Driver.FindElementRequired(listContainerLocator);
+            var itemContainerLocator = LocatorHelper.ByCssDataTestExact(InventoryItemKey);
+            return findItemElements(productListContainer, itemContainerLocator);
         }
 
-        private ProductModel GetProductFromContainer(IWebElement productContainer)
+        protected ProductModel GetProductFromContainer(IWebElement productContainer)
         {
             // Global elements
-            var name = productContainer.FindRequiredElement(LocatorHelper.ByCssDataTestExact(InventoryItemNameKey)).Text;
-            var description = productContainer.FindRequiredElement(LocatorHelper.ByCssDataTestExact("inventory-item-desc")).Text;
-            var price = productContainer.FindRequiredElement(LocatorHelper.ByCssDataTestExact("inventory-item-price")).Text;
+            var name = productContainer.FindElementRequired(LocatorHelper.ByCssDataTestExact(InventoryItemNameKey)).Text;
+            var description = productContainer.FindElementRequired(LocatorHelper.ByCssDataTestExact("inventory-item-desc")).Text;
+            var price = productContainer.FindElementRequired(LocatorHelper.ByCssDataTestExact("inventory-item-price")).Text;
 
             // Optional elements
             var quantity = productContainer.FindElementSafe(LocatorHelper.ByCssDataTestExact("item-quantity"))?.Text;
