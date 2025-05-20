@@ -99,23 +99,30 @@ namespace SauceDemo.Tests.StepDefinitions.Features
         testRunner.And("I log in as \"standard_user\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
                 TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Product"});
+                            "Product",
+                            "Order"});
                 table1.AddRow(new string[] {
-                            "Sauce Labs Backpack"});
+                            "Sauce Labs Backpack",
+                            "1"});
                 table1.AddRow(new string[] {
-                            "Sauce Labs Fleece Jacket"});
+                            "Sauce Labs Fleece Jacket",
+                            "2"});
                 table1.AddRow(new string[] {
-                            "Test.allTheThings() T-Shirt (Red)"});
+                            "Test.allTheThings() T-Shirt (Red)",
+                            "3"});
+                table1.AddRow(new string[] {
+                            "Sauce Labs Onesie",
+                            "4"});
 #line 7
         testRunner.And("I add the following items to the cart:", ((string)(null)), table1, "And ");
 #line hidden
-#line 12
+#line 13
         testRunner.And("I click the cart icon", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 13
+#line 14
         testRunner.When("I click Continue Shopping", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 14
+#line 15
         testRunner.Then("the \"inventory\" page is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -131,7 +138,7 @@ namespace SauceDemo.Tests.StepDefinitions.Features
                     "page-navigation"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Checkout button navigates to Checkout: Your Information page", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 17
+#line 18
     this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
@@ -141,30 +148,37 @@ namespace SauceDemo.Tests.StepDefinitions.Features
             else
             {
                 this.ScenarioStart();
-#line 18
+#line 19
         testRunner.Given("I open the login page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 19
+#line 20
         testRunner.And("I log in as \"standard_user\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
                 TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Product"});
+                            "Product",
+                            "Order"});
                 table2.AddRow(new string[] {
-                            "Sauce Labs Onesie"});
+                            "Sauce Labs Onesie",
+                            "1"});
                 table2.AddRow(new string[] {
-                            "Sauce Labs Fleece Jacket"});
+                            "Sauce Labs Fleece Jacket",
+                            "2"});
                 table2.AddRow(new string[] {
-                            "Test.allTheThings() T-Shirt (Red)"});
-#line 20
+                            "Test.allTheThings() T-Shirt (Red)",
+                            "3"});
+                table2.AddRow(new string[] {
+                            "Sauce Labs Bike Light",
+                            "4"});
+#line 21
         testRunner.And("I add the following items to the cart:", ((string)(null)), table2, "And ");
 #line hidden
-#line 25
+#line 27
         testRunner.And("I click the cart icon", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 26
+#line 28
         testRunner.When("I click Checkout", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 27
+#line 29
         testRunner.Then("the \"checkout information\" page is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -172,41 +186,14 @@ namespace SauceDemo.Tests.StepDefinitions.Features
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Cart displays empty when there are no items in it")]
+        [NUnit.Framework.DescriptionAttribute("Cart displays all added items")]
         [NUnit.Framework.CategoryAttribute("cart-contents")]
-        [NUnit.Framework.CategoryAttribute("wip")]
-        public void CartDisplaysEmptyWhenThereAreNoItemsInIt()
+        public void CartDisplaysAllAddedItems()
         {
             string[] tagsOfScenario = new string[] {
-                    "cart-contents",
-                    "wip"};
+                    "cart-contents"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Cart displays empty when there are no items in it", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 30
-    this.ScenarioInitialize(scenarioInfo);
-#line hidden
-            if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
-            {
-                testRunner.SkipScenario();
-            }
-            else
-            {
-                this.ScenarioStart();
-            }
-            this.ScenarioCleanup();
-        }
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Remove button removes item from cart")]
-        [NUnit.Framework.CategoryAttribute("cart-contents")]
-        [NUnit.Framework.CategoryAttribute("wip")]
-        public void RemoveButtonRemovesItemFromCart()
-        {
-            string[] tagsOfScenario = new string[] {
-                    "cart-contents",
-                    "wip"};
-            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Remove button removes item from cart", null, tagsOfScenario, argumentsOfScenario, featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Cart displays all added items", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 32
     this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -217,31 +204,63 @@ namespace SauceDemo.Tests.StepDefinitions.Features
             else
             {
                 this.ScenarioStart();
-            }
-            this.ScenarioCleanup();
-        }
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Cart displays all added items")]
-        [NUnit.Framework.CategoryAttribute("cart-contents")]
-        [NUnit.Framework.CategoryAttribute("wip")]
-        public void CartDisplaysAllAddedItems()
-        {
-            string[] tagsOfScenario = new string[] {
-                    "cart-contents",
-                    "wip"};
-            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Cart displays all added items", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 36
-    this.ScenarioInitialize(scenarioInfo);
+#line 33
+        testRunner.Given("I open the login page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-            if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
-            {
-                testRunner.SkipScenario();
-            }
-            else
-            {
-                this.ScenarioStart();
+#line 34
+        testRunner.And("I log in as \"standard_user\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+                TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Product",
+                            "Order"});
+                table3.AddRow(new string[] {
+                            "Sauce Labs Backpack",
+                            "2"});
+                table3.AddRow(new string[] {
+                            "Sauce Labs Bike Light",
+                            "1"});
+                table3.AddRow(new string[] {
+                            "Sauce Labs Bolt T-Shirt",
+                            "4"});
+                table3.AddRow(new string[] {
+                            "Sauce Labs Fleece Jacket",
+                            "3"});
+                table3.AddRow(new string[] {
+                            "Sauce Labs Onesie",
+                            "6"});
+                table3.AddRow(new string[] {
+                            "Test.allTheThings() T-Shirt (Red)",
+                            "5"});
+#line 35
+        testRunner.And("I add the following items to the cart:", ((string)(null)), table3, "And ");
+#line hidden
+#line 43
+        testRunner.When("I click the cart icon", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+                TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Product",
+                            "Order"});
+                table4.AddRow(new string[] {
+                            "Sauce Labs Backpack",
+                            "2"});
+                table4.AddRow(new string[] {
+                            "Sauce Labs Bike Light",
+                            "1"});
+                table4.AddRow(new string[] {
+                            "Sauce Labs Bolt T-Shirt",
+                            "4"});
+                table4.AddRow(new string[] {
+                            "Sauce Labs Fleece Jacket",
+                            "3"});
+                table4.AddRow(new string[] {
+                            "Sauce Labs Onesie",
+                            "6"});
+                table4.AddRow(new string[] {
+                            "Test.allTheThings() T-Shirt (Red)",
+                            "5"});
+#line 44
+        testRunner.Then("the checkout product area displays the following items:", ((string)(null)), table4, "Then ");
+#line hidden
             }
             this.ScenarioCleanup();
         }
@@ -249,15 +268,13 @@ namespace SauceDemo.Tests.StepDefinitions.Features
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Cart displays previously added items after logout")]
         [NUnit.Framework.CategoryAttribute("cart-contents")]
-        [NUnit.Framework.CategoryAttribute("wip")]
         public void CartDisplaysPreviouslyAddedItemsAfterLogout()
         {
             string[] tagsOfScenario = new string[] {
-                    "cart-contents",
-                    "wip"};
+                    "cart-contents"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Cart displays previously added items after logout", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 39
+#line 54
     this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
@@ -267,22 +284,74 @@ namespace SauceDemo.Tests.StepDefinitions.Features
             else
             {
                 this.ScenarioStart();
+#line 55
+        testRunner.Given("I open the login page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 56
+        testRunner.And("I log in as \"standard_user\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+                TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Product",
+                            "Order"});
+                table5.AddRow(new string[] {
+                            "Sauce Labs Backpack",
+                            "2"});
+                table5.AddRow(new string[] {
+                            "Sauce Labs Bike Light",
+                            "1"});
+                table5.AddRow(new string[] {
+                            "Sauce Labs Bolt T-Shirt",
+                            "4"});
+                table5.AddRow(new string[] {
+                            "Sauce Labs Fleece Jacket",
+                            "3"});
+#line 57
+        testRunner.And("I add the following items to the cart:", ((string)(null)), table5, "And ");
+#line hidden
+#line 63
+        testRunner.And("I open the menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 64
+        testRunner.And("I click the logout link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 65
+        testRunner.And("I log in as \"standard_user\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 66
+        testRunner.When("I click the cart icon", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+                TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Product",
+                            "Order"});
+                table6.AddRow(new string[] {
+                            "Sauce Labs Backpack",
+                            "2"});
+                table6.AddRow(new string[] {
+                            "Sauce Labs Bike Light",
+                            "1"});
+                table6.AddRow(new string[] {
+                            "Sauce Labs Bolt T-Shirt",
+                            "4"});
+                table6.AddRow(new string[] {
+                            "Sauce Labs Fleece Jacket",
+                            "3"});
+#line 67
+        testRunner.Then("the checkout product area displays the following items:", ((string)(null)), table6, "Then ");
+#line hidden
             }
             this.ScenarioCleanup();
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Cart displays correct contents after returning via direct URL")]
+        [NUnit.Framework.DescriptionAttribute("Cart displays empty when there are no items in it")]
         [NUnit.Framework.CategoryAttribute("cart-contents")]
-        [NUnit.Framework.CategoryAttribute("wip")]
-        public void CartDisplaysCorrectContentsAfterReturningViaDirectURL()
+        public void CartDisplaysEmptyWhenThereAreNoItemsInIt()
         {
             string[] tagsOfScenario = new string[] {
-                    "cart-contents",
-                    "wip"};
+                    "cart-contents"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Cart displays correct contents after returning via direct URL", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 44
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Cart displays empty when there are no items in it", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 75
     this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
@@ -292,22 +361,32 @@ namespace SauceDemo.Tests.StepDefinitions.Features
             else
             {
                 this.ScenarioStart();
+#line 76
+        testRunner.Given("I open the login page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 77
+        testRunner.And("I log in as \"standard_user\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 78
+        testRunner.When("I click the cart icon", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 79
+        testRunner.Then("the checkout product area displays empty", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
             }
             this.ScenarioCleanup();
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Resetting App State clears all items from the cart")]
-        [NUnit.Framework.CategoryAttribute("reset-app-state")]
-        [NUnit.Framework.CategoryAttribute("wip")]
-        public void ResettingAppStateClearsAllItemsFromTheCart()
+        [NUnit.Framework.DescriptionAttribute("Remove button removes item from cart")]
+        [NUnit.Framework.CategoryAttribute("cart-contents")]
+        public void RemoveButtonRemovesItemFromCart()
         {
             string[] tagsOfScenario = new string[] {
-                    "reset-app-state",
-                    "wip"};
+                    "cart-contents"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Resetting App State clears all items from the cart", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 47
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Remove button removes item from cart", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 82
     this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
@@ -317,6 +396,51 @@ namespace SauceDemo.Tests.StepDefinitions.Features
             else
             {
                 this.ScenarioStart();
+#line 83
+        testRunner.Given("I open the login page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 84
+        testRunner.And("I log in as \"standard_user\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+                TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Product",
+                            "Order"});
+                table7.AddRow(new string[] {
+                            "Sauce Labs Backpack",
+                            "2"});
+                table7.AddRow(new string[] {
+                            "Sauce Labs Bike Light",
+                            "1"});
+                table7.AddRow(new string[] {
+                            "Sauce Labs Bolt T-Shirt",
+                            "4"});
+                table7.AddRow(new string[] {
+                            "Sauce Labs Fleece Jacket",
+                            "3"});
+#line 85
+        testRunner.And("I add the following items to the cart:", ((string)(null)), table7, "And ");
+#line hidden
+#line 91
+        testRunner.And("I click the cart icon", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 92
+        testRunner.When("I remove \"Sauce Labs Fleece Jacket\" from the cart", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+                TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Product",
+                            "Order"});
+                table8.AddRow(new string[] {
+                            "Sauce Labs Backpack",
+                            "2"});
+                table8.AddRow(new string[] {
+                            "Sauce Labs Bike Light",
+                            "1"});
+                table8.AddRow(new string[] {
+                            "Sauce Labs Bolt T-Shirt",
+                            "4"});
+#line 93
+        testRunner.Then("the checkout product area displays the following items:", ((string)(null)), table8, "Then ");
+#line hidden
             }
             this.ScenarioCleanup();
         }

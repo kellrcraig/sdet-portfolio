@@ -29,6 +29,7 @@ namespace SauceDemo.Tests.StepDefinitions.Steps
         }
 
         [Given(@"I remove ""(.*)"" from the cart")]
+        [When(@"I remove ""(.*)"" from the cart")]
         public void IRemoveItemFromTheCart(string displayName)
         {
             var validProductName = productNameData.GetValidatedProductName(displayName);
@@ -51,7 +52,7 @@ namespace SauceDemo.Tests.StepDefinitions.Steps
         [When(@"I add the following items to the cart:")]
         public void IAddTheFollowingItemsToTheCart(Table table)
         {
-            var displayNames = GetProductNamesFromTable(table);
+            var displayNames = StepTableHelper.GetProductNamesFromTableOrdered(table);
             var validProductNames = productNameData.GetValidatedProductNames(displayNames);
             validProductNames.ForEach(productAddRemoveListComponent.ClickAddToCart);
         }
@@ -59,7 +60,7 @@ namespace SauceDemo.Tests.StepDefinitions.Steps
         [When(@"I remove the following items from the cart:")]
         public void IRemoveTheFollowingItemsFromTheCart(Table table)
         {
-            var displayNames = GetProductNamesFromTable(table);
+            var displayNames = StepTableHelper.GetProductNamesFromTable(table);
             var validProductNames = productNameData.GetValidatedProductNames(displayNames);
             validProductNames.ForEach(productAddRemoveListComponent.ClickRemove);
         }
@@ -80,11 +81,6 @@ namespace SauceDemo.Tests.StepDefinitions.Steps
             var actual = productAddRemoveDetailComponent.GetAddRemoveButtonText();
             var expected = ProductAddRemoveData.GetValidatedAddRemoveText(buttonText);
             AssertionHelper.AssertEqual(actual, expected, "Cart button text");
-        }
-
-        private List<string> GetProductNamesFromTable(Table table)
-        {
-            return table.Rows.Select(row => row["Product"]).ToList();
         }
     }
 }

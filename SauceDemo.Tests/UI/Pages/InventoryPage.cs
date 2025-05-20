@@ -15,12 +15,12 @@ namespace SauceDemo.Tests.UI.Pages
 
         public void NavigateTo() => BrowserHelper.NavigateTo(Driver, "https://www.saucedemo.com/inventory.html");
 
-        public string ActiveSortText() => Driver.FindRequiredElement(LocatorHelper.ByCssDataTestExact("active-option")).Text;
+        public string ActiveSortText() => Driver.FindElementRequired(LocatorHelper.ByCssDataTestExact("active-option")).Text;
 
         public void SelectSortOption(SortOptionData sortOption)
         {
-            var sortDropdown = Driver.FindRequiredElement(LocatorHelper.ByCssDataTestExact("product-sort-container"));
-            var options = sortDropdown.FindRequiredElements(LocatorHelper.ByTag("option"));
+            var sortDropdown = Driver.FindElementRequired(LocatorHelper.ByCssDataTestExact("product-sort-container"));
+            var options = sortDropdown.FindElementsRequired(LocatorHelper.ByTag("option"));
             var match = options.FirstOrDefault(o => o.Text == sortOption.Text) ??
                 throw new InvalidOperationException($"Could not find option: {sortOption.Text}");
             match.Click();

@@ -199,6 +199,31 @@ namespace SauceDemo.Tests.StepDefinitions.Features
             }
             this.ScenarioCleanup();
         }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Resetting App State clears all items from the cart")]
+        [NUnit.Framework.CategoryAttribute("reset-app-state")]
+        [NUnit.Framework.CategoryAttribute("wip")]
+        public void ResettingAppStateClearsAllItemsFromTheCart()
+        {
+            string[] tagsOfScenario = new string[] {
+                    "reset-app-state",
+                    "wip"};
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Resetting App State clears all items from the cart", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 16
+    this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+            }
+            this.ScenarioCleanup();
+        }
     }
 }
 #pragma warning restore

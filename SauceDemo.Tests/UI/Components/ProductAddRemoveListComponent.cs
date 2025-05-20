@@ -17,14 +17,14 @@ namespace SauceDemo.Tests.UI.Components
         {
             var productContainer = GetProductContainerByAncestor(productName);
             var buttonLocator = LocatorHelper.ById($"{AddToCartItemKey}-{productName.InternalName}");
-            productContainer.FindRequiredElement(buttonLocator).Click();
+            productContainer.FindElementRequired(buttonLocator).Click();
         }
 
         public void ClickRemove(ProductNameModel productName)
         {
             var productContainer = GetProductContainerByAncestor(productName);
             var buttonLocator = LocatorHelper.ById($"{RemoveItemKey}-{productName.InternalName}");
-            productContainer.FindRequiredElement(buttonLocator).Click();
+            productContainer.FindElementRequired(buttonLocator).Click();
         }
 
         public ProductAddRemoveData GetAddRemoveButtonText(ProductNameModel productName)

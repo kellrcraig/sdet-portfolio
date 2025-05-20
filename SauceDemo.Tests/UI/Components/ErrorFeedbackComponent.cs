@@ -30,7 +30,7 @@ namespace SauceDemo.Tests.UI.Components
 
         public void DismissErrorFeedback()
         {
-            Driver.FindRequiredElement(LocatorHelper.ByClassName("error-button"))?.Click();
+            Driver.FindElementRequired(LocatorHelper.ByClassName("error-button"))?.Click();
         }
 
         private bool ErrorIconIsVisible(By locator)
@@ -42,7 +42,7 @@ namespace SauceDemo.Tests.UI.Components
         private string? GetInputBottomBorderColor(string id)
         {
             var locator = LocatorHelper.ById(id);
-            var element = Driver.FindRequiredElement(locator);
+            var element = Driver.FindElementRequired(locator);
             return element?.GetCssValue("border-bottom-color");
         }
     }

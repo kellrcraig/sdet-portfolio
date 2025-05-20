@@ -12,9 +12,9 @@ namespace SauceDemo.Tests.UI.Components
         {
         }
 
-        public void ClickAddToCart() => Driver.FindRequiredElement(LocatorHelper.ById(AddToCartItemKey)).Click();
+        public void ClickAddToCart() => Driver.FindElementRequired(LocatorHelper.ById(AddToCartItemKey)).Click();
 
-        public void ClickRemove() => Driver.FindRequiredElement(LocatorHelper.ById(RemoveItemKey)).Click();
+        public void ClickRemove() => Driver.FindElementRequired(LocatorHelper.ById(RemoveItemKey)).Click();
 
         public ProductAddRemoveData GetAddRemoveButtonText()
         {

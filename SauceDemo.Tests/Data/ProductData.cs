@@ -62,13 +62,13 @@ namespace SauceDemo.Tests.Data
             },
         };
 
-        public ProductModel GetExpectedProductForCheckout(string quantity, ProductNameModel productName)
+        public ProductModel GetExpectedProductForCheckout(ProductNameModel productName)
         {
             var validProduct = GetValidatedProduct(productName);
 
             return validProduct with
             {
-                Quantity = quantity,
+                Quantity = "1",
                 ImageAlt = null,
                 ImageSource = null
             };
@@ -87,6 +87,11 @@ namespace SauceDemo.Tests.Data
         public List<ProductModel> GetExpectedProductsForInventory(IEnumerable<ProductNameModel> productNames)
         {
             return productNames.Select(GetExpectedProductForInventory).ToList();
+        }
+
+        public List<ProductModel> GetExpectedProductsForCheckout(IEnumerable<ProductNameModel> productNames)
+        {
+            return productNames.Select(GetExpectedProductForCheckout).ToList();
         }
 
         private ProductModel GetValidatedProduct(ProductNameModel productName)

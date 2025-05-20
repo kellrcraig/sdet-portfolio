@@ -22,6 +22,7 @@ namespace SauceDemo.Tests.StepDefinitions.Steps
             menu.OpenMenu();
         }
 
+        [Given(@"I click the logout link")]
         [When(@"I click the logout link")]
         public void IClickTheLogoutLink()
         {

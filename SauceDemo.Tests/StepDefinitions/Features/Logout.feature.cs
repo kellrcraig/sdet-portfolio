@@ -269,8 +269,14 @@ namespace SauceDemo.Tests.StepDefinitions.Features
 #line 42
         testRunner.And("I click the cart icon", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
+                TechTalk.SpecFlow.Table table17 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Product",
+                            "Order"});
+                table17.AddRow(new string[] {
+                            "Sauce Labs Backpack",
+                            "1"});
 #line 43
-        testRunner.Then("the checkout product area displays \"1\" \"Sauce Labs Backpack\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+        testRunner.Then("the checkout product area displays the following items:", ((string)(null)), table17, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -287,7 +293,7 @@ namespace SauceDemo.Tests.StepDefinitions.Features
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("User who is actively using the app is not automatically logged out after 10 minut" +
                     "es", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 46
+#line 48
     this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
@@ -310,7 +316,7 @@ namespace SauceDemo.Tests.StepDefinitions.Features
                     "wip"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Idle user cannot cannot modify cart after automatic logout", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 50
+#line 52
     this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))

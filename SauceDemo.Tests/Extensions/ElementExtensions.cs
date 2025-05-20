@@ -4,7 +4,7 @@ namespace SauceDemo.Tests.Extensions
 
     public static class ElementExtensions
     {
-        public static IWebElement FindRequiredElement(this IWebDriver driver, By locator)
+        public static IWebElement FindElementRequired(this IWebDriver driver, By locator)
         {
             try
             {
@@ -19,7 +19,7 @@ namespace SauceDemo.Tests.Extensions
             }
         }
 
-        public static IWebElement FindRequiredElement(this IWebElement element, By locator)
+        public static IWebElement FindElementRequired(this IWebElement element, By locator)
         {
             try
             {
@@ -34,7 +34,7 @@ namespace SauceDemo.Tests.Extensions
             }
         }
 
-        public static IReadOnlyCollection<IWebElement> FindRequiredElements(this IWebElement element, By locator)
+        public static IReadOnlyCollection<IWebElement> FindElementsRequired(this IWebElement element, By locator)
         {
             var elements = element.FindElements(locator);
             if (elements is null || elements.Count == 0)
@@ -45,6 +45,11 @@ namespace SauceDemo.Tests.Extensions
             }
 
             return elements;
+        }
+
+        public static IReadOnlyCollection<IWebElement> FindElementsSafe(this IWebElement element, By locator)
+        {
+            return element.FindElements(locator);
         }
 
         public static IWebElement? FindElementSafe(this IWebElement element, By locator)
