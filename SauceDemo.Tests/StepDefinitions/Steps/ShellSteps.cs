@@ -23,11 +23,17 @@ namespace SauceDemo.Tests.StepDefinitions.Steps
             var actualUrl = shellPage.PageUrl;
             Assert.Multiple(() =>
             {
-                AssertionHelper.AssertContains(actualUrl, expected.UrlFragment, $"Page URL '{actualUrl}' contains '{expected.UrlFragment}'");
+                AssertionHelper.AssertContains(
+                    actualUrl,
+                    expected.UrlFragment,
+                    $"Page URL");
 
                 if (expected.Title != null)
                 {
-                    AssertionHelper.AssertEqual(shellPage?.PageTitle, expected.Title, "Page title");
+                    AssertionHelper.AssertEqual(
+                        shellPage?.PageTitle,
+                        expected.Title,
+                        "Page title");
                 }
             });
         }
