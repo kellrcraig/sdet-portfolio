@@ -186,4 +186,4 @@ Feature: Checkout: Your Information
             | Last Name  | Howlett  |
             | Zip Code   | 77478    |
         When I click Cancel
-        Then the "cart" page is displayed 
+        Then the "cart" page is displayed

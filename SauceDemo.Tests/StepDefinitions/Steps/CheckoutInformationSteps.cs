@@ -20,11 +20,5 @@ namespace SauceDemo.Tests.StepDefinitions.Steps
         {
             checkoutInformationPage.ClickContinue();
         }
-
-        [When(@"I click Cancel")]
-        public void IClickCancel()
-        {
-            checkoutInformationPage.ClickCancel();
-        }
     }
 }
