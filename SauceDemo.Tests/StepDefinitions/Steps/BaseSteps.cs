@@ -1,6 +1,7 @@
 namespace SauceDemo.Tests.StepDefinitions.Steps
 {
     using OpenQA.Selenium;
+    using SauceDemo.Tests.Constants;
     using SauceDemo.Tests.UI.Shared;
     using TechTalk.SpecFlow;
 
@@ -8,7 +9,7 @@ namespace SauceDemo.Tests.StepDefinitions.Steps
     {
         protected BaseSteps(ScenarioContext scenarioContext)
         {
-            Driver = scenarioContext["driver"] as IWebDriver
+            Driver = scenarioContext[ScenarioContextKeys.Driver] as IWebDriver
                       ?? throw new InvalidOperationException("WebDriver not found in ScenarioContext.");
         }
 

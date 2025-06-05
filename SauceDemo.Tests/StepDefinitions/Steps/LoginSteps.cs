@@ -1,5 +1,6 @@
 namespace SauceDemo.Tests.StepDefinitions.Steps
 {
+    using SauceDemo.Tests.Constants;
     using SauceDemo.Tests.Data;
     using SauceDemo.Tests.UI.Pages;
     using TechTalk.SpecFlow;
@@ -7,24 +8,31 @@ namespace SauceDemo.Tests.StepDefinitions.Steps
     [Binding]
     public class LoginSteps : BaseSteps
     {
-        private readonly LoginPage? loginPage;
+        private readonly LoginPage loginPage;
+
+        private readonly ScenarioContext scenarioContext;
 
         public LoginSteps(ScenarioContext scenarioContext)
             : base(scenarioContext)
         {
             loginPage = PageComponent<LoginPage>();
+            this.scenarioContext = scenarioContext;
         }
 
         [Given(@"I am on the login page")]
         [Given(@"I open the login page")]
-        public void IOpenTheLoginPage() => loginPage?.NavigateTo();
+        public void IOpenTheLoginPage()
+        {
+            loginPage.NavigateTo();
+            scenarioContext[ScenarioContextKeys.ActiveForm] = loginPage.Form;
+        }
 
         [When(@"I log in with username ""(.*)"" and password ""(.*)""")]
         public void ILogInWithUsernameAndPassword(string username, string password)
         {
             var validUserName = CredentialData.ValidateUserName(username);
             var validPassword = CredentialData.ValidatePassword(password);
-            loginPage?.Login(validUserName, validPassword);
+            loginPage.Login(validUserName, validPassword);
         }
 
         [Given(@"I log in as ""(.*)""")]
@@ -32,7 +40,7 @@ namespace SauceDemo.Tests.StepDefinitions.Steps
         public void ILogInAs(string username)
         {
             var validUserName = CredentialData.ValidateUserName(username);
-            loginPage?.Login(validUserName, CredentialData.CorrectPassword);
+            loginPage.Login(validUserName, CredentialData.CorrectPassword);
         }
     }
 }

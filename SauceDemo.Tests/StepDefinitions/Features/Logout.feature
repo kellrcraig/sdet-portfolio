@@ -13,7 +13,7 @@ Feature: Logout
         And I open the menu
         When I click the logout link
         And I click the back button
-        Then the "Epic sadface: You can only access '/inventory.html' when you are logged in." message is displayed
+        Then the "Epic sadface: You can only access '/inventory.html' when you are logged in." form error message is displayed
 
     Scenario: Logged out user cannot access protected pages via direct URL
         Given I open the login page
@@ -21,7 +21,7 @@ Feature: Logout
         And I open the menu
         When I click the logout link
         And I open the inventory page
-        Then the "Epic sadface: You can only access '/inventory.html' when you are logged in." message is displayed
+        Then the "Epic sadface: You can only access '/inventory.html' when you are logged in." form error message is displayed
     
     Scenario: Cart badge count is preserved after logout
         Given I open the login page

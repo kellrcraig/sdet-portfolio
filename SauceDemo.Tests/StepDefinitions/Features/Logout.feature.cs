@@ -143,7 +143,7 @@ namespace SauceDemo.Tests.StepDefinitions.Features
 #line hidden
 #line 16
         testRunner.Then("the \"Epic sadface: You can only access \'/inventory.html\' when you are logged in.\"" +
-                        " message is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+                        " form error message is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -183,7 +183,7 @@ namespace SauceDemo.Tests.StepDefinitions.Features
 #line hidden
 #line 24
         testRunner.Then("the \"Epic sadface: You can only access \'/inventory.html\' when you are logged in.\"" +
-                        " message is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+                        " form error message is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -269,14 +269,14 @@ namespace SauceDemo.Tests.StepDefinitions.Features
 #line 42
         testRunner.And("I click the cart icon", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table17 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table31 = new TechTalk.SpecFlow.Table(new string[] {
                             "Product",
                             "Order"});
-                table17.AddRow(new string[] {
+                table31.AddRow(new string[] {
                             "Sauce Labs Backpack",
                             "1"});
 #line 43
-        testRunner.Then("the checkout product area displays the following items:", ((string)(null)), table17, "Then ");
+        testRunner.Then("the checkout product area displays the following items:", ((string)(null)), table31, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
