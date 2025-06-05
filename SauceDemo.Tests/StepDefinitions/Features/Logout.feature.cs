@@ -269,14 +269,14 @@ namespace SauceDemo.Tests.StepDefinitions.Features
 #line 42
         testRunner.And("I click the cart icon", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table31 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table35 = new TechTalk.SpecFlow.Table(new string[] {
                             "Product",
                             "Order"});
-                table31.AddRow(new string[] {
+                table35.AddRow(new string[] {
                             "Sauce Labs Backpack",
                             "1"});
 #line 43
-        testRunner.Then("the checkout product area displays the following items:", ((string)(null)), table31, "Then ");
+        testRunner.Then("the checkout product area displays the following items:", ((string)(null)), table35, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

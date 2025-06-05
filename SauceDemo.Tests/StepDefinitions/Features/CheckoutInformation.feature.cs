@@ -622,12 +622,10 @@ namespace SauceDemo.Tests.StepDefinitions.Features
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Continue button navigates to Checkout: Overview page after validation succeeds")]
         [NUnit.Framework.CategoryAttribute("page-navigation")]
-        [NUnit.Framework.CategoryAttribute("wip")]
         public void ContinueButtonNavigatesToCheckoutOverviewPageAfterValidationSucceeds()
         {
             string[] tagsOfScenario = new string[] {
-                    "page-navigation",
-                    "wip"};
+                    "page-navigation"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Continue button navigates to Checkout: Overview page after validation succeeds", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 152
@@ -640,6 +638,57 @@ namespace SauceDemo.Tests.StepDefinitions.Features
             else
             {
                 this.ScenarioStart();
+#line 153
+        testRunner.Given("I open the login page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 154
+        testRunner.And("I log in as \"standard_user\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+                TechTalk.SpecFlow.Table table23 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Product",
+                            "Order"});
+                table23.AddRow(new string[] {
+                            "Sauce Labs Backpack",
+                            "1"});
+                table23.AddRow(new string[] {
+                            "Sauce Labs Bolt T-Shirt",
+                            "2"});
+                table23.AddRow(new string[] {
+                            "Test.allTheThings() T-Shirt (Red)",
+                            "3"});
+                table23.AddRow(new string[] {
+                            "Sauce Labs Onesie",
+                            "4"});
+#line 155
+        testRunner.And("I add the following items to the cart:", ((string)(null)), table23, "And ");
+#line hidden
+#line 161
+        testRunner.And("I click the cart icon", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 162
+        testRunner.And("I click Checkout", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+                TechTalk.SpecFlow.Table table24 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Field",
+                            "Data"});
+                table24.AddRow(new string[] {
+                            "First Name",
+                            "James"});
+                table24.AddRow(new string[] {
+                            "Last Name",
+                            "Howlett"});
+                table24.AddRow(new string[] {
+                            "Zip Code",
+                            "77478"});
+#line 163
+        testRunner.And("I enter the following data:", ((string)(null)), table24, "And ");
+#line hidden
+#line 168
+        testRunner.When("I click Continue", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 169
+        testRunner.Then("the \"checkout overview\" page is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
             }
             this.ScenarioCleanup();
         }
@@ -647,15 +696,13 @@ namespace SauceDemo.Tests.StepDefinitions.Features
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Cancel button navigates to Your Cart page")]
         [NUnit.Framework.CategoryAttribute("page-navigation")]
-        [NUnit.Framework.CategoryAttribute("wip")]
         public void CancelButtonNavigatesToYourCartPage()
         {
             string[] tagsOfScenario = new string[] {
-                    "page-navigation",
-                    "wip"};
+                    "page-navigation"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Cancel button navigates to Your Cart page", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 155
+#line 172
     this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
@@ -665,6 +712,57 @@ namespace SauceDemo.Tests.StepDefinitions.Features
             else
             {
                 this.ScenarioStart();
+#line 173
+        testRunner.Given("I open the login page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 174
+        testRunner.And("I log in as \"standard_user\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+                TechTalk.SpecFlow.Table table25 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Product",
+                            "Order"});
+                table25.AddRow(new string[] {
+                            "Sauce Labs Backpack",
+                            "1"});
+                table25.AddRow(new string[] {
+                            "Sauce Labs Bolt T-Shirt",
+                            "2"});
+                table25.AddRow(new string[] {
+                            "Test.allTheThings() T-Shirt (Red)",
+                            "3"});
+                table25.AddRow(new string[] {
+                            "Sauce Labs Onesie",
+                            "4"});
+#line 175
+        testRunner.And("I add the following items to the cart:", ((string)(null)), table25, "And ");
+#line hidden
+#line 181
+        testRunner.And("I click the cart icon", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 182
+        testRunner.And("I click Checkout", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+                TechTalk.SpecFlow.Table table26 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Field",
+                            "Data"});
+                table26.AddRow(new string[] {
+                            "First Name",
+                            "James"});
+                table26.AddRow(new string[] {
+                            "Last Name",
+                            "Howlett"});
+                table26.AddRow(new string[] {
+                            "Zip Code",
+                            "77478"});
+#line 183
+        testRunner.And("I enter the following data:", ((string)(null)), table26, "And ");
+#line hidden
+#line 188
+        testRunner.When("I click Cancel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 189
+        testRunner.Then("the \"cart\" page is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
             }
             this.ScenarioCleanup();
         }
