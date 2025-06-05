@@ -2,6 +2,7 @@ namespace SauceDemo.Tests.StepDefinitions.Hooks
 {
     using OpenQA.Selenium;
     using OpenQA.Selenium.Chrome;
+    using SauceDemo.Tests.Constants;
     using TechTalk.SpecFlow;
 
     [Binding]
@@ -68,13 +69,13 @@ namespace SauceDemo.Tests.StepDefinitions.Hooks
             options.AddArgument("--disable-notifications");
 
             var driver = new ChromeDriver(options);
-            scenarioContext["driver"] = driver;
+            scenarioContext[ScenarioContextKeys.Driver] = driver;
         }
 
         [AfterScenario]
         public void TearDown()
         {
-            if (scenarioContext.TryGetValue("driver", out IWebDriver? driver))
+            if (scenarioContext.TryGetValue(ScenarioContextKeys.Driver, out IWebDriver? driver))
             {
                 driver?.Quit();
             }

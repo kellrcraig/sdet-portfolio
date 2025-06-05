@@ -21,12 +21,14 @@ namespace SauceDemo.Tests.StepDefinitions.Features
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
     [NUnit.Framework.DescriptionAttribute("Known Issues")]
+    [NUnit.Framework.CategoryAttribute("wip")]
     public partial class KnownIssuesFeature
     {
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
         
-        private static string[] featureTags = ((string[])(null));
+        private static string[] featureTags = new string[] {
+                "wip"};
         
 #line 1 "KnownIssues.feature"
 #line hidden
@@ -77,16 +79,37 @@ namespace SauceDemo.Tests.StepDefinitions.Features
         [NUnit.Framework.DescriptionAttribute("Reset App State link reverts items, sorting option, and cart badge count to defau" +
             "lts")]
         [NUnit.Framework.CategoryAttribute("reset-app-state")]
-        [NUnit.Framework.CategoryAttribute("wip")]
         public void ResetAppStateLinkRevertsItemsSortingOptionAndCartBadgeCountToDefaults()
         {
             string[] tagsOfScenario = new string[] {
-                    "reset-app-state",
-                    "wip"};
+                    "reset-app-state"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Reset App State link reverts items, sorting option, and cart badge count to defau" +
                     "lts", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 4
+#line 5
+    this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Resetting App State clears all items from the cart")]
+        [NUnit.Framework.CategoryAttribute("reset-app-state")]
+        public void ResettingAppStateClearsAllItemsFromTheCart()
+        {
+            string[] tagsOfScenario = new string[] {
+                    "reset-app-state"};
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Resetting App State clears all items from the cart", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 7
     this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
@@ -102,14 +125,12 @@ namespace SauceDemo.Tests.StepDefinitions.Features
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Items and sorting option persist when returning to Inventory page")]
-        [NUnit.Framework.CategoryAttribute("wip")]
         public void ItemsAndSortingOptionPersistWhenReturningToInventoryPage()
         {
-            string[] tagsOfScenario = new string[] {
-                    "wip"};
+            string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Items and sorting option persist when returning to Inventory page", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 6
+#line 8
     this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
@@ -126,15 +147,13 @@ namespace SauceDemo.Tests.StepDefinitions.Features
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Continue Shopping button navigates back to previous page")]
         [NUnit.Framework.CategoryAttribute("page-navigation")]
-        [NUnit.Framework.CategoryAttribute("wip")]
         public void ContinueShoppingButtonNavigatesBackToPreviousPage()
         {
             string[] tagsOfScenario = new string[] {
-                    "page-navigation",
-                    "wip"};
+                    "page-navigation"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Continue Shopping button navigates back to previous page", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 10
+#line 12
     this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
@@ -152,16 +171,14 @@ namespace SauceDemo.Tests.StepDefinitions.Features
         [NUnit.Framework.DescriptionAttribute("Checkout button navigates to Checkout: Your Information page when the cart is not" +
             " empty")]
         [NUnit.Framework.CategoryAttribute("page-navigation")]
-        [NUnit.Framework.CategoryAttribute("wip")]
         public void CheckoutButtonNavigatesToCheckoutYourInformationPageWhenTheCartIsNotEmpty()
         {
             string[] tagsOfScenario = new string[] {
-                    "page-navigation",
-                    "wip"};
+                    "page-navigation"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Checkout button navigates to Checkout: Your Information page when the cart is not" +
                     " empty", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 12
+#line 14
     this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
@@ -178,15 +195,13 @@ namespace SauceDemo.Tests.StepDefinitions.Features
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Checkout button does not navigate when the cart is empty")]
         [NUnit.Framework.CategoryAttribute("page-navigation")]
-        [NUnit.Framework.CategoryAttribute("wip")]
         public void CheckoutButtonDoesNotNavigateWhenTheCartIsEmpty()
         {
             string[] tagsOfScenario = new string[] {
-                    "page-navigation",
-                    "wip"};
+                    "page-navigation"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Checkout button does not navigate when the cart is empty", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 14
+#line 16
     this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
@@ -201,17 +216,162 @@ namespace SauceDemo.Tests.StepDefinitions.Features
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Resetting App State clears all items from the cart")]
-        [NUnit.Framework.CategoryAttribute("reset-app-state")]
-        [NUnit.Framework.CategoryAttribute("wip")]
-        public void ResettingAppStateClearsAllItemsFromTheCart()
+        [NUnit.Framework.DescriptionAttribute("Zip code field only accepts standard US format (five digits (e.g., 90210) or nine" +
+            " digits with dash (e.g., 90210-1234))")]
+        public void ZipCodeFieldOnlyAcceptsStandardUSFormatFiveDigitsE_G_90210OrNineDigitsWithDashE_G_90210_1234()
         {
-            string[] tagsOfScenario = new string[] {
-                    "reset-app-state",
-                    "wip"};
+            string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Resetting App State clears all items from the cart", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 16
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Zip code field only accepts standard US format (five digits (e.g., 90210) or nine" +
+                    " digits with dash (e.g., 90210-1234))", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 18
+    this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Name fields accept alphabetic characters")]
+        public void NameFieldsAcceptAlphabeticCharacters()
+        {
+            string[] tagsOfScenario = ((string[])(null));
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Name fields accept alphabetic characters", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 19
+    this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Name fields accept hyphens and apostrophes")]
+        public void NameFieldsAcceptHyphensAndApostrophes()
+        {
+            string[] tagsOfScenario = ((string[])(null));
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Name fields accept hyphens and apostrophes", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 20
+    this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Name fields accept names with spaces")]
+        public void NameFieldsAcceptNamesWithSpaces()
+        {
+            string[] tagsOfScenario = ((string[])(null));
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Name fields accept names with spaces", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 21
+    this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Name fields accept names with Unicode characters")]
+        public void NameFieldsAcceptNamesWithUnicodeCharacters()
+        {
+            string[] tagsOfScenario = ((string[])(null));
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Name fields accept names with Unicode characters", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 22
+    this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Name fields reject inputs longer than 50 characters")]
+        public void NameFieldsRejectInputsLongerThan50Characters()
+        {
+            string[] tagsOfScenario = ((string[])(null));
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Name fields reject inputs longer than 50 characters", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 23
+    this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Name fields warns for numbers but does not block submission")]
+        public void NameFieldsWarnsForNumbersButDoesNotBlockSubmission()
+        {
+            string[] tagsOfScenario = ((string[])(null));
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Name fields warns for numbers but does not block submission", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 24
+    this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Cannot access Checkout: Your Information page via direct URL")]
+        public void CannotAccessCheckoutYourInformationPageViaDirectURL()
+        {
+            string[] tagsOfScenario = ((string[])(null));
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Cannot access Checkout: Your Information page via direct URL", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 25
     this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))

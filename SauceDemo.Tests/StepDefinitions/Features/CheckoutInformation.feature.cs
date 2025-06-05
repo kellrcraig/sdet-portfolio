@@ -21,14 +21,12 @@ namespace SauceDemo.Tests.StepDefinitions.Features
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
     [NUnit.Framework.DescriptionAttribute("Checkout: Your Information")]
-    [NUnit.Framework.CategoryAttribute("wip")]
     public partial class CheckoutYourInformationFeature
     {
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
         
-        private static string[] featureTags = new string[] {
-                "wip"};
+        private static string[] featureTags = ((string[])(null));
         
 #line 1 "CheckoutInformation.feature"
 #line hidden
@@ -76,162 +74,13 @@ namespace SauceDemo.Tests.StepDefinitions.Features
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Zip code field only accepts standard US format (five digits (e.g., 90210) or nine" +
-            " digits with dash (e.g., 90210-1234))")]
-        public void ZipCodeFieldOnlyAcceptsStandardUSFormatFiveDigitsE_G_90210OrNineDigitsWithDashE_G_90210_1234()
-        {
-            string[] tagsOfScenario = ((string[])(null));
-            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Zip code field only accepts standard US format (five digits (e.g., 90210) or nine" +
-                    " digits with dash (e.g., 90210-1234))", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 4
-    this.ScenarioInitialize(scenarioInfo);
-#line hidden
-            if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
-            {
-                testRunner.SkipScenario();
-            }
-            else
-            {
-                this.ScenarioStart();
-            }
-            this.ScenarioCleanup();
-        }
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Name fields accept alphabetic characters")]
-        public void NameFieldsAcceptAlphabeticCharacters()
-        {
-            string[] tagsOfScenario = ((string[])(null));
-            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Name fields accept alphabetic characters", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 5
-    this.ScenarioInitialize(scenarioInfo);
-#line hidden
-            if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
-            {
-                testRunner.SkipScenario();
-            }
-            else
-            {
-                this.ScenarioStart();
-            }
-            this.ScenarioCleanup();
-        }
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Name fields accept hyphens and apostrophes")]
-        public void NameFieldsAcceptHyphensAndApostrophes()
-        {
-            string[] tagsOfScenario = ((string[])(null));
-            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Name fields accept hyphens and apostrophes", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 6
-    this.ScenarioInitialize(scenarioInfo);
-#line hidden
-            if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
-            {
-                testRunner.SkipScenario();
-            }
-            else
-            {
-                this.ScenarioStart();
-            }
-            this.ScenarioCleanup();
-        }
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Name fields accept names with spaces")]
-        public void NameFieldsAcceptNamesWithSpaces()
-        {
-            string[] tagsOfScenario = ((string[])(null));
-            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Name fields accept names with spaces", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 7
-    this.ScenarioInitialize(scenarioInfo);
-#line hidden
-            if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
-            {
-                testRunner.SkipScenario();
-            }
-            else
-            {
-                this.ScenarioStart();
-            }
-            this.ScenarioCleanup();
-        }
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Name fields accept names with Unicode characters")]
-        public void NameFieldsAcceptNamesWithUnicodeCharacters()
-        {
-            string[] tagsOfScenario = ((string[])(null));
-            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Name fields accept names with Unicode characters", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 8
-    this.ScenarioInitialize(scenarioInfo);
-#line hidden
-            if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
-            {
-                testRunner.SkipScenario();
-            }
-            else
-            {
-                this.ScenarioStart();
-            }
-            this.ScenarioCleanup();
-        }
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Name fields reject inputs longer than 50 characters")]
-        public void NameFieldsRejectInputsLongerThan50Characters()
-        {
-            string[] tagsOfScenario = ((string[])(null));
-            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Name fields reject inputs longer than 50 characters", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 9
-    this.ScenarioInitialize(scenarioInfo);
-#line hidden
-            if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
-            {
-                testRunner.SkipScenario();
-            }
-            else
-            {
-                this.ScenarioStart();
-            }
-            this.ScenarioCleanup();
-        }
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Name fields warns for numbers but does not block submission")]
-        public void NameFieldsWarnsForNumbersButDoesNotBlockSubmission()
-        {
-            string[] tagsOfScenario = ((string[])(null));
-            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Name fields warns for numbers but does not block submission", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 10
-    this.ScenarioInitialize(scenarioInfo);
-#line hidden
-            if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
-            {
-                testRunner.SkipScenario();
-            }
-            else
-            {
-                this.ScenarioStart();
-            }
-            this.ScenarioCleanup();
-        }
-        
-        [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Tab key navigates to the next field")]
         public void TabKeyNavigatesToTheNextField()
         {
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Tab key navigates to the next field", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 11
+#line 3
     this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
@@ -241,6 +90,48 @@ namespace SauceDemo.Tests.StepDefinitions.Features
             else
             {
                 this.ScenarioStart();
+#line 4
+        testRunner.Given("I open the login page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 5
+        testRunner.And("I log in as \"standard_user\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+                TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Product",
+                            "Order"});
+                table9.AddRow(new string[] {
+                            "Sauce Labs Backpack",
+                            "1"});
+                table9.AddRow(new string[] {
+                            "Sauce Labs Fleece Jacket",
+                            "2"});
+                table9.AddRow(new string[] {
+                            "Test.allTheThings() T-Shirt (Red)",
+                            "3"});
+                table9.AddRow(new string[] {
+                            "Sauce Labs Onesie",
+                            "4"});
+#line 6
+        testRunner.And("I add the following items to the cart:", ((string)(null)), table9, "And ");
+#line hidden
+#line 12
+        testRunner.And("I click the cart icon", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 13
+        testRunner.And("I click Checkout", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 14
+        testRunner.And("I click the \"First Name\" field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 15
+        testRunner.And("the active field is \"First Name\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 16
+        testRunner.When("I press the Tab key", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 17
+        testRunner.Then("the active field is \"Last Name\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
             }
             this.ScenarioCleanup();
         }
@@ -252,7 +143,7 @@ namespace SauceDemo.Tests.StepDefinitions.Features
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Shift+tab navigates to the previous field", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 12
+#line 19
     this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
@@ -262,6 +153,111 @@ namespace SauceDemo.Tests.StepDefinitions.Features
             else
             {
                 this.ScenarioStart();
+#line 20
+        testRunner.Given("I open the login page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 21
+        testRunner.And("I log in as \"standard_user\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+                TechTalk.SpecFlow.Table table10 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Product",
+                            "Order"});
+                table10.AddRow(new string[] {
+                            "Sauce Labs Backpack",
+                            "1"});
+                table10.AddRow(new string[] {
+                            "Sauce Labs Fleece Jacket",
+                            "2"});
+                table10.AddRow(new string[] {
+                            "Test.allTheThings() T-Shirt (Red)",
+                            "3"});
+                table10.AddRow(new string[] {
+                            "Sauce Labs Onesie",
+                            "4"});
+#line 22
+        testRunner.And("I add the following items to the cart:", ((string)(null)), table10, "And ");
+#line hidden
+#line 28
+        testRunner.And("I click the cart icon", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 29
+        testRunner.And("I click Checkout", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 30
+        testRunner.And("I click the \"Zip Code\" field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 31
+        testRunner.And("the active field is \"Zip Code\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 32
+        testRunner.When("I press the Shift+Tab keys", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 33
+        testRunner.Then("the active field is \"Last Name\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Continue button blocks page navigation when all fields are empty")]
+        public void ContinueButtonBlocksPageNavigationWhenAllFieldsAreEmpty()
+        {
+            string[] tagsOfScenario = ((string[])(null));
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Continue button blocks page navigation when all fields are empty", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 35
+    this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+#line 36
+        testRunner.Given("I open the login page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 37
+        testRunner.And("I log in as \"standard_user\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+                TechTalk.SpecFlow.Table table11 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Product",
+                            "Order"});
+                table11.AddRow(new string[] {
+                            "Sauce Labs Backpack",
+                            "1"});
+                table11.AddRow(new string[] {
+                            "Sauce Labs Bolt T-Shirt",
+                            "2"});
+                table11.AddRow(new string[] {
+                            "Test.allTheThings() T-Shirt (Red)",
+                            "3"});
+                table11.AddRow(new string[] {
+                            "Sauce Labs Onesie",
+                            "4"});
+#line 38
+        testRunner.And("I add the following items to the cart:", ((string)(null)), table11, "And ");
+#line hidden
+#line 44
+        testRunner.And("I click the cart icon", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 45
+        testRunner.And("I click Checkout", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 46
+        testRunner.When("I click Continue", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 47
+        testRunner.Then("the \"checkout information\" page is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 48
+        testRunner.And("the \"Error: First Name is required\" form error message is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 49
+        testRunner.And("all fields display error styling", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
             }
             this.ScenarioCleanup();
         }
@@ -273,7 +269,7 @@ namespace SauceDemo.Tests.StepDefinitions.Features
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Continue button blocks page navigation when First Name field is empty", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 13
+#line 52
     this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
@@ -283,6 +279,78 @@ namespace SauceDemo.Tests.StepDefinitions.Features
             else
             {
                 this.ScenarioStart();
+#line 53
+        testRunner.Given("I open the login page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 54
+        testRunner.And("I log in as \"standard_user\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+                TechTalk.SpecFlow.Table table12 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Product",
+                            "Order"});
+                table12.AddRow(new string[] {
+                            "Sauce Labs Backpack",
+                            "1"});
+                table12.AddRow(new string[] {
+                            "Sauce Labs Bolt T-Shirt",
+                            "2"});
+                table12.AddRow(new string[] {
+                            "Test.allTheThings() T-Shirt (Red)",
+                            "3"});
+                table12.AddRow(new string[] {
+                            "Sauce Labs Onesie",
+                            "4"});
+#line 55
+        testRunner.And("I add the following items to the cart:", ((string)(null)), table12, "And ");
+#line hidden
+#line 61
+        testRunner.And("I click the cart icon", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 62
+        testRunner.And("I click Checkout", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+                TechTalk.SpecFlow.Table table13 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Field",
+                            "Data"});
+                table13.AddRow(new string[] {
+                            "First Name",
+                            ""});
+                table13.AddRow(new string[] {
+                            "Last Name",
+                            "Howlett"});
+                table13.AddRow(new string[] {
+                            "Zip Code",
+                            "77478"});
+#line 63
+        testRunner.And("I enter the following data:", ((string)(null)), table13, "And ");
+#line hidden
+                TechTalk.SpecFlow.Table table14 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Field",
+                            "Data"});
+                table14.AddRow(new string[] {
+                            "First Name",
+                            ""});
+                table14.AddRow(new string[] {
+                            "Last Name",
+                            "Howlett"});
+                table14.AddRow(new string[] {
+                            "Zip Code",
+                            "77478"});
+#line 68
+        testRunner.And("the form displays the following data:", ((string)(null)), table14, "And ");
+#line hidden
+#line 73
+        testRunner.When("I click Continue", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 74
+        testRunner.Then("the \"checkout information\" page is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 75
+        testRunner.And("the \"Error: First Name is required\" form error message is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 76
+        testRunner.And("all fields display error styling", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
             }
             this.ScenarioCleanup();
         }
@@ -294,7 +362,7 @@ namespace SauceDemo.Tests.StepDefinitions.Features
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Continue button blocks page navigation when Last Name field is empty", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 14
+#line 78
     this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
@@ -304,6 +372,78 @@ namespace SauceDemo.Tests.StepDefinitions.Features
             else
             {
                 this.ScenarioStart();
+#line 79
+        testRunner.Given("I open the login page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 80
+        testRunner.And("I log in as \"standard_user\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+                TechTalk.SpecFlow.Table table15 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Product",
+                            "Order"});
+                table15.AddRow(new string[] {
+                            "Sauce Labs Backpack",
+                            "1"});
+                table15.AddRow(new string[] {
+                            "Sauce Labs Bolt T-Shirt",
+                            "2"});
+                table15.AddRow(new string[] {
+                            "Test.allTheThings() T-Shirt (Red)",
+                            "3"});
+                table15.AddRow(new string[] {
+                            "Sauce Labs Onesie",
+                            "4"});
+#line 81
+        testRunner.And("I add the following items to the cart:", ((string)(null)), table15, "And ");
+#line hidden
+#line 87
+        testRunner.And("I click the cart icon", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 88
+        testRunner.And("I click Checkout", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+                TechTalk.SpecFlow.Table table16 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Field",
+                            "Data"});
+                table16.AddRow(new string[] {
+                            "First Name",
+                            "James"});
+                table16.AddRow(new string[] {
+                            "Last Name",
+                            ""});
+                table16.AddRow(new string[] {
+                            "Zip Code",
+                            "77478"});
+#line 89
+        testRunner.And("I enter the following data:", ((string)(null)), table16, "And ");
+#line hidden
+                TechTalk.SpecFlow.Table table17 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Field",
+                            "Data"});
+                table17.AddRow(new string[] {
+                            "First Name",
+                            "James"});
+                table17.AddRow(new string[] {
+                            "Last Name",
+                            ""});
+                table17.AddRow(new string[] {
+                            "Zip Code",
+                            "77478"});
+#line 94
+        testRunner.And("the form displays the following data:", ((string)(null)), table17, "And ");
+#line hidden
+#line 99
+        testRunner.When("I click Continue", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 100
+        testRunner.Then("the \"checkout information\" page is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 101
+        testRunner.And("the \"Error: Last Name is required\" form error message is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 102
+        testRunner.And("all fields display error styling", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
             }
             this.ScenarioCleanup();
         }
@@ -315,7 +455,7 @@ namespace SauceDemo.Tests.StepDefinitions.Features
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Continue button blocks page navigation when Postal Code field is empty", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 15
+#line 104
     this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
@@ -325,50 +465,78 @@ namespace SauceDemo.Tests.StepDefinitions.Features
             else
             {
                 this.ScenarioStart();
-            }
-            this.ScenarioCleanup();
-        }
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Continue button navigates to Checkout: Overview page after validation succeeds")]
-        [NUnit.Framework.CategoryAttribute("page-navigation")]
-        public void ContinueButtonNavigatesToCheckoutOverviewPageAfterValidationSucceeds()
-        {
-            string[] tagsOfScenario = new string[] {
-                    "page-navigation"};
-            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Continue button navigates to Checkout: Overview page after validation succeeds", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 18
-    this.ScenarioInitialize(scenarioInfo);
+#line 105
+        testRunner.Given("I open the login page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-            if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
-            {
-                testRunner.SkipScenario();
-            }
-            else
-            {
-                this.ScenarioStart();
-            }
-            this.ScenarioCleanup();
-        }
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Continue button does not navigate after validation fails")]
-        public void ContinueButtonDoesNotNavigateAfterValidationFails()
-        {
-            string[] tagsOfScenario = ((string[])(null));
-            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Continue button does not navigate after validation fails", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 21
-    this.ScenarioInitialize(scenarioInfo);
+#line 106
+        testRunner.And("I log in as \"standard_user\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
-            {
-                testRunner.SkipScenario();
-            }
-            else
-            {
-                this.ScenarioStart();
+                TechTalk.SpecFlow.Table table18 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Product",
+                            "Order"});
+                table18.AddRow(new string[] {
+                            "Sauce Labs Backpack",
+                            "1"});
+                table18.AddRow(new string[] {
+                            "Sauce Labs Bolt T-Shirt",
+                            "2"});
+                table18.AddRow(new string[] {
+                            "Test.allTheThings() T-Shirt (Red)",
+                            "3"});
+                table18.AddRow(new string[] {
+                            "Sauce Labs Onesie",
+                            "4"});
+#line 107
+        testRunner.And("I add the following items to the cart:", ((string)(null)), table18, "And ");
+#line hidden
+#line 113
+        testRunner.And("I click the cart icon", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 114
+        testRunner.And("I click Checkout", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+                TechTalk.SpecFlow.Table table19 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Field",
+                            "Data"});
+                table19.AddRow(new string[] {
+                            "First Name",
+                            "James"});
+                table19.AddRow(new string[] {
+                            "Last Name",
+                            "Howlett"});
+                table19.AddRow(new string[] {
+                            "Zip Code",
+                            ""});
+#line 115
+        testRunner.And("I enter the following data:", ((string)(null)), table19, "And ");
+#line hidden
+                TechTalk.SpecFlow.Table table20 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Field",
+                            "Data"});
+                table20.AddRow(new string[] {
+                            "First Name",
+                            "James"});
+                table20.AddRow(new string[] {
+                            "Last Name",
+                            "Howlett"});
+                table20.AddRow(new string[] {
+                            "Zip Code",
+                            ""});
+#line 120
+        testRunner.And("the form displays the following data:", ((string)(null)), table20, "And ");
+#line hidden
+#line 125
+        testRunner.When("I click Continue", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 126
+        testRunner.Then("the \"checkout information\" page is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 127
+        testRunner.And("the \"Error: Postal Code is required\" form error message is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 128
+        testRunner.And("all fields display error styling", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
             }
             this.ScenarioCleanup();
         }
@@ -380,7 +548,89 @@ namespace SauceDemo.Tests.StepDefinitions.Features
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Validation error is cleared after closing the message", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 23
+#line 130
+    this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+#line 131
+        testRunner.Given("I open the login page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 132
+        testRunner.And("I log in as \"standard_user\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+                TechTalk.SpecFlow.Table table21 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Product",
+                            "Order"});
+                table21.AddRow(new string[] {
+                            "Sauce Labs Backpack",
+                            "1"});
+                table21.AddRow(new string[] {
+                            "Sauce Labs Bolt T-Shirt",
+                            "2"});
+                table21.AddRow(new string[] {
+                            "Test.allTheThings() T-Shirt (Red)",
+                            "3"});
+                table21.AddRow(new string[] {
+                            "Sauce Labs Onesie",
+                            "4"});
+#line 133
+        testRunner.And("I add the following items to the cart:", ((string)(null)), table21, "And ");
+#line hidden
+#line 139
+        testRunner.And("I click the cart icon", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 140
+        testRunner.And("I click Checkout", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+                TechTalk.SpecFlow.Table table22 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Field",
+                            "Data"});
+                table22.AddRow(new string[] {
+                            "First Name",
+                            "James"});
+                table22.AddRow(new string[] {
+                            "Last Name",
+                            "Howlett"});
+                table22.AddRow(new string[] {
+                            "Zip Code",
+                            ""});
+#line 141
+        testRunner.And("I enter the following data:", ((string)(null)), table22, "And ");
+#line hidden
+#line 146
+        testRunner.And("I click Continue", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 147
+        testRunner.And("the \"Error: Postal Code is required\" form error message is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 148
+        testRunner.When("I dismiss the form error message", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 149
+        testRunner.Then("no fields display error styling", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Continue button navigates to Checkout: Overview page after validation succeeds")]
+        [NUnit.Framework.CategoryAttribute("page-navigation")]
+        [NUnit.Framework.CategoryAttribute("wip")]
+        public void ContinueButtonNavigatesToCheckoutOverviewPageAfterValidationSucceeds()
+        {
+            string[] tagsOfScenario = new string[] {
+                    "page-navigation",
+                    "wip"};
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Continue button navigates to Checkout: Overview page after validation succeeds", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 152
     this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
@@ -397,34 +647,15 @@ namespace SauceDemo.Tests.StepDefinitions.Features
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Cancel button navigates to Your Cart page")]
         [NUnit.Framework.CategoryAttribute("page-navigation")]
+        [NUnit.Framework.CategoryAttribute("wip")]
         public void CancelButtonNavigatesToYourCartPage()
         {
             string[] tagsOfScenario = new string[] {
-                    "page-navigation"};
+                    "page-navigation",
+                    "wip"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Cancel button navigates to Your Cart page", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 26
-    this.ScenarioInitialize(scenarioInfo);
-#line hidden
-            if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
-            {
-                testRunner.SkipScenario();
-            }
-            else
-            {
-                this.ScenarioStart();
-            }
-            this.ScenarioCleanup();
-        }
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Cannot access Checkout: Your Information page via direct URL")]
-        public void CannotAccessCheckoutYourInformationPageViaDirectURL()
-        {
-            string[] tagsOfScenario = ((string[])(null));
-            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Cannot access Checkout: Your Information page via direct URL", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 27
+#line 155
     this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))

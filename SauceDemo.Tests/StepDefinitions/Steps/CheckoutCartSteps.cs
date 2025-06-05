@@ -1,5 +1,6 @@
 namespace SauceDemo.Tests.StepDefinitions.Steps
 {
+    using SauceDemo.Tests.Constants;
     using SauceDemo.Tests.UI.Pages;
     using TechTalk.SpecFlow;
 
@@ -7,11 +8,15 @@ namespace SauceDemo.Tests.StepDefinitions.Steps
     public class CheckoutCartSteps : BaseSteps
     {
         private readonly CheckoutCartPage checkoutCartPage;
+        private readonly ScenarioContext scenarioContext;
+        private readonly CheckoutInformationPage checkoutInformationPage;
 
         public CheckoutCartSteps(ScenarioContext scenarioContext)
             : base(scenarioContext)
         {
             checkoutCartPage = PageComponent<CheckoutCartPage>();
+            checkoutInformationPage = PageComponent<CheckoutInformationPage>();
+            this.scenarioContext = scenarioContext;
         }
 
         [Given(@"I click Continue Shopping")]
@@ -21,10 +26,12 @@ namespace SauceDemo.Tests.StepDefinitions.Steps
             checkoutCartPage.ClickContinueShopping();
         }
 
+        [Given(@"I click Checkout")]
         [When(@"I click Checkout")]
         public void IClickCheckout()
         {
             checkoutCartPage.ClickCheckout();
+            scenarioContext[ScenarioContextKeys.ActiveForm] = checkoutInformationPage.Form;
         }
     }
 }

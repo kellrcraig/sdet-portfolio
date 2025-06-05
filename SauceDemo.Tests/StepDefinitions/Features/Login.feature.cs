@@ -130,7 +130,11 @@ namespace SauceDemo.Tests.StepDefinitions.Features
         testRunner.Then("the \"login\" page is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 12
-        testRunner.And("the \"Epic sadface: Sorry, this user has been locked out.\" message is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+        testRunner.And("the \"Epic sadface: Sorry, this user has been locked out.\" form error message is d" +
+                        "isplayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 13
+        testRunner.And("all fields display error styling", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -143,7 +147,7 @@ namespace SauceDemo.Tests.StepDefinitions.Features
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("User with incorrect username cannot log in", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 14
+#line 15
     this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
@@ -153,18 +157,21 @@ namespace SauceDemo.Tests.StepDefinitions.Features
             else
             {
                 this.ScenarioStart();
-#line 15
+#line 16
         testRunner.Given("I open the login page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 16
+#line 17
         testRunner.When("I log in as \"incorrect_username\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 17
+#line 18
         testRunner.Then("the \"login\" page is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 18
-        testRunner.And("the \"Epic sadface: Username and password do not match any user in this service\" m" +
-                        "essage is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 19
+        testRunner.And("the \"Epic sadface: Username and password do not match any user in this service\" f" +
+                        "orm error message is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 20
+        testRunner.And("all fields display error styling", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -177,7 +184,7 @@ namespace SauceDemo.Tests.StepDefinitions.Features
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("User with empty username cannot log in", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 20
+#line 22
     this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
@@ -187,17 +194,20 @@ namespace SauceDemo.Tests.StepDefinitions.Features
             else
             {
                 this.ScenarioStart();
-#line 21
+#line 23
         testRunner.Given("I open the login page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 22
+#line 24
         testRunner.When("I log in with username \"\" and password \"secret_sauce\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 23
+#line 25
         testRunner.Then("the \"login\" page is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 24
-        testRunner.And("the \"Epic sadface: Username is required\" message is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 26
+        testRunner.And("the \"Epic sadface: Username is required\" form error message is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 27
+        testRunner.And("all fields display error styling", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -210,7 +220,7 @@ namespace SauceDemo.Tests.StepDefinitions.Features
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("User with empty password cannot log in", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 26
+#line 29
     this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
@@ -220,17 +230,20 @@ namespace SauceDemo.Tests.StepDefinitions.Features
             else
             {
                 this.ScenarioStart();
-#line 27
+#line 30
         testRunner.Given("I open the login page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 28
+#line 31
         testRunner.When("I log in with username \"standard_user\" and password \"\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 29
+#line 32
         testRunner.Then("the \"login\" page is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 30
-        testRunner.And("the \"Epic sadface: Password is required\" message is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 33
+        testRunner.And("the \"Epic sadface: Password is required\" form error message is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 34
+        testRunner.And("all fields display error styling", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -243,7 +256,7 @@ namespace SauceDemo.Tests.StepDefinitions.Features
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("User with incorrect password cannot log in", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 32
+#line 36
     this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
@@ -253,18 +266,21 @@ namespace SauceDemo.Tests.StepDefinitions.Features
             else
             {
                 this.ScenarioStart();
-#line 33
+#line 37
         testRunner.Given("I open the login page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 34
+#line 38
         testRunner.When("I log in with username \"standard_user\" and password \"incorrect_password\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 35
+#line 39
         testRunner.Then("the \"login\" page is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 36
-        testRunner.And("the \"Epic sadface: Username and password do not match any user in this service\" m" +
-                        "essage is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 40
+        testRunner.And("the \"Epic sadface: Username and password do not match any user in this service\" f" +
+                        "orm error message is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 41
+        testRunner.And("all fields display error styling", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -277,7 +293,7 @@ namespace SauceDemo.Tests.StepDefinitions.Features
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Login error is cleared after closing the message", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 38
+#line 43
     this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
@@ -287,17 +303,24 @@ namespace SauceDemo.Tests.StepDefinitions.Features
             else
             {
                 this.ScenarioStart();
-#line 39
+#line 44
         testRunner.Given("I open the login page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 40
+#line 45
         testRunner.And("I log in as \"incorrect_username\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 41
-        testRunner.When("I dismiss the error message", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 46
+        testRunner.And("the \"Epic sadface: Username and password do not match any user in this service\" f" +
+                        "orm error message is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 42
-        testRunner.Then("the error message is not displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 47
+        testRunner.When("I dismiss the form error message", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 48
+        testRunner.Then("the form error message is not displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 49
+        testRunner.And("no fields display error styling", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
             this.ScenarioCleanup();
