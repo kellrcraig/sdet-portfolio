@@ -39,8 +39,3 @@ jobs:
         name: Screenshots
         path: ./SauceDemo.Tests/TestResults/Screenshots
         if-no-files-found: warn
-
-    - name: List screenshot files
-      run: |
-        echo "Working directory: $PWD"
-        find . -type f -iname "*.png"
