@@ -8,15 +8,12 @@ namespace SauceDemo.Tests.StepDefinitions.Steps
     [Binding]
     public class FormSteps : BaseSteps
     {
-        private readonly ScenarioContext scenarioContext;
-
         public FormSteps(ScenarioContext scenarioContext)
             : base(scenarioContext)
         {
-            this.scenarioContext = scenarioContext;
         }
 
-        private FormComponent FormComponent => scenarioContext[ScenarioContextKeys.ActiveForm] as FormComponent
+        private FormComponent FormComponent => ScenarioContext[ScenarioContextKeys.ActiveForm] as FormComponent
                 ?? throw new InvalidOperationException("FormComponent not found in ScenarioContext.");
 
         [Given(@"I click the ""(.*)"" field")]

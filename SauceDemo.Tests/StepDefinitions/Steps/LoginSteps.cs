@@ -10,13 +10,10 @@ namespace SauceDemo.Tests.StepDefinitions.Steps
     {
         private readonly LoginPage loginPage;
 
-        private readonly ScenarioContext scenarioContext;
-
         public LoginSteps(ScenarioContext scenarioContext)
             : base(scenarioContext)
         {
             loginPage = PageComponent<LoginPage>();
-            this.scenarioContext = scenarioContext;
         }
 
         [Given(@"I am on the login page")]
@@ -24,7 +21,7 @@ namespace SauceDemo.Tests.StepDefinitions.Steps
         public void IOpenTheLoginPage()
         {
             loginPage.NavigateTo();
-            scenarioContext[ScenarioContextKeys.ActiveForm] = loginPage.Form;
+            ScenarioContext[ScenarioContextKeys.ActiveForm] = loginPage.Form;
         }
 
         [When(@"I log in with username ""(.*)"" and password ""(.*)""")]

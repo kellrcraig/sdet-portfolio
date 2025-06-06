@@ -30,6 +30,7 @@ namespace SauceDemo.Tests.UI.Components
         public void ClickAboutLink()
         {
             WaitHelper.WaitForElementToBeClickableInDom(Driver, LocatorHelper.ById("about_sidebar_link"))?.Click();
+            throw new Exception();
         }
 
         public void ClickLogoutLink()

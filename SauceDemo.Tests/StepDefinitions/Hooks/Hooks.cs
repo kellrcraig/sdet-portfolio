@@ -1,18 +1,47 @@
 namespace SauceDemo.Tests.StepDefinitions.Hooks
 {
+    using System.Globalization;
     using OpenQA.Selenium;
     using OpenQA.Selenium.Chrome;
     using SauceDemo.Tests.Constants;
+    using SauceDemo.Tests.Helpers;
     using TechTalk.SpecFlow;
 
     [Binding]
-    public class DriverHooks
+    public class Hooks
     {
         private readonly ScenarioContext scenarioContext;
 
-        public DriverHooks(ScenarioContext scenarioContext)
+        public Hooks(ScenarioContext scenarioContext)
         {
             this.scenarioContext = scenarioContext;
+        }
+
+        private IWebDriver Driver =>
+            scenarioContext.TryGetValue(ScenarioContextKeys.Driver, out var driverObj)
+            && driverObj is IWebDriver driver
+                ? driver
+                : throw new InvalidOperationException("WebDriver not found in ScenarioContext.");
+
+        [BeforeTestRun]
+        public static void CleanScreenshots()
+        {
+            var dir = ProjectPathHelper.GetScreenshotOutputPath();
+            if (Directory.Exists(dir))
+            {
+                Directory.Delete(dir, recursive: true);
+            }
+        }
+
+        [AfterStep]
+        public void TakeScreenshotOnStepFailure()
+        {
+            if (scenarioContext.TestError != null)
+            {
+                var timestamp = DateTime.UtcNow.ToString("yyyy-MM-dd_HH-mm-ss-fff", CultureInfo.InvariantCulture);
+                var stepName = scenarioContext.StepContext.StepInfo.BindingMatch?.StepBinding?.Method?.Name ?? "UnknownStep";
+                ScreenshotHelper.Take($"{timestamp}_{stepName}_Failed", Driver);
+            }
         }
 
         [BeforeScenario]
@@ -75,10 +104,7 @@ namespace SauceDemo.Tests.StepDefinitions.Hooks
         [AfterScenario]
         public void TearDown()
         {
-            if (scenarioContext.TryGetValue(ScenarioContextKeys.Driver, out IWebDriver? driver))
-            {
-                driver?.Quit();
-            }
+            Driver.Quit();
         }
     }
 }
