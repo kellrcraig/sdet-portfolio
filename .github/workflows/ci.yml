@@ -32,9 +32,10 @@ jobs:
         name: test-results
         path: '**/*.trx'
 
-    - name: Upload screenshots
+    - name: Upload Screenshots as Artifact
       if: failure()
       uses: actions/upload-artifact@v4
       with:
         name: Screenshots
-        path: TestResults/Screenshots
+        path: SauceDemo.Tests/TestResults/Screenshots
+        if-no-files-found: warn
