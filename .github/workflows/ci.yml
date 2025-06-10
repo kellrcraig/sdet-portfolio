@@ -2,7 +2,7 @@ name: .NET Test Automation
 
 on:
   push:
-    branches: [ main, fix/flaky-about-link-test ]
+    branches: [ ]
   pull_request:
     branches: [ main ]
 
