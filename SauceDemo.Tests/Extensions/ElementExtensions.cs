@@ -75,5 +75,10 @@ namespace SauceDemo.Tests.Extensions
                 return null;
             }
         }
+
+        public static bool IsVisible(this IWebElement? element)
+        {
+            return element != null && element.Displayed;
+        }
     }
 }
