@@ -9,9 +9,12 @@ namespace SauceDemo.Tests.StepDefinitions.Steps
     {
         protected BaseSteps(ScenarioContext scenarioContext)
         {
+            ScenarioContext = scenarioContext;
             Driver = scenarioContext[ScenarioContextKeys.Driver] as IWebDriver
                       ?? throw new InvalidOperationException("WebDriver not found in ScenarioContext.");
         }
+
+        protected ScenarioContext ScenarioContext { get; }
 
         protected IWebDriver Driver { get; }
 

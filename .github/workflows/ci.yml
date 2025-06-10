@@ -1,8 +1,8 @@
 name: .NET Test Automation
 
 on:
-  push:
-    branches: [ main ]
+  #push:
+  #  branches: [ ]
   pull_request:
     branches: [ main ]
 
@@ -29,5 +29,13 @@ jobs:
       if: always()
       uses: actions/upload-artifact@v4
       with:
-        name: test-results
+        name: TestResults
         path: '**/*.trx'
+
+    - name: Upload Screenshots as Artifact
+      if: failure()
+      uses: actions/upload-artifact@v4
+      with:
+        name: Screenshots
+        path: ./SauceDemo.Tests/TestResults/Screenshots
+        if-no-files-found: warn
