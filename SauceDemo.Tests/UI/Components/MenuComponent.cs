@@ -7,6 +7,8 @@ namespace SauceDemo.Tests.UI.Components
 
     public class MenuComponent : UiObjectBase
     {
+        private readonly By menuLocator = LocatorHelper.ByClassName("bm-menu-wrap");
+
         public MenuComponent(IWebDriver driver)
             : base(driver)
         {
@@ -20,6 +22,12 @@ namespace SauceDemo.Tests.UI.Components
         public void CloseMenu()
         {
             WaitHelper.WaitForElementToBeClickableInDom(Driver, LocatorHelper.ById("react-burger-cross-btn"))?.Click();
+            WaitHelper.WaitForElementToDisappear(Driver, menuLocator);
+        }
+
+        public bool MenuIsVisible()
+        {
+            return Driver.FindElementSafe(menuLocator).IsVisible();
         }
 
         public void ClickAllItemsLink()
@@ -40,14 +48,6 @@ namespace SauceDemo.Tests.UI.Components
         public void ClickResetLink()
         {
             WaitHelper.WaitForElementToBeClickableInDom(Driver, LocatorHelper.ById("reset_sidebar_link"))?.Click();
-        }
-
-        public bool MenuIsVisible()
-        {
-            var locator = LocatorHelper.ByClassName("bm-menu-wrap");
-            WaitHelper.WaitForElementToDisappear(Driver, locator);
-            var element = Driver.FindElementSafe(locator);
-            return element != null && element.Displayed;
         }
     }
 }

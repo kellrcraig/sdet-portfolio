@@ -18,8 +18,7 @@ namespace SauceDemo.Tests.UI.Components
 
         public bool CartBadgeIsVisible()
         {
-            var element = Driver.FindElementSafe(cartBadgeLocator);
-            return element != null && element.Displayed;
+            return Driver.FindElementSafe(cartBadgeLocator).IsVisible();
         }
 
         public void ClickCartIcon()

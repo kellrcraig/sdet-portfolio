@@ -34,8 +34,7 @@ namespace SauceDemo.Tests.UI.Components
 
         public bool ErrorIconIsVisible()
         {
-            var element = Driver.FindElementSafe(LocatorHelper.ByCssSelector($"#{fieldID} ~ svg.error_icon"));
-            return element != null && element.Displayed;
+            return Driver.FindElementSafe(LocatorHelper.ByCssSelector($"#{fieldID} ~ svg.error_icon")).IsVisible();
         }
 
         public string GetInputBottomBorderColor()
