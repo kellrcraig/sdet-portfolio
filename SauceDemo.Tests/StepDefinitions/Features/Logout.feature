@@ -49,4 +49,4 @@ Feature: Logout
 
     @wip
     #we are going to navigate to the cart. Maybe back button?
-    Scenario: Idle user cannot cannot modify cart after automatic logout
+    Scenario: Idle user cannot modify cart after automatic logout
