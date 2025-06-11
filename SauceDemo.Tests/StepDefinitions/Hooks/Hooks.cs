@@ -79,7 +79,7 @@ namespace SauceDemo.Tests.StepDefinitions.Hooks
             options.AddArgument("--disable-blink-features=AutomationControlled");
 
             // Optional but helps remove the "Chrome is being controlled" banner.
-            options.AddArgument("disable-infobars");
+            options.AddArgument("--disable-infobars");
 
             // Disable password manager:
             options.AddUserProfilePreference("credentials_enable_service", false);
