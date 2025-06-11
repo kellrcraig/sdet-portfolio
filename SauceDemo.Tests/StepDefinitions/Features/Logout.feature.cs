@@ -308,14 +308,14 @@ namespace SauceDemo.Tests.StepDefinitions.Features
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Idle user cannot cannot modify cart after automatic logout")]
+        [NUnit.Framework.DescriptionAttribute("Idle user cannot modify cart after automatic logout")]
         [NUnit.Framework.CategoryAttribute("wip")]
-        public void IdleUserCannotCannotModifyCartAfterAutomaticLogout()
+        public void IdleUserCannotModifyCartAfterAutomaticLogout()
         {
             string[] tagsOfScenario = new string[] {
                     "wip"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Idle user cannot cannot modify cart after automatic logout", null, tagsOfScenario, argumentsOfScenario, featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Idle user cannot modify cart after automatic logout", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 52
     this.ScenarioInitialize(scenarioInfo);
 #line hidden

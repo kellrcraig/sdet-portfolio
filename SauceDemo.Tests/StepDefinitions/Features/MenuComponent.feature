@@ -1,11 +1,5 @@
 Feature: Menu Component
 
-    # Reset App State behavior is tested in:
-    # - Inventory.feature
-    # - InventoryDetail.feature
-    # - CheckoutYourCart.feature
-    # - CheckoutOverview.feature
-
     Scenario: Close button hides the menu
         Given I open the login page
         And I log in as "standard_user"
