@@ -23,7 +23,7 @@ jobs:
       run: pwsh SauceDemo.Tests/Scripts/build.ps1
 
     - name: Run test script
-      run: pwsh SauceDemo.Tests/Scripts/test.ps1
+      run: pwsh SauceDemo.Tests/Scripts/test_ci.ps1
 
     - name: Upload Test Results as Artifact
       if: always()

@@ -19,6 +19,7 @@ namespace SauceDemo.Tests.StepDefinitions.Steps
         [When(@"I click the cart icon")]
         public void IClickTheCartIcon() => cartButtonComponent.ClickCartIcon();
 
+        [Given(@"the cart badge displays ""(.*)""")]
         [Then(@"the cart badge displays ""(.*)""")]
         public void ThenTheCartBadgeDisplays(string expectedCount)
         {

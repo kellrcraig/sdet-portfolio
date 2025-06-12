@@ -60,6 +60,3 @@ Feature: Item Detail
         Then the "item detail" page is displayed
         And the item detail product area displays the "Sauce Labs Backpack"
         And the cart button displays "Add to cart"
-
-    @reset-app-state @wip
-    Scenario: Reset App State link reverts item state and cart icon count to defaults

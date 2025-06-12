@@ -41,6 +41,12 @@ namespace SauceDemo.Tests.StepDefinitions.Steps
             menu.ClickAboutLink();
         }
 
+        [When(@"I click the reset app state link")]
+        public void IClickTheResetAppStateLink()
+        {
+            menu.ClickResetLink();
+        }
+
         [When(@"I close the menu")]
         public void ICloseTheMenu()
         {

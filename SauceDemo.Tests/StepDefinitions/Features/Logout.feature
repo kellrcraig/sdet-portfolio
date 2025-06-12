@@ -44,9 +44,11 @@ Feature: Logout
             | Product                           | Order |
             | Sauce Labs Backpack               | 1     |        
 
-    @wip
-    Scenario: User who is actively using the app is not automatically logged out after 10 minutes
-
-    @wip
-    #we are going to navigate to the cart. Maybe back button?
-    Scenario: Idle user cannot modify cart after automatic logout
+    @regression
+    Scenario: User is logged out after 10 minutes
+        Given I open the login page
+        And I log in as "standard_user"
+        And I wait for "10" minutes
+        When I click the cart icon
+        Then the "login" page is displayed
+        And the "Epic sadface: You can only access '/cart.html' when you are logged in." form error message is displayed

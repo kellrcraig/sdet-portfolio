@@ -187,6 +187,65 @@ namespace SauceDemo.Tests.StepDefinitions.Features
             }
             this.ScenarioCleanup();
         }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Reset App State link reverts cart icon count to default")]
+        [NUnit.Framework.CategoryAttribute("reset-app-state")]
+        public void ResetAppStateLinkRevertsCartIconCountToDefault()
+        {
+            string[] tagsOfScenario = new string[] {
+                    "reset-app-state"};
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Reset App State link reverts cart icon count to default", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 29
+    this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+#line 30
+        testRunner.Given("I open the login page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 31
+        testRunner.And("I log in as \"standard_user\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+                TechTalk.SpecFlow.Table table53 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Product",
+                            "Order"});
+                table53.AddRow(new string[] {
+                            "Sauce Labs Bolt T-Shirt",
+                            "1"});
+                table53.AddRow(new string[] {
+                            "Sauce Labs Bike Light",
+                            "2"});
+                table53.AddRow(new string[] {
+                            "Sauce Labs Fleece Jacket",
+                            "3"});
+                table53.AddRow(new string[] {
+                            "Sauce Labs Onesie",
+                            "4"});
+#line 32
+        testRunner.And("I add the following items to the cart:", ((string)(null)), table53, "And ");
+#line hidden
+#line 38
+        testRunner.And("the cart badge displays \"4\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 39
+        testRunner.And("I open the menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 40
+        testRunner.When("I click the reset app state link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 41
+        testRunner.Then("the cart badge is not displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
     }
 }
 #pragma warning restore

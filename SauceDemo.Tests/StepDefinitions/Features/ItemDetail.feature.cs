@@ -345,31 +345,6 @@ namespace SauceDemo.Tests.StepDefinitions.Features
             }
             this.ScenarioCleanup();
         }
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Reset App State link reverts item state and cart icon count to defaults")]
-        [NUnit.Framework.CategoryAttribute("reset-app-state")]
-        [NUnit.Framework.CategoryAttribute("wip")]
-        public void ResetAppStateLinkRevertsItemStateAndCartIconCountToDefaults()
-        {
-            string[] tagsOfScenario = new string[] {
-                    "reset-app-state",
-                    "wip"};
-            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Reset App State link reverts item state and cart icon count to defaults", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 65
-    this.ScenarioInitialize(scenarioInfo);
-#line hidden
-            if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
-            {
-                testRunner.SkipScenario();
-            }
-            else
-            {
-                this.ScenarioStart();
-            }
-            this.ScenarioCleanup();
-        }
     }
 }
 #pragma warning restore
