@@ -21,14 +21,12 @@ namespace SauceDemo.Tests.StepDefinitions.Features
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
     [NUnit.Framework.DescriptionAttribute("Checkout Complete")]
-    [NUnit.Framework.CategoryAttribute("wip")]
     public partial class CheckoutCompleteFeature
     {
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
         
-        private static string[] featureTags = new string[] {
-                "wip"};
+        private static string[] featureTags = ((string[])(null));
         
 #line 1 "CheckoutComplete.feature"
 #line hidden
@@ -84,7 +82,7 @@ namespace SauceDemo.Tests.StepDefinitions.Features
                     "page-navigation"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Back Home button navigates to Inventory page with empty cart", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 5
+#line 4
     this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
@@ -94,6 +92,66 @@ namespace SauceDemo.Tests.StepDefinitions.Features
             else
             {
                 this.ScenarioStart();
+#line 5
+        testRunner.Given("I open the login page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 6
+        testRunner.And("I log in as \"standard_user\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+                TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Product",
+                            "Order"});
+                table9.AddRow(new string[] {
+                            "Sauce Labs Backpack",
+                            "1"});
+                table9.AddRow(new string[] {
+                            "Sauce Labs Bolt T-Shirt",
+                            "2"});
+                table9.AddRow(new string[] {
+                            "Test.allTheThings() T-Shirt (Red)",
+                            "3"});
+                table9.AddRow(new string[] {
+                            "Sauce Labs Onesie",
+                            "4"});
+#line 7
+        testRunner.And("I add the following items to the cart:", ((string)(null)), table9, "And ");
+#line hidden
+#line 13
+        testRunner.And("I click the cart icon", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 14
+        testRunner.And("I click Checkout", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+                TechTalk.SpecFlow.Table table10 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Field",
+                            "Data"});
+                table10.AddRow(new string[] {
+                            "First Name",
+                            "James"});
+                table10.AddRow(new string[] {
+                            "Last Name",
+                            "Howlett"});
+                table10.AddRow(new string[] {
+                            "Zip Code",
+                            "77478"});
+#line 15
+        testRunner.And("I enter the following data:", ((string)(null)), table10, "And ");
+#line hidden
+#line 20
+        testRunner.And("I click Continue", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 21
+        testRunner.And("I click Finish", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 22
+        testRunner.When("I click Back Home", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 23
+        testRunner.Then("the \"inventory\" page is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 24
+        testRunner.And("the cart badge is not displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
             }
             this.ScenarioCleanup();
         }
@@ -105,7 +163,7 @@ namespace SauceDemo.Tests.StepDefinitions.Features
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Thank you message and confirmation icon are displayed", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 8
+#line 26
     this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
@@ -115,27 +173,60 @@ namespace SauceDemo.Tests.StepDefinitions.Features
             else
             {
                 this.ScenarioStart();
-            }
-            this.ScenarioCleanup();
-        }
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Cannot access Checkout: Complete page via direct URL")]
-        public void CannotAccessCheckoutCompletePageViaDirectURL()
-        {
-            string[] tagsOfScenario = ((string[])(null));
-            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Cannot access Checkout: Complete page via direct URL", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 11
-    this.ScenarioInitialize(scenarioInfo);
+#line 27
+        testRunner.Given("I open the login page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-            if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
-            {
-                testRunner.SkipScenario();
-            }
-            else
-            {
-                this.ScenarioStart();
+#line 28
+        testRunner.And("I log in as \"standard_user\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+                TechTalk.SpecFlow.Table table11 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Product",
+                            "Order"});
+                table11.AddRow(new string[] {
+                            "Sauce Labs Backpack",
+                            "1"});
+                table11.AddRow(new string[] {
+                            "Sauce Labs Bolt T-Shirt",
+                            "2"});
+                table11.AddRow(new string[] {
+                            "Test.allTheThings() T-Shirt (Red)",
+                            "3"});
+                table11.AddRow(new string[] {
+                            "Sauce Labs Onesie",
+                            "4"});
+#line 29
+        testRunner.And("I add the following items to the cart:", ((string)(null)), table11, "And ");
+#line hidden
+#line 35
+        testRunner.And("I click the cart icon", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 36
+        testRunner.And("I click Checkout", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+                TechTalk.SpecFlow.Table table12 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Field",
+                            "Data"});
+                table12.AddRow(new string[] {
+                            "First Name",
+                            "James"});
+                table12.AddRow(new string[] {
+                            "Last Name",
+                            "Howlett"});
+                table12.AddRow(new string[] {
+                            "Zip Code",
+                            "77478"});
+#line 37
+        testRunner.And("I enter the following data:", ((string)(null)), table12, "And ");
+#line hidden
+#line 42
+        testRunner.And("I click Continue", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 43
+        testRunner.When("I click Finish", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 44
+        testRunner.Then("the Thank You message is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
             }
             this.ScenarioCleanup();
         }
