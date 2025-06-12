@@ -426,6 +426,29 @@ namespace SauceDemo.Tests.StepDefinitions.Features
             }
             this.ScenarioCleanup();
         }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("User who is actively using the app is not automatically logged out after 10 minut" +
+            "es")]
+        public void UserWhoIsActivelyUsingTheAppIsNotAutomaticallyLoggedOutAfter10Minutes()
+        {
+            string[] tagsOfScenario = ((string[])(null));
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("User who is actively using the app is not automatically logged out after 10 minut" +
+                    "es", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 28
+    this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+            }
+            this.ScenarioCleanup();
+        }
     }
 }
 #pragma warning restore

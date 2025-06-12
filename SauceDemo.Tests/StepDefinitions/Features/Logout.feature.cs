@@ -283,16 +283,14 @@ namespace SauceDemo.Tests.StepDefinitions.Features
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("User who is actively using the app is not automatically logged out after 10 minut" +
-            "es")]
-        [NUnit.Framework.CategoryAttribute("wip")]
-        public void UserWhoIsActivelyUsingTheAppIsNotAutomaticallyLoggedOutAfter10Minutes()
+        [NUnit.Framework.DescriptionAttribute("User is logged out after 10 minutes")]
+        [NUnit.Framework.CategoryAttribute("regression")]
+        public void UserIsLoggedOutAfter10Minutes()
         {
             string[] tagsOfScenario = new string[] {
-                    "wip"};
+                    "regression"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("User who is actively using the app is not automatically logged out after 10 minut" +
-                    "es", null, tagsOfScenario, argumentsOfScenario, featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("User is logged out after 10 minutes", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 48
     this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -303,29 +301,25 @@ namespace SauceDemo.Tests.StepDefinitions.Features
             else
             {
                 this.ScenarioStart();
-            }
-            this.ScenarioCleanup();
-        }
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Idle user cannot modify cart after automatic logout")]
-        [NUnit.Framework.CategoryAttribute("wip")]
-        public void IdleUserCannotModifyCartAfterAutomaticLogout()
-        {
-            string[] tagsOfScenario = new string[] {
-                    "wip"};
-            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Idle user cannot modify cart after automatic logout", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 52
-    this.ScenarioInitialize(scenarioInfo);
+#line 49
+        testRunner.Given("I open the login page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-            if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
-            {
-                testRunner.SkipScenario();
-            }
-            else
-            {
-                this.ScenarioStart();
+#line 50
+        testRunner.And("I log in as \"standard_user\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 51
+        testRunner.And("I wait for \"10\" minutes", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 52
+        testRunner.When("I click the cart icon", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 53
+        testRunner.Then("the \"login\" page is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 54
+        testRunner.And("the \"Epic sadface: You can only access \'/cart.html\' when you are logged in.\" form" +
+                        " error message is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
             }
             this.ScenarioCleanup();
         }
