@@ -23,4 +23,5 @@ Feature: Known Issues
     Scenario: Name fields reject inputs longer than 50 characters
     Scenario: Name fields warns for numbers but does not block submission
     Scenario: Cannot access Checkout: Your Information page via direct URL    
-    Scenario: Cannot access Checkout: Overview page via direct URL    
+    Scenario: Cannot access Checkout: Overview page via direct URL
+    Scenario: Cannot access Checkout: Complete page via direct URL    

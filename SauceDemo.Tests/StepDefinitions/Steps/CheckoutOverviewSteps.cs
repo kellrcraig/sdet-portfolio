@@ -15,6 +15,7 @@ namespace SauceDemo.Tests.StepDefinitions.Steps
             checkoutOverviewPage = PageComponent<CheckoutOverviewPage>();
         }
 
+        [Given(@"I click Finish")]
         [When(@"I click Finish")]
         public void IClickFinish()
         {

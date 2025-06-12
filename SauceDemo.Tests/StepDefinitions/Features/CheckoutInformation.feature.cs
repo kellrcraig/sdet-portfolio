@@ -96,23 +96,23 @@ namespace SauceDemo.Tests.StepDefinitions.Features
 #line 5
         testRunner.And("I log in as \"standard_user\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table13 = new TechTalk.SpecFlow.Table(new string[] {
                             "Product",
                             "Order"});
-                table9.AddRow(new string[] {
+                table13.AddRow(new string[] {
                             "Sauce Labs Backpack",
                             "1"});
-                table9.AddRow(new string[] {
+                table13.AddRow(new string[] {
                             "Sauce Labs Fleece Jacket",
                             "2"});
-                table9.AddRow(new string[] {
+                table13.AddRow(new string[] {
                             "Test.allTheThings() T-Shirt (Red)",
                             "3"});
-                table9.AddRow(new string[] {
+                table13.AddRow(new string[] {
                             "Sauce Labs Onesie",
                             "4"});
 #line 6
-        testRunner.And("I add the following items to the cart:", ((string)(null)), table9, "And ");
+        testRunner.And("I add the following items to the cart:", ((string)(null)), table13, "And ");
 #line hidden
 #line 12
         testRunner.And("I click the cart icon", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -159,23 +159,23 @@ namespace SauceDemo.Tests.StepDefinitions.Features
 #line 21
         testRunner.And("I log in as \"standard_user\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table10 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table14 = new TechTalk.SpecFlow.Table(new string[] {
                             "Product",
                             "Order"});
-                table10.AddRow(new string[] {
+                table14.AddRow(new string[] {
                             "Sauce Labs Backpack",
                             "1"});
-                table10.AddRow(new string[] {
+                table14.AddRow(new string[] {
                             "Sauce Labs Fleece Jacket",
                             "2"});
-                table10.AddRow(new string[] {
+                table14.AddRow(new string[] {
                             "Test.allTheThings() T-Shirt (Red)",
                             "3"});
-                table10.AddRow(new string[] {
+                table14.AddRow(new string[] {
                             "Sauce Labs Onesie",
                             "4"});
 #line 22
-        testRunner.And("I add the following items to the cart:", ((string)(null)), table10, "And ");
+        testRunner.And("I add the following items to the cart:", ((string)(null)), table14, "And ");
 #line hidden
 #line 28
         testRunner.And("I click the cart icon", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -222,23 +222,23 @@ namespace SauceDemo.Tests.StepDefinitions.Features
 #line 37
         testRunner.And("I log in as \"standard_user\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table11 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table15 = new TechTalk.SpecFlow.Table(new string[] {
                             "Product",
                             "Order"});
-                table11.AddRow(new string[] {
+                table15.AddRow(new string[] {
                             "Sauce Labs Backpack",
                             "1"});
-                table11.AddRow(new string[] {
+                table15.AddRow(new string[] {
                             "Sauce Labs Bolt T-Shirt",
                             "2"});
-                table11.AddRow(new string[] {
+                table15.AddRow(new string[] {
                             "Test.allTheThings() T-Shirt (Red)",
                             "3"});
-                table11.AddRow(new string[] {
+                table15.AddRow(new string[] {
                             "Sauce Labs Onesie",
                             "4"});
 #line 38
-        testRunner.And("I add the following items to the cart:", ((string)(null)), table11, "And ");
+        testRunner.And("I add the following items to the cart:", ((string)(null)), table15, "And ");
 #line hidden
 #line 44
         testRunner.And("I click the cart icon", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -285,23 +285,23 @@ namespace SauceDemo.Tests.StepDefinitions.Features
 #line 54
         testRunner.And("I log in as \"standard_user\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table12 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table16 = new TechTalk.SpecFlow.Table(new string[] {
                             "Product",
                             "Order"});
-                table12.AddRow(new string[] {
+                table16.AddRow(new string[] {
                             "Sauce Labs Backpack",
                             "1"});
-                table12.AddRow(new string[] {
+                table16.AddRow(new string[] {
                             "Sauce Labs Bolt T-Shirt",
                             "2"});
-                table12.AddRow(new string[] {
+                table16.AddRow(new string[] {
                             "Test.allTheThings() T-Shirt (Red)",
                             "3"});
-                table12.AddRow(new string[] {
+                table16.AddRow(new string[] {
                             "Sauce Labs Onesie",
                             "4"});
 #line 55
-        testRunner.And("I add the following items to the cart:", ((string)(null)), table12, "And ");
+        testRunner.And("I add the following items to the cart:", ((string)(null)), table16, "And ");
 #line hidden
 #line 61
         testRunner.And("I click the cart icon", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -309,35 +309,35 @@ namespace SauceDemo.Tests.StepDefinitions.Features
 #line 62
         testRunner.And("I click Checkout", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table13 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table17 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Data"});
-                table13.AddRow(new string[] {
+                table17.AddRow(new string[] {
                             "First Name",
                             ""});
-                table13.AddRow(new string[] {
+                table17.AddRow(new string[] {
                             "Last Name",
                             "Howlett"});
-                table13.AddRow(new string[] {
+                table17.AddRow(new string[] {
                             "Zip Code",
                             "77478"});
 #line 63
-        testRunner.And("I enter the following data:", ((string)(null)), table13, "And ");
+        testRunner.And("I enter the following data:", ((string)(null)), table17, "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table14 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table18 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Data"});
-                table14.AddRow(new string[] {
+                table18.AddRow(new string[] {
                             "First Name",
                             ""});
-                table14.AddRow(new string[] {
+                table18.AddRow(new string[] {
                             "Last Name",
                             "Howlett"});
-                table14.AddRow(new string[] {
+                table18.AddRow(new string[] {
                             "Zip Code",
                             "77478"});
 #line 68
-        testRunner.And("the form displays the following data:", ((string)(null)), table14, "And ");
+        testRunner.And("the form displays the following data:", ((string)(null)), table18, "And ");
 #line hidden
 #line 73
         testRunner.When("I click Continue", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -378,23 +378,23 @@ namespace SauceDemo.Tests.StepDefinitions.Features
 #line 80
         testRunner.And("I log in as \"standard_user\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table15 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table19 = new TechTalk.SpecFlow.Table(new string[] {
                             "Product",
                             "Order"});
-                table15.AddRow(new string[] {
+                table19.AddRow(new string[] {
                             "Sauce Labs Backpack",
                             "1"});
-                table15.AddRow(new string[] {
+                table19.AddRow(new string[] {
                             "Sauce Labs Bolt T-Shirt",
                             "2"});
-                table15.AddRow(new string[] {
+                table19.AddRow(new string[] {
                             "Test.allTheThings() T-Shirt (Red)",
                             "3"});
-                table15.AddRow(new string[] {
+                table19.AddRow(new string[] {
                             "Sauce Labs Onesie",
                             "4"});
 #line 81
-        testRunner.And("I add the following items to the cart:", ((string)(null)), table15, "And ");
+        testRunner.And("I add the following items to the cart:", ((string)(null)), table19, "And ");
 #line hidden
 #line 87
         testRunner.And("I click the cart icon", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -402,35 +402,35 @@ namespace SauceDemo.Tests.StepDefinitions.Features
 #line 88
         testRunner.And("I click Checkout", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table16 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table20 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Data"});
-                table16.AddRow(new string[] {
+                table20.AddRow(new string[] {
                             "First Name",
                             "James"});
-                table16.AddRow(new string[] {
+                table20.AddRow(new string[] {
                             "Last Name",
                             ""});
-                table16.AddRow(new string[] {
+                table20.AddRow(new string[] {
                             "Zip Code",
                             "77478"});
 #line 89
-        testRunner.And("I enter the following data:", ((string)(null)), table16, "And ");
+        testRunner.And("I enter the following data:", ((string)(null)), table20, "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table17 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table21 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Data"});
-                table17.AddRow(new string[] {
+                table21.AddRow(new string[] {
                             "First Name",
                             "James"});
-                table17.AddRow(new string[] {
+                table21.AddRow(new string[] {
                             "Last Name",
                             ""});
-                table17.AddRow(new string[] {
+                table21.AddRow(new string[] {
                             "Zip Code",
                             "77478"});
 #line 94
-        testRunner.And("the form displays the following data:", ((string)(null)), table17, "And ");
+        testRunner.And("the form displays the following data:", ((string)(null)), table21, "And ");
 #line hidden
 #line 99
         testRunner.When("I click Continue", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -471,23 +471,23 @@ namespace SauceDemo.Tests.StepDefinitions.Features
 #line 106
         testRunner.And("I log in as \"standard_user\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table18 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table22 = new TechTalk.SpecFlow.Table(new string[] {
                             "Product",
                             "Order"});
-                table18.AddRow(new string[] {
+                table22.AddRow(new string[] {
                             "Sauce Labs Backpack",
                             "1"});
-                table18.AddRow(new string[] {
+                table22.AddRow(new string[] {
                             "Sauce Labs Bolt T-Shirt",
                             "2"});
-                table18.AddRow(new string[] {
+                table22.AddRow(new string[] {
                             "Test.allTheThings() T-Shirt (Red)",
                             "3"});
-                table18.AddRow(new string[] {
+                table22.AddRow(new string[] {
                             "Sauce Labs Onesie",
                             "4"});
 #line 107
-        testRunner.And("I add the following items to the cart:", ((string)(null)), table18, "And ");
+        testRunner.And("I add the following items to the cart:", ((string)(null)), table22, "And ");
 #line hidden
 #line 113
         testRunner.And("I click the cart icon", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -495,35 +495,35 @@ namespace SauceDemo.Tests.StepDefinitions.Features
 #line 114
         testRunner.And("I click Checkout", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table19 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table23 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Data"});
-                table19.AddRow(new string[] {
+                table23.AddRow(new string[] {
                             "First Name",
                             "James"});
-                table19.AddRow(new string[] {
+                table23.AddRow(new string[] {
                             "Last Name",
                             "Howlett"});
-                table19.AddRow(new string[] {
+                table23.AddRow(new string[] {
                             "Zip Code",
                             ""});
 #line 115
-        testRunner.And("I enter the following data:", ((string)(null)), table19, "And ");
+        testRunner.And("I enter the following data:", ((string)(null)), table23, "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table20 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table24 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Data"});
-                table20.AddRow(new string[] {
+                table24.AddRow(new string[] {
                             "First Name",
                             "James"});
-                table20.AddRow(new string[] {
+                table24.AddRow(new string[] {
                             "Last Name",
                             "Howlett"});
-                table20.AddRow(new string[] {
+                table24.AddRow(new string[] {
                             "Zip Code",
                             ""});
 #line 120
-        testRunner.And("the form displays the following data:", ((string)(null)), table20, "And ");
+        testRunner.And("the form displays the following data:", ((string)(null)), table24, "And ");
 #line hidden
 #line 125
         testRunner.When("I click Continue", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -564,23 +564,23 @@ namespace SauceDemo.Tests.StepDefinitions.Features
 #line 132
         testRunner.And("I log in as \"standard_user\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table21 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table25 = new TechTalk.SpecFlow.Table(new string[] {
                             "Product",
                             "Order"});
-                table21.AddRow(new string[] {
+                table25.AddRow(new string[] {
                             "Sauce Labs Backpack",
                             "1"});
-                table21.AddRow(new string[] {
+                table25.AddRow(new string[] {
                             "Sauce Labs Bolt T-Shirt",
                             "2"});
-                table21.AddRow(new string[] {
+                table25.AddRow(new string[] {
                             "Test.allTheThings() T-Shirt (Red)",
                             "3"});
-                table21.AddRow(new string[] {
+                table25.AddRow(new string[] {
                             "Sauce Labs Onesie",
                             "4"});
 #line 133
-        testRunner.And("I add the following items to the cart:", ((string)(null)), table21, "And ");
+        testRunner.And("I add the following items to the cart:", ((string)(null)), table25, "And ");
 #line hidden
 #line 139
         testRunner.And("I click the cart icon", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -588,20 +588,20 @@ namespace SauceDemo.Tests.StepDefinitions.Features
 #line 140
         testRunner.And("I click Checkout", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table22 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table26 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Data"});
-                table22.AddRow(new string[] {
+                table26.AddRow(new string[] {
                             "First Name",
                             "James"});
-                table22.AddRow(new string[] {
+                table26.AddRow(new string[] {
                             "Last Name",
                             "Howlett"});
-                table22.AddRow(new string[] {
+                table26.AddRow(new string[] {
                             "Zip Code",
                             ""});
 #line 141
-        testRunner.And("I enter the following data:", ((string)(null)), table22, "And ");
+        testRunner.And("I enter the following data:", ((string)(null)), table26, "And ");
 #line hidden
 #line 146
         testRunner.And("I click Continue", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -644,23 +644,23 @@ namespace SauceDemo.Tests.StepDefinitions.Features
 #line 154
         testRunner.And("I log in as \"standard_user\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table23 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table27 = new TechTalk.SpecFlow.Table(new string[] {
                             "Product",
                             "Order"});
-                table23.AddRow(new string[] {
+                table27.AddRow(new string[] {
                             "Sauce Labs Backpack",
                             "1"});
-                table23.AddRow(new string[] {
+                table27.AddRow(new string[] {
                             "Sauce Labs Bolt T-Shirt",
                             "2"});
-                table23.AddRow(new string[] {
+                table27.AddRow(new string[] {
                             "Test.allTheThings() T-Shirt (Red)",
                             "3"});
-                table23.AddRow(new string[] {
+                table27.AddRow(new string[] {
                             "Sauce Labs Onesie",
                             "4"});
 #line 155
-        testRunner.And("I add the following items to the cart:", ((string)(null)), table23, "And ");
+        testRunner.And("I add the following items to the cart:", ((string)(null)), table27, "And ");
 #line hidden
 #line 161
         testRunner.And("I click the cart icon", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -668,20 +668,20 @@ namespace SauceDemo.Tests.StepDefinitions.Features
 #line 162
         testRunner.And("I click Checkout", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table24 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table28 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Data"});
-                table24.AddRow(new string[] {
+                table28.AddRow(new string[] {
                             "First Name",
                             "James"});
-                table24.AddRow(new string[] {
+                table28.AddRow(new string[] {
                             "Last Name",
                             "Howlett"});
-                table24.AddRow(new string[] {
+                table28.AddRow(new string[] {
                             "Zip Code",
                             "77478"});
 #line 163
-        testRunner.And("I enter the following data:", ((string)(null)), table24, "And ");
+        testRunner.And("I enter the following data:", ((string)(null)), table28, "And ");
 #line hidden
 #line 168
         testRunner.When("I click Continue", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -718,23 +718,23 @@ namespace SauceDemo.Tests.StepDefinitions.Features
 #line 174
         testRunner.And("I log in as \"standard_user\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table25 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table29 = new TechTalk.SpecFlow.Table(new string[] {
                             "Product",
                             "Order"});
-                table25.AddRow(new string[] {
+                table29.AddRow(new string[] {
                             "Sauce Labs Backpack",
                             "1"});
-                table25.AddRow(new string[] {
+                table29.AddRow(new string[] {
                             "Sauce Labs Bolt T-Shirt",
                             "2"});
-                table25.AddRow(new string[] {
+                table29.AddRow(new string[] {
                             "Test.allTheThings() T-Shirt (Red)",
                             "3"});
-                table25.AddRow(new string[] {
+                table29.AddRow(new string[] {
                             "Sauce Labs Onesie",
                             "4"});
 #line 175
-        testRunner.And("I add the following items to the cart:", ((string)(null)), table25, "And ");
+        testRunner.And("I add the following items to the cart:", ((string)(null)), table29, "And ");
 #line hidden
 #line 181
         testRunner.And("I click the cart icon", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -742,20 +742,20 @@ namespace SauceDemo.Tests.StepDefinitions.Features
 #line 182
         testRunner.And("I click Checkout", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table26 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table30 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Data"});
-                table26.AddRow(new string[] {
+                table30.AddRow(new string[] {
                             "First Name",
                             "James"});
-                table26.AddRow(new string[] {
+                table30.AddRow(new string[] {
                             "Last Name",
                             "Howlett"});
-                table26.AddRow(new string[] {
+                table30.AddRow(new string[] {
                             "Zip Code",
                             "77478"});
 #line 183
-        testRunner.And("I enter the following data:", ((string)(null)), table26, "And ");
+        testRunner.And("I enter the following data:", ((string)(null)), table30, "And ");
 #line hidden
 #line 188
         testRunner.When("I click Cancel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
