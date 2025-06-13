@@ -21,14 +21,14 @@ namespace SauceDemo.Tests.StepDefinitions.Features
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
     [NUnit.Framework.DescriptionAttribute("Known Issues")]
-    [NUnit.Framework.CategoryAttribute("wip")]
+    [NUnit.Framework.CategoryAttribute("known-issues")]
     public partial class KnownIssuesFeature
     {
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
         
         private static string[] featureTags = new string[] {
-                "wip"};
+                "known-issues"};
         
 #line 1 "KnownIssues.feature"
 #line hidden

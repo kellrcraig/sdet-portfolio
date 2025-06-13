@@ -153,10 +153,12 @@ namespace SauceDemo.Tests.StepDefinitions.Features
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("About link navigates to the Sauce Labs website")]
         [NUnit.Framework.CategoryAttribute("page-navigation")]
+        [NUnit.Framework.CategoryAttribute("regression")]
         public void AboutLinkNavigatesToTheSauceLabsWebsite()
         {
             string[] tagsOfScenario = new string[] {
-                    "page-navigation"};
+                    "page-navigation",
+                    "regression"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("About link navigates to the Sauce Labs website", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 20
@@ -197,7 +199,7 @@ namespace SauceDemo.Tests.StepDefinitions.Features
                     "reset-app-state"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Reset App State link reverts cart icon count to default", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 29
+#line 28
     this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
@@ -207,10 +209,10 @@ namespace SauceDemo.Tests.StepDefinitions.Features
             else
             {
                 this.ScenarioStart();
-#line 30
+#line 29
         testRunner.Given("I open the login page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 31
+#line 30
         testRunner.And("I log in as \"standard_user\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
                 TechTalk.SpecFlow.Table table53 = new TechTalk.SpecFlow.Table(new string[] {
@@ -228,19 +230,19 @@ namespace SauceDemo.Tests.StepDefinitions.Features
                 table53.AddRow(new string[] {
                             "Sauce Labs Onesie",
                             "4"});
-#line 32
+#line 31
         testRunner.And("I add the following items to the cart:", ((string)(null)), table53, "And ");
 #line hidden
-#line 38
+#line 37
         testRunner.And("the cart badge displays \"4\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 39
+#line 38
         testRunner.And("I open the menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 40
+#line 39
         testRunner.When("I click the reset app state link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 41
+#line 40
         testRunner.Then("the cart badge is not displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }

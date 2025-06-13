@@ -1,6 +1,9 @@
 {
     "runtime": {
       "missingOrPendingStepsOutcome": "Error"
-    }
+    },
+    "generator": {
+        "generateParallelizableCode": true
+    }    
   }
   
