@@ -1,13 +1,13 @@
 name: .NET Test Automation
 
 on:
-  #push:
-  #  branches: [ ]
   pull_request:
-    branches: [ main ]
+    paths:
+      - 'SauceDemo.Tests/**'
+      - '.github/workflows/**'
 
 jobs:
-  build-and-test:
+  build-and-test-saucedemo:
     runs-on: ubuntu-latest
 
     steps:
