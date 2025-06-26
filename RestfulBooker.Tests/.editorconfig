@@ -1,0 +1,17 @@
+root = true
+
+[*.cs]
+#SA1600ElementsMustBeDocumented
+dotnet_diagnostic.SA1600.severity = none
+
+#SA1633FileMustHaveHeader
+dotnet_diagnostic.SA1633.severity = none
+
+#SA1101PrefixLocalCallsWithThis
+dotnet_diagnostic.SA1101.severity = none
+
+#SA0001XmlCommentAnalysisDisabled
+dotnet_diagnostic.SA0001.severity = none
+
+#SA1649FileNameMustMatchTypeName
+dotnet_diagnostic.SA1649.severity = none
