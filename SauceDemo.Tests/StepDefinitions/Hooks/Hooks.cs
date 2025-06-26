@@ -6,7 +6,9 @@ namespace SauceDemo.Tests.StepDefinitions.Hooks
     using SauceDemo.Tests.Constants;
     using SauceDemo.Tests.Helpers;
     using TechTalk.SpecFlow;
+    using WebDriverManager;
     using WebDriverManager.DriverConfigs.Impl;
+    using WebDriverManager.Helpers;
 
     [Binding]
     public class Hooks
@@ -98,7 +100,8 @@ namespace SauceDemo.Tests.StepDefinitions.Hooks
             // Optional: blocks web notifications
             options.AddArgument("--disable-notifications");
 
-            new WebDriverManager.DriverManager().SetUpDriver(new ChromeConfig());
+            new DriverManager().SetUpDriver(new ChromeConfig(), VersionResolveStrategy.MatchingBrowser);
+
             var driver = new ChromeDriver(options);
             scenarioContext[ScenarioContextKeys.Driver] = driver;
         }
