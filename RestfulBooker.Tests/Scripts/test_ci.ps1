@@ -5,4 +5,4 @@ $scriptDir = Split-Path -Parent $MyInvocation.MyCommand.Definition
 $testBasePath = Join-Path $scriptDir 'test_base.ps1'
 
 # Call test_base.ps1 with the filter
-& $testBasePath -TestFilter
+& $testBasePath

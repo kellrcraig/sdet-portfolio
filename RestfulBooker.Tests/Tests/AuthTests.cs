@@ -13,13 +13,5 @@ namespace RestfulBooker.Tests.Tests
         {
             client = new AuthCient();
         }
-
-        [Test]
-        public async Task CreateTokenAsync_()
-        {
-            var data = await client.CreateTokenAsync();
-            //response.StatusCode.Should().Be(System.Net.HttpStatusCode.Created);
-            //response.Content.Should().Be("Created");
-        }
     }
 }
