@@ -4,7 +4,7 @@ namespace RestfulBooker.Tests.Tests
     using RestfulBooker.Tests.Clients;
 
     [TestFixture]
-    public class PingTests
+    public class PingClientTests
     {
         private PingClient client;
 
@@ -15,7 +15,7 @@ namespace RestfulBooker.Tests.Tests
         }
 
         [Test]
-        public async Task GetPingAsync_ShouldReturn201Created()
+        public async Task GetPingAsync_ShouldReturnCreated()
         {
             var response = await client.GetPingAsync();
             response.StatusCode.Should().Be(System.Net.HttpStatusCode.Created);
