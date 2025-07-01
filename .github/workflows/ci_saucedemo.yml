@@ -1,10 +1,7 @@
-name: .NET Test Automation
+name: Build and test for SauceDemo.Tests
 
 on:
   pull_request:
-    paths:
-      - 'SauceDemo.Tests/**'
-      - '.github/workflows/**'
 
 jobs:
   build-and-test-saucedemo:

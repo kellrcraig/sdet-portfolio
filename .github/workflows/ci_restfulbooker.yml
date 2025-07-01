@@ -1,10 +1,7 @@
-name: .NET Test Automation
+name: Build and test for RestfulBooker.Tests
 
 on:
   pull_request:
-    paths:
-      - 'RestfulBooker.Tests/**'
-      - '.github/workflows/**'
 
 jobs:
   build-and-test-restfulbooker:
