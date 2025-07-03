@@ -1,8 +1,8 @@
 namespace RestfulBooker.Tests.Models
 {
-    public class AuthRequestModel
+    public class AuthCredentialsModel
     {
-        public AuthRequestModel(string? username, string? password)
+        public AuthCredentialsModel(string? username, string? password)
         {
             Username = username;
             Password = password;

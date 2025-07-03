@@ -1,5 +1,7 @@
 namespace RestfulBooker.Tests.Clients
 {
+    using RestfulBooker.Tests.Models;
+    using RestfulBooker.Tests.Parsers;
     using RestSharp;
 
     public abstract class BaseClient
@@ -10,5 +12,12 @@ namespace RestfulBooker.Tests.Clients
         }
 
         protected RestClient Client { get; }
+
+        protected async Task<ParsedResponseModel> SendAsync(RestRequest request)
+        {
+            var response = await Client.ExecuteAsync(request);
+            var model = ResponseParser.Parse(response);
+            return model;
+        }
     }
 }
