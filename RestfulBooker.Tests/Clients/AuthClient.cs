@@ -2,7 +2,6 @@ namespace RestfulBooker.Tests.Clients
 {
     using System.Threading.Tasks;
     using RestfulBooker.Tests.Models;
-    using RestfulBooker.Tests.Parsers;
     using RestSharp;
 
     public class AuthClient : BaseClient
@@ -15,33 +14,16 @@ namespace RestfulBooker.Tests.Clients
             this.method = method;
         }
 
-        public async Task<AuthResponseModel> CreateTokenAsync(AuthRequestModel body)
+        public async Task<ParsedResponseModel> CreateTokenAsync(AuthCredentialsModel body)
         {
             var request = new RestRequest(resource, method).AddJsonBody(body);
-            var response = await CreateTokenAsync(request);
-            return BuildResponseModel(response);
+            return await SendAsync(request);
         }
 
-        public async Task<AuthResponseModel> CreateTokenAsync(string body)
+        public async Task<ParsedResponseModel> CreateTokenAsync(string body)
         {
             var request = new RestRequest(resource, method).AddStringBody(body, DataFormat.Json);
-            var response = await CreateTokenAsync(request);
-            return BuildResponseModel(response);
-        }
-
-        private async Task<RestResponse> CreateTokenAsync(RestRequest request)
-        {
-            var response = await Client.ExecuteAsync(request);
-            return response;
-        }
-
-        private AuthResponseModel BuildResponseModel(RestResponse response)
-        {
-            var model = string.IsNullOrWhiteSpace(response.Content)
-                ? new AuthResponseModel()
-                : AuthContentParser.Parse(response.Content);
-            model.StatusCode = response.StatusCode;
-            return model;
+            return await SendAsync(request);
         }
     }
 }

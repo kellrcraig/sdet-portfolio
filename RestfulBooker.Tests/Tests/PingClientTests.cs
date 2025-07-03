@@ -17,9 +17,12 @@ namespace RestfulBooker.Tests.Tests
         [Test]
         public async Task GetPingAsync_ShouldReturnCreated()
         {
-            var response = await client.GetPingAsync();
-            response.StatusCode.Should().Be(System.Net.HttpStatusCode.Created);
-            response.Content.Should().Be("Created");
+            // Act
+            var actual = await client.GetPingAsync();
+
+            // Assert
+            actual.StatusCode.Should().Be(System.Net.HttpStatusCode.Created);
+            actual.GetParsedDataAs<string>().Should().Be("Created");
         }
     }
 }
