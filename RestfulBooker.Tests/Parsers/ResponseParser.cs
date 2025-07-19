@@ -46,6 +46,10 @@ namespace RestfulBooker.Tests.Parsers
                 {
                     parsedData.SetParsedData(JsonSerializer.Deserialize<BookingWithIdModel>(response.Content));
                 }
+                else if (root.TryGetProperty("firstname", out _))
+                {
+                    parsedData.SetParsedData(JsonSerializer.Deserialize<BookingModel>(response.Content));
+                }
             }
 
             return parsedData;

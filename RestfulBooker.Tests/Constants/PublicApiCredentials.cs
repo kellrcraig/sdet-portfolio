@@ -1,4 +1,4 @@
-namespace RestfulBooker.Constants
+namespace RestfulBooker.Tests.Constants
 {
     public static class PublicApiCredentials
     {
