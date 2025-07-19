@@ -7,12 +7,23 @@ namespace RestfulBooker.Tests.Data
         // 23 bookings
         public static readonly List<BookingModel> AllRecords;
 
+        // Null booking
+        public static readonly BookingPartialModel NullBooking = new ()
+        {
+            FirstName = null,
+            LastName = nameof(NullBooking),
+            TotalPrice = null,
+            DepositPaid = null,
+            BookingDates = null,
+            AdditionalNeeds = null,
+        };
+
         // Long name booking
         public static readonly BookingModel LongNameBooking = new ()
         {
             FirstName = new string('A', 255),
             LastName = nameof(LongNameBooking),
-            TotalPrice = 9999,
+            TotalPrice = 999999999,
             DepositPaid = false,
             BookingDates = new BookingDateModel
             {

@@ -3,7 +3,6 @@ namespace RestfulBooker.Tests.Tests
     using System.Net;
     using System.Threading.Tasks;
     using FluentAssertions;
-    using FluentAssertions.Execution;
     using RestfulBooker.Tests.Clients;
     using RestfulBooker.Tests.Data;
     using RestfulBooker.Tests.Helpers;
@@ -43,12 +42,104 @@ namespace RestfulBooker.Tests.Tests
             TrackCreatedBooking(actual);
 
             // Assert
-            using (new AssertionScope())
-            {
-                actual.StatusCode.Should().Be(HttpStatusCode.OK);
-                actual.GetParsedDataAs<BookingWithIdModel>().BookingId.Should().BeGreaterThan(0);
-                actual.GetParsedDataAs<BookingWithIdModel>().Booking.Should().BeEquivalentTo(payload);
-            }
+            AssertionHelper.AssertCreateBookingSucceeds(actual, payload);
+        }
+
+        [Test]
+        public async Task CreateBookingAsync_ShouldReturnBookingWithId_WhenDataIsLong()
+        {
+            // Arrange
+            var payload = BookingData.LongNameBooking;
+
+            // Act
+            var actual = await defaultBookingClient.CreateBookingAsync(payload);
+            TrackCreatedBooking(actual);
+
+            // Assert
+            AssertionHelper.AssertCreateBookingSucceeds(actual, payload);
+        }
+
+        [Test]
+        public async Task CreateBookingAsync_ShouldReturnBookingWithId_WhenPriceIsFree()
+        {
+            // Arrange
+            var payload = BookingData.FreeBooking;
+
+            // Act
+            var actual = await defaultBookingClient.CreateBookingAsync(payload);
+            TrackCreatedBooking(actual);
+
+            // Assert
+            AssertionHelper.AssertCreateBookingSucceeds(actual, payload);
+        }
+
+        [Test]
+        public async Task CreateBookingAsync_ShouldReturnBookingWithId_WhenPriceIsNegative()
+        {
+            // Arrange
+            var payload = BookingData.NegativePriceBooking;
+
+            // Act
+            var actual = await defaultBookingClient.CreateBookingAsync(payload);
+            TrackCreatedBooking(actual);
+
+            // Assert
+            AssertionHelper.AssertCreateBookingSucceeds(actual, payload);
+        }
+
+        [Test]
+        public async Task CreateBookingAsync_ShouldReturnBookingWithId_WhenDatesAreSame()
+        {
+            // Arrange
+            var payload = BookingData.SameDayBooking;
+
+            // Act
+            var actual = await defaultBookingClient.CreateBookingAsync(payload);
+            TrackCreatedBooking(actual);
+
+            // Assert
+            AssertionHelper.AssertCreateBookingSucceeds(actual, payload);
+        }
+
+        [Test]
+        public async Task CreateBookingAsync_ShouldReturnBookingWithId_WhenDatesAreBackwards()
+        {
+            // Arrange
+            var payload = BookingData.BackwardsDatesBooking;
+
+            // Act
+            var actual = await defaultBookingClient.CreateBookingAsync(payload);
+            TrackCreatedBooking(actual);
+
+            // Assert
+            AssertionHelper.AssertCreateBookingSucceeds(actual, payload);
+        }
+
+        [Test]
+        public async Task CreateBookingAsync_ShouldReturnBookingWithId_WhenDataIsEmpty()
+        {
+            // Arrange
+            var payload = BookingData.EmptyStringsBooking;
+
+            // Act
+            var actual = await defaultBookingClient.CreateBookingAsync(payload);
+            TrackCreatedBooking(actual);
+
+            // Assert
+            AssertionHelper.AssertCreateBookingSucceeds(actual, payload);
+        }
+
+        [Test]
+        public async Task CreateBookingAsync_ShouldReturnInternalServerError_WhenDataIsNull()
+        {
+            // Arrange
+            var payload = BookingData.NullBooking;
+
+            // Act
+            var actual = await defaultBookingClient.CreateBookingAsync(payload);
+
+            // Assert
+            actual.StatusCode.Should().Be(HttpStatusCode.InternalServerError);
         }
 
         [Test]
@@ -70,10 +161,7 @@ namespace RestfulBooker.Tests.Tests
             {
                 var actual = pair.First;
                 var expected = pair.Second;
-
-                actual.StatusCode.Should().Be(HttpStatusCode.OK);
-                actual.GetParsedDataAs<BookingWithIdModel>().BookingId.Should().BeGreaterThan(0);
-                actual.GetParsedDataAs<BookingWithIdModel>().Booking.Should().BeEquivalentTo(expected);
+                AssertionHelper.AssertCreateBookingSucceeds(actual, expected);
             });
         }
 

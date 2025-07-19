@@ -3,10 +3,33 @@ namespace RestfulBooker.Tests.Helpers
     using System.Net;
     using FluentAssertions;
     using FluentAssertions.Execution;
+    using NUnit.Framework.Constraints;
     using RestfulBooker.Tests.Models;
 
     public static class AssertionHelper
     {
+        public static void AssertCreateBookingSucceeds(ParsedResponseModel actual, BookingModel expected)
+        {
+            using (new AssertionScope())
+            {
+                actual.StatusCode.Should().Be(HttpStatusCode.OK);
+                var data = actual.GetParsedDataAs<BookingWithIdModel>();
+                data.BookingId.Should().BeGreaterThan(0);
+                data.Booking.Should().BeEquivalentTo(expected);
+            }
+        }
+
+        public static void AssertCreateBookingSucceeds(ParsedResponseModel actual, BookingPartialModel expected)
+        {
+            using (new AssertionScope())
+            {
+                actual.StatusCode.Should().Be(HttpStatusCode.OK);
+                var data = actual.GetParsedDataAs<BookingWithIdModel>();
+                data.BookingId.Should().BeGreaterThan(0);
+                data.Booking.Should().BeEquivalentTo(expected);
+            }
+        }
+
         public static void AssertCreateAuthTokenResponseSucceeds(ParsedResponseModel actual)
         {
             using (new AssertionScope())

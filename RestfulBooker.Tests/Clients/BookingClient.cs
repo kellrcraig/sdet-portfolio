@@ -42,6 +42,16 @@ namespace RestfulBooker.Tests.Clients
             return await SendAsync(request);
         }
 
+        public async Task<ParsedResponseModel> CreateBookingAsync(BookingPartialModel payload)
+        {
+            var request = new RestRequest(resource, Method.Post)
+
+                // TODO: DRY
+                .AddHeader("Accept", "application/json")
+                .AddJsonBody(payload);
+            return await SendAsync(request);
+        }
+
         public async Task<ParsedResponseModel> DeleteBookingAsync(int id, string token)
         {
             var request = new RestRequest($"{resource}/{id}", Method.Delete)
