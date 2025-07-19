@@ -3,8 +3,9 @@ namespace RestfulBooker.Tests.Tests
     using System.Net;
     using FluentAssertions;
     using FluentAssertions.Execution;
-    using RestfulBooker.Constants;
     using RestfulBooker.Tests.Clients;
+    using RestfulBooker.Tests.Constants;
+    using RestfulBooker.Tests.Helpers;
     using RestfulBooker.Tests.Models;
 
     [TestFixture]
@@ -22,51 +23,39 @@ namespace RestfulBooker.Tests.Tests
         public async Task CreateTokenAsync_ShouldSucceedAuthentication_WhenCredentialsAreCorrect()
         {
             // Arrange
-            var body = new AuthCredentialsModel(
-                PublicApiCredentials.UserName,
-                PublicApiCredentials.Password);
+            var body = new AuthCredentialsModel();
 
             // Act
             var actual = await defaultClient.CreateTokenAsync(body);
 
             // Assert
-            using (new AssertionScope())
-            {
-                actual.StatusCode.Should().Be(HttpStatusCode.OK);
-                actual.GetParsedDataAs<AuthTokenModel>().Token.Should().NotBeNullOrEmpty();
-                actual.GetParsedDataAs<AuthTokenModel>().Token.Should().MatchRegex("^[a-f0-9]{15}$");
-                actual.GetParsedDataAs<AuthTokenModel>().Token.Should().HaveLength(15);
-            }
+            AssertionHelper.AssertCreateAuthTokenResponseSucceeds(actual);
         }
 
         [Test]
         public async Task CreateTokenAsync_ShouldFailAuthentication_WhenUserNameIsUpperCase()
         {
             // Arrange
-            var body = new AuthCredentialsModel(
-                PublicApiCredentials.UserName.ToUpper(),
-                PublicApiCredentials.Password);
+            var body = new AuthCredentialsModel(username: PublicApiCredentials.UserName.ToUpper());
 
             // Act
             var actual = await defaultClient.CreateTokenAsync(body);
 
             // Assert
-            AssertBadCredentials(actual);
+            AssertionHelper.AssertCreateAuthTokenResponseBadCredentials(actual);
         }
 
         [Test]
         public async Task CreateTokenAsync_ShouldFailAuthentication_WhenPasswordHasTrailingWhitespace()
         {
             // Arrange
-            var body = new AuthCredentialsModel(
-                PublicApiCredentials.UserName,
-                PublicApiCredentials.Password.PadRight(16));
+            var body = new AuthCredentialsModel(password: PublicApiCredentials.Password.PadRight(16));
 
             // Act
             var actual = await defaultClient.CreateTokenAsync(body);
 
             // Assert
-            AssertBadCredentials(actual);
+            AssertionHelper.AssertCreateAuthTokenResponseBadCredentials(actual);
         }
 
         [Test]
@@ -79,37 +68,33 @@ namespace RestfulBooker.Tests.Tests
             var actual = await defaultClient.CreateTokenAsync(body);
 
             // Assert
-            AssertBadCredentials(actual);
+            AssertionHelper.AssertCreateAuthTokenResponseBadCredentials(actual);
         }
 
         [Test]
         public async Task CreateTokenAsync_ShouldFailAuthentication_WhenPasswordIsIncorrect()
         {
             // Arrange
-            var body = new AuthCredentialsModel(
-                PublicApiCredentials.UserName,
-                "IncorrectPassword");
+            var body = new AuthCredentialsModel(password: "IncorrectPassword");
 
             // Act
             var actual = await defaultClient.CreateTokenAsync(body);
 
             // Assert
-            AssertBadCredentials(actual);
+            AssertionHelper.AssertCreateAuthTokenResponseBadCredentials(actual);
         }
 
         [Test]
         public async Task CreateTokenAsync_ShouldFailAuthentication_WhenUserNameIsIncorrect()
         {
             // Arrange
-            var body = new AuthCredentialsModel(
-                "IncorrectUserName",
-                PublicApiCredentials.Password);
+            var body = new AuthCredentialsModel(username: "IncorrectUserName");
 
             // Act
             var actual = await defaultClient.CreateTokenAsync(body);
 
             // Assert
-            AssertBadCredentials(actual);
+            AssertionHelper.AssertCreateAuthTokenResponseBadCredentials(actual);
         }
 
         [Test]
@@ -122,7 +107,7 @@ namespace RestfulBooker.Tests.Tests
             var actual = await defaultClient.CreateTokenAsync(body);
 
             // Assert
-            AssertBadCredentials(actual);
+            AssertionHelper.AssertCreateAuthTokenResponseBadCredentials(actual);
         }
 
         [Test]
@@ -137,7 +122,7 @@ namespace RestfulBooker.Tests.Tests
             var actual = await defaultClient.CreateTokenAsync(body);
 
             // Assert
-            AssertBadCredentials(actual);
+            AssertionHelper.AssertCreateAuthTokenResponseBadCredentials(actual);
         }
 
         [Test]
@@ -152,7 +137,7 @@ namespace RestfulBooker.Tests.Tests
             var actual = await defaultClient.CreateTokenAsync(body);
 
             // Assert
-            AssertBadCredentials(actual);
+            AssertionHelper.AssertCreateAuthTokenResponseBadCredentials(actual);
         }
 
         [Test]
@@ -167,7 +152,7 @@ namespace RestfulBooker.Tests.Tests
             var actual = await defaultClient.CreateTokenAsync(body);
 
             // Assert
-            AssertBadCredentials(actual);
+            AssertionHelper.AssertCreateAuthTokenResponseBadCredentials(actual);
         }
 
         [Test]
@@ -192,9 +177,7 @@ namespace RestfulBooker.Tests.Tests
         {
             // Arrange
             var client = new AuthClient(RestSharp.Method.Get);
-            var body = new AuthCredentialsModel(
-                PublicApiCredentials.UserName,
-                PublicApiCredentials.Password);
+            var body = new AuthCredentialsModel();
 
             // Act
             var actual = await client.CreateTokenAsync(body);
@@ -204,15 +187,6 @@ namespace RestfulBooker.Tests.Tests
             {
                 actual.StatusCode.Should().Be(HttpStatusCode.NotFound);
                 actual.GetParsedDataAs<string>().Equals("Not Found");
-            }
-        }
-
-        private static void AssertBadCredentials(ParsedResponseModel actual)
-        {
-            using (new AssertionScope())
-            {
-                actual.StatusCode.Should().Be(HttpStatusCode.OK);
-                actual.GetParsedDataAs<AuthErrorModel>().Reason.Should().Be("Bad credentials");
             }
         }
     }
