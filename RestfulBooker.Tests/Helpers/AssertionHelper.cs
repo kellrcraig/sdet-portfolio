@@ -3,7 +3,6 @@ namespace RestfulBooker.Tests.Helpers
     using System.Net;
     using FluentAssertions;
     using FluentAssertions.Execution;
-    using NUnit.Framework.Constraints;
     using RestfulBooker.Tests.Models;
 
     public static class AssertionHelper
@@ -70,6 +69,11 @@ namespace RestfulBooker.Tests.Helpers
                 var booking = actual.GetParsedDataAs<BookingModel>();
                 booking.Should().NotBeNull();
             }
+        }
+
+        public static void AssertBookingIdsMatch<T>(List<T> actual, List<T> expected)
+        {
+            actual.Should().BeEquivalentTo(expected);
         }
     }
 }

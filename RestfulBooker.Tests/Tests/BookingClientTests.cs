@@ -25,9 +25,9 @@ namespace RestfulBooker.Tests.Tests
         [TearDown]
         public async Task TearDown()
         {
-            await AssertBookingsCreated();
+            await AssertBookingsAreCreated();
             await DeleteCreatedBookings();
-            await AssertBookingsDeleted();
+            await AssertBookingsAreDeleted();
             createdBookingIDs.Clear();
         }
 
@@ -38,8 +38,7 @@ namespace RestfulBooker.Tests.Tests
             var payload = BookingData.SinglePersonBooking;
 
             // Act
-            var actual = await defaultBookingClient.CreateBookingAsync(payload);
-            TrackCreatedBooking(actual);
+            var actual = (await CreateAndTrackBookings(payload)).Single();
 
             // Assert
             AssertionHelper.AssertCreateBookingSucceeds(actual, payload);
@@ -52,8 +51,7 @@ namespace RestfulBooker.Tests.Tests
             var payload = BookingData.LongNameBooking;
 
             // Act
-            var actual = await defaultBookingClient.CreateBookingAsync(payload);
-            TrackCreatedBooking(actual);
+            var actual = (await CreateAndTrackBookings(payload)).Single();
 
             // Assert
             AssertionHelper.AssertCreateBookingSucceeds(actual, payload);
@@ -66,8 +64,7 @@ namespace RestfulBooker.Tests.Tests
             var payload = BookingData.FreeBooking;
 
             // Act
-            var actual = await defaultBookingClient.CreateBookingAsync(payload);
-            TrackCreatedBooking(actual);
+            var actual = (await CreateAndTrackBookings(payload)).Single();
 
             // Assert
             AssertionHelper.AssertCreateBookingSucceeds(actual, payload);
@@ -80,8 +77,7 @@ namespace RestfulBooker.Tests.Tests
             var payload = BookingData.NegativePriceBooking;
 
             // Act
-            var actual = await defaultBookingClient.CreateBookingAsync(payload);
-            TrackCreatedBooking(actual);
+            var actual = (await CreateAndTrackBookings(payload)).Single();
 
             // Assert
             AssertionHelper.AssertCreateBookingSucceeds(actual, payload);
@@ -94,8 +90,7 @@ namespace RestfulBooker.Tests.Tests
             var payload = BookingData.SameDayBooking;
 
             // Act
-            var actual = await defaultBookingClient.CreateBookingAsync(payload);
-            TrackCreatedBooking(actual);
+            var actual = (await CreateAndTrackBookings(payload)).Single();
 
             // Assert
             AssertionHelper.AssertCreateBookingSucceeds(actual, payload);
@@ -108,8 +103,7 @@ namespace RestfulBooker.Tests.Tests
             var payload = BookingData.BackwardsDatesBooking;
 
             // Act
-            var actual = await defaultBookingClient.CreateBookingAsync(payload);
-            TrackCreatedBooking(actual);
+            var actual = (await CreateAndTrackBookings(payload)).Single();
 
             // Assert
             AssertionHelper.AssertCreateBookingSucceeds(actual, payload);
@@ -151,10 +145,7 @@ namespace RestfulBooker.Tests.Tests
                 .Concat(BookingData.Summers);
 
             // Act
-            var tasks = payloads.Select(defaultBookingClient.CreateBookingAsync);
-            var results = await Task.WhenAll(tasks);
-            var actual = results.ToList();
-            actual.ForEach(TrackCreatedBooking);
+            var actual = await CreateAndTrackBookings(payloads.ToArray());
 
             // Assert
             actual.Zip(payloads).ToList().ForEach(pair =>
@@ -163,6 +154,93 @@ namespace RestfulBooker.Tests.Tests
                 var expected = pair.Second;
                 AssertionHelper.AssertCreateBookingSucceeds(actual, expected);
             });
+        }
+
+        [Test]
+        public async Task GetBookingIdsAsync_ShouldReturnTwoIds_WhenQueryingByFirstName()
+        {
+            // Arrange
+            var payloads = BookingData.UniqueFamily;
+            var expected = await CreateAndTrackBookings(payloads.ToArray());
+            var expectedIds = expected
+                .Select(r => r.GetParsedDataAs<BookingWithIdModel>().BookingId)
+                .ToList();
+
+            // Act
+            var actual = await defaultBookingClient.GetBookingIdsAsync(firstname: BookingData.UniqueFirstName);
+            var actualIds = actual.GetParsedDataAs<List<BookingIdModel>>()
+                .Select(b => b.BookingId)
+                .ToList();
+
+            // Assert
+            AssertionHelper.AssertBookingIdsMatch(actualIds, expectedIds);
+        }
+
+        [Test]
+        public async Task GetBookingIdsAsync_ShouldReturnTwoIds_WhenQueryingByLastName()
+        {
+            // Arrange
+            var payloads = BookingData.UniqueFamily;
+            var expected = await CreateAndTrackBookings(payloads.ToArray());
+            var expectedIds = expected
+                .Select(r => r.GetParsedDataAs<BookingWithIdModel>().BookingId)
+                .ToList();
+
+            // Act
+            var actual = await defaultBookingClient.GetBookingIdsAsync(lastname: BookingData.UniqueLastName);
+            var actualIds = actual.GetParsedDataAs<List<BookingIdModel>>()
+                .Select(b => b.BookingId)
+                .ToList();
+
+            // Assert
+            AssertionHelper.AssertBookingIdsMatch(actualIds, expectedIds);
+        }
+
+        [Test]
+        public async Task GetBookingIdsAsync_ShouldReturnTwoIds_WhenQueryingByFirstNameLastName()
+        {
+            // Arrange
+            var payloads = BookingData.UniqueFamily;
+            var expected = await CreateAndTrackBookings(payloads.ToArray());
+            var expectedIds = expected
+                .Select(r => r.GetParsedDataAs<BookingWithIdModel>().BookingId)
+                .ToList();
+
+            // Act
+            var actual = await defaultBookingClient.GetBookingIdsAsync(
+                firstname: BookingData.UniqueFirstName,
+                lastname: BookingData.UniqueLastName);
+            var actualIds = actual.GetParsedDataAs<List<BookingIdModel>>()
+                .Select(b => b.BookingId)
+                .ToList();
+
+            // Assert
+            AssertionHelper.AssertBookingIdsMatch(actualIds, expectedIds);
+        }
+
+        [Test]
+        public async Task GetBookingIdsAsync_ShouldReturnNoIds_WhenQueryingByAnUnusualFirstName()
+        {
+            // Arrange
+            // Don't create any data
+            var expectedIds = new List<BookingIdModel>();
+
+            // Act
+            var actual = await defaultBookingClient.GetBookingIdsAsync(firstname: BookingData.UniqueFirstName);
+            var actualIds = actual.GetParsedDataAs<List<BookingIdModel>>();
+
+            // Assert
+            AssertionHelper.AssertBookingIdsMatch(actualIds, expectedIds);
+        }
+
+        private async Task<List<ParsedResponseModel>> CreateAndTrackBookings(params BookingModel[] payloads)
+        {
+            var createBookingsTasks = payloads.Select(defaultBookingClient.CreateBookingAsync);
+            var results = await Task.WhenAll(createBookingsTasks);
+            var createdBookings = results.ToList();
+            createdBookings.ForEach(TrackCreatedBooking);
+            await AssertBookingsAreCreated();
+            return createdBookings;
         }
 
         private void TrackCreatedBooking(ParsedResponseModel response)
@@ -189,7 +267,7 @@ namespace RestfulBooker.Tests.Tests
             actual.ForEach(AssertionHelper.AssertDeleteBookingResponseSucceeds);
         }
 
-        private async Task AssertBookingsDeleted()
+        private async Task AssertBookingsAreDeleted()
         {
             var tasks = createdBookingIDs.Select(defaultBookingClient.GetBookingAsync);
             var results = await Task.WhenAll(tasks);
@@ -197,7 +275,7 @@ namespace RestfulBooker.Tests.Tests
             actual.ForEach(AssertionHelper.AssertGetBookingResponseDoesNotExist);
         }
 
-        private async Task AssertBookingsCreated()
+        private async Task AssertBookingsAreCreated()
         {
             var tasks = createdBookingIDs.Select(defaultBookingClient.GetBookingAsync);
             var results = await Task.WhenAll(tasks);

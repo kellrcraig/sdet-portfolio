@@ -4,10 +4,6 @@ namespace RestfulBooker.Tests.Data
 
     public class BookingData
     {
-        // 23 bookings
-        public static readonly List<BookingModel> AllRecords;
-
-        // Null booking
         public static readonly BookingPartialModel NullBooking = new ()
         {
             FirstName = null,
@@ -18,7 +14,6 @@ namespace RestfulBooker.Tests.Data
             AdditionalNeeds = null,
         };
 
-        // Long name booking
         public static readonly BookingModel LongNameBooking = new ()
         {
             FirstName = new string('A', 255),
@@ -33,7 +28,6 @@ namespace RestfulBooker.Tests.Data
             AdditionalNeeds = "Testing long name fields.",
         };
 
-        // Free  booking
         public static readonly BookingModel FreeBooking = new ()
         {
             FirstName = "Price of...free!",
@@ -48,7 +42,6 @@ namespace RestfulBooker.Tests.Data
             AdditionalNeeds = "Testing a $0 TotalPrice.",
         };
 
-        // Negative price booking
         public static readonly BookingModel NegativePriceBooking = new ()
         {
             FirstName = "Negative",
@@ -63,7 +56,6 @@ namespace RestfulBooker.Tests.Data
             AdditionalNeeds = "Testing a negative TotalPrice.",
         };
 
-        // Same day booking
         public static readonly BookingModel SameDayBooking = new ()
         {
             FirstName = "Same",
@@ -78,7 +70,6 @@ namespace RestfulBooker.Tests.Data
             AdditionalNeeds = "Testing checking in and out on the same date.",
         };
 
-        // Backwards CheckOut-CheckIn dates booking
         public static readonly BookingModel BackwardsDatesBooking = new ()
         {
             FirstName = "Same day",
@@ -93,7 +84,6 @@ namespace RestfulBooker.Tests.Data
             AdditionalNeeds = "Testing checking in and out in reverse order.",
         };
 
-        // Empty booking
         public static readonly BookingModel EmptyStringsBooking = new ()
         {
             FirstName = string.Empty,
@@ -108,7 +98,6 @@ namespace RestfulBooker.Tests.Data
             AdditionalNeeds = string.Empty,
         };
 
-        // Single person booking
         public static readonly BookingModel SinglePersonBooking = new ()
         {
             FirstName = "Single",
@@ -123,7 +112,6 @@ namespace RestfulBooker.Tests.Data
             AdditionalNeeds = "Testing just a normal single person.",
         };
 
-        // Howlett family of 4
         public static readonly List<BookingModel> Howletts = new ()
         {
             new ()
@@ -180,7 +168,6 @@ namespace RestfulBooker.Tests.Data
             },
         };
 
-        // Summers family of 7
         public static readonly List<BookingModel> Summers = new ()
         {
             new ()
@@ -276,7 +263,6 @@ namespace RestfulBooker.Tests.Data
             },
         };
 
-        // Richards family of 5
         public static readonly List<BookingModel> Richards = new ()
         {
             new ()
@@ -346,22 +332,42 @@ namespace RestfulBooker.Tests.Data
             },
         };
 
-        static BookingData()
+        public static readonly List<BookingModel> UniqueFamily = new ()
         {
-            AllRecords = new List<BookingModel>
+            new ()
             {
-                LongNameBooking,
-                FreeBooking,
-                NegativePriceBooking,
-                SameDayBooking,
-                BackwardsDatesBooking,
-                EmptyStringsBooking,
-                SinglePersonBooking,
-            }
-            .Concat(Howletts)
-            .Concat(Summers)
-            .Concat(Richards)
-            .ToList();
-        }
+                FirstName = UniqueFirstName,
+                LastName = UniqueLastName,
+                TotalPrice = 85,
+                DepositPaid = false,
+                BookingDates = new BookingDateModel()
+                {
+                    CheckIn = UniqueCheckIn,
+                    CheckOut = UniqueCheckOut,
+                },
+                AdditionalNeeds = string.Empty,
+            },
+            new ()
+            {
+                FirstName = UniqueFirstName,
+                LastName = UniqueLastName,
+                TotalPrice = 85,
+                DepositPaid = false,
+                BookingDates = new BookingDateModel()
+                {
+                    CheckIn = UniqueCheckIn,
+                    CheckOut = UniqueCheckOut,
+                },
+                AdditionalNeeds = string.Empty,
+            },
+        };
+
+        public static string UniqueFirstName => "FirstName_c5c1a3387e";
+
+        public static string UniqueLastName => "LastName_c5c1a3387e";
+
+        public static DateOnly UniqueCheckIn => new (1732, 1, 7);
+
+        public static DateOnly UniqueCheckOut => new (1732, 1, 1);
     }
 }
