@@ -30,9 +30,12 @@ namespace RestfulBooker.Tests.Parsers
                 using var document = JsonDocument.Parse(response.Content);
                 var root = document.RootElement;
                 if (root.ValueKind == JsonValueKind.Array &&
-                    root[0].TryGetProperty("bookingid", out _))
+                    (root.GetArrayLength() == 0 || root[0].TryGetProperty("bookingid", out _)))
                 {
-                    parsedData.SetParsedData(JsonSerializer.Deserialize<List<BookingIdModel>>(response.Content));
+                    // Only GetBookingIds returns an array
+                    var list = JsonSerializer.Deserialize<List<BookingIdModel>>(response.Content)
+                               ?? new List<BookingIdModel>();
+                    parsedData.SetParsedData(list);
                 }
                 else if (root.TryGetProperty("token", out _))
                 {

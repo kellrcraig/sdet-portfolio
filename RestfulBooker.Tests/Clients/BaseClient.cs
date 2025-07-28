@@ -1,5 +1,6 @@
 namespace RestfulBooker.Tests.Clients
 {
+    using System.Diagnostics;
     using RestfulBooker.Tests.Models;
     using RestfulBooker.Tests.Parsers;
     using RestSharp;
@@ -16,6 +17,11 @@ namespace RestfulBooker.Tests.Clients
         protected async Task<ParsedResponseModel> SendAsync(RestRequest request)
         {
             var response = await Client.ExecuteAsync(request);
+            if (response.ResponseUri != null)
+            {
+                Debug.WriteLine($"Response URL: {response.ResponseUri}");
+            }
+
             var model = ResponseParser.Parse(response);
             return model;
         }
