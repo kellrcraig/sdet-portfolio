@@ -12,10 +12,17 @@ namespace SauceDemo.Tests.UI.Components
         {
         }
 
-        public string? GetErrorMessageText()
+        public string GetErrorMessageText(string errorText)
         {
             var errorMessageLocator = LocatorHelper.ByCssSelector($"h3{CssSelectorHelper.DataTestExact("error")}");
-            return Driver.FindElementSafe(errorMessageLocator)?.Text;
+            WaitHelper.WaitForTextToBePresent(Driver, errorMessageLocator, errorText);
+            return Driver.FindElementRequired(errorMessageLocator).Text;
+        }
+
+        public bool IsErrorMessageDisplayed()
+        {
+            var locator = LocatorHelper.ByCssSelector($"h3{CssSelectorHelper.DataTestExact("error")}");
+            return Driver.FindElementSafe(locator) != null;
         }
 
         public void DismissErrorFeedback()
