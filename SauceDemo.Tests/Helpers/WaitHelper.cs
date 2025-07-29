@@ -37,12 +37,12 @@ namespace SauceDemo.Tests.Helpers
             IWebDriver driver,
             By locator,
             string expectedText,
-            int timeoutSeconds = 5)
+            int timeoutSeconds = 2)
         {
             var wait = GetWait(driver, timeoutSeconds);
             return wait.Until(_ =>
             {
-                var element = driver.FindElementSafe(locator);
+                var element = driver.FindElementRequired(locator);
                 return element?.Text.Contains(expectedText) ?? false;
             });
         }

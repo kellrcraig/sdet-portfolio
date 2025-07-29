@@ -26,7 +26,7 @@ namespace SauceDemo.Tests.StepDefinitions.Steps
         public void TheLoginErrorMessageIsDisplayed(string expectedErrorMessage)
         {
             AssertionHelper.AssertEqual(
-                formErrorComponent.GetErrorMessageText(),
+                formErrorComponent.GetErrorMessageText(expectedErrorMessage),
                 expectedErrorMessage,
                 "Form error message");
         }
@@ -34,9 +34,8 @@ namespace SauceDemo.Tests.StepDefinitions.Steps
         [Then(@"the form error message is not displayed")]
         public void TheFormErrorMessageIsNotDisplayed()
         {
-            AssertionHelper.AssertEqual(
-                formErrorComponent.GetErrorMessageText(),
-                null,
+            AssertionHelper.AssertFalse(
+                formErrorComponent.IsErrorMessageDisplayed(),
                 "Form error message");
         }
     }
