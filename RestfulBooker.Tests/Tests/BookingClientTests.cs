@@ -14,6 +14,7 @@ namespace RestfulBooker.Tests.Tests
         private BookingClient defaultBookingClient;
         private AuthClient authClient;
         private List<int> createdBookingIDs = new ();
+        private string? cachedAuthToken;
 
         [SetUp]
         public void Setup()
@@ -251,10 +252,15 @@ namespace RestfulBooker.Tests.Tests
 
         private async Task<string> GetAuthToken()
         {
-            var authCredentials = new AuthCredentialsModel();
-            var response = await authClient.CreateTokenAsync(authCredentials);
-            AssertionHelper.AssertCreateAuthTokenResponseSucceeds(response);
-            return response.GetParsedDataAs<AuthTokenModel>().Token;
+            if (cachedAuthToken == null)
+            {
+                var authCredentials = new AuthCredentialsModel();
+                var response = await authClient.CreateTokenAsync(authCredentials);
+                AssertionHelper.AssertCreateAuthTokenResponseSucceeds(response);
+                cachedAuthToken = response.GetParsedDataAs<AuthTokenModel>().Token;
+            }
+
+            return cachedAuthToken;
         }
 
         private async Task DeleteCreatedBookings()
