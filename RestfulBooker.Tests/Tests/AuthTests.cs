@@ -3,9 +3,10 @@ namespace RestfulBooker.Tests.Tests
     using RestfulBooker.Tests.Constants;
     using RestfulBooker.Tests.Helpers;
     using RestfulBooker.Tests.Models;
+    using RestfulBooker.Tests.Tests.Shared;
 
     [TestFixture]
-    public class AuthClientTests : BaseTests
+    public class AuthTests : TestBase
     {
         [Test]
         public async Task CreateTokenAsync_ShouldSucceedAuthentication_WhenCredentialsAreCorrect()

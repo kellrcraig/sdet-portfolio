@@ -1,10 +1,10 @@
 namespace RestfulBooker.Tests.Tests
 {
-    using FluentAssertions;
     using RestfulBooker.Tests.Helpers;
+    using RestfulBooker.Tests.Tests.Shared;
 
     [TestFixture]
-    public class PingTests : BaseTests
+    public class PingTests : TestBase
     {
         [Test]
         public async Task HealthCheck_ShouldReturnCreated()
