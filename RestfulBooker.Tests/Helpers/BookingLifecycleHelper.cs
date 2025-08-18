@@ -4,18 +4,31 @@ namespace RestfulBooker.Tests.Helpers
 
     public static class BookingLifecycleHelper
     {
-        private static readonly ConcurrentBag<int> BookingIds = new ();
+        private static readonly ConcurrentDictionary<string, ConcurrentBag<int>> IdsByTest = new ();
 
-        public static void TrackBooking(int id) => BookingIds.Add(id);
+        private static string CurrentKey => TestContext.CurrentContext.Test.ID;
 
-        public static List<int> GetBookingIds() => BookingIds.ToList();
-
-        public static void Clear()
+        public static void TrackBooking(int bookingId)
         {
-            while (!BookingIds.IsEmpty)
+            var bag = IdsByTest.GetOrAdd(CurrentKey, _ => new ConcurrentBag<int>());
+            bag.Add(bookingId);
+        }
+
+        public static int[] GetBookingIdsForCurrentTest()
+        {
+            return IdsByTest.TryGetValue(CurrentKey, out var bag)
+                ? bag.ToArray()
+                : Array.Empty<int>();
+        }
+
+        public static int[] ClearIdsForCurrentTest()
+        {
+            if (!IdsByTest.TryRemove(CurrentKey, out var bag) || bag.IsEmpty)
             {
-                BookingIds.TryTake(out _);
+                return Array.Empty<int>();
             }
+
+            return bag.ToArray();
         }
     }
 }

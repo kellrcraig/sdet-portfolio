@@ -11,12 +11,12 @@ namespace RestfulBooker.Tests.Tests
         [TearDown]
         public async Task TearDown()
         {
-            var bookingIds = BookingLifecycleHelper.GetBookingIds();
+            var bookingIds = BookingLifecycleHelper.GetBookingIdsForCurrentTest().ToList();
             if (bookingIds.Any())
             {
                 var parsedResponses = await Client.DeleteBookingsAsync(bookingIds);
                 parsedResponses.ForEach(AssertionHelper.AssertDeleteBookingSucceeds);
-                BookingLifecycleHelper.Clear();
+                BookingLifecycleHelper.ClearIdsForCurrentTest();
             }
         }
 
