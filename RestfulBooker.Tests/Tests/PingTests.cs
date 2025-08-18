@@ -1,6 +1,7 @@
 namespace RestfulBooker.Tests.Tests
 {
     using FluentAssertions;
+    using RestfulBooker.Tests.Helpers;
 
     [TestFixture]
     public class PingTests : BaseTests
@@ -13,8 +14,7 @@ namespace RestfulBooker.Tests.Tests
             var actual = await Client.HealthCheckAsync();
 
             // Assert
-            actual.StatusCode.Should().Be(System.Net.HttpStatusCode.Created);
-            actual.Content.Should().Be("Created");
+            AssertionHelper.AssertHealthCheckSucceeds(actual);
         }
     }
 }

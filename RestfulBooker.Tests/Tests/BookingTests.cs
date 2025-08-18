@@ -1,7 +1,6 @@
 namespace RestfulBooker.Tests.Tests
 {
     using System.Threading.Tasks;
-    using FluentAssertions;
     using RestfulBooker.Tests.Data;
     using RestfulBooker.Tests.Helpers;
     using RestfulBooker.Tests.Models;
@@ -137,8 +136,10 @@ namespace RestfulBooker.Tests.Tests
         {
             // Arrange
             var payloads = BookingData.UniqueFamily;
-            var expected = await Client.CreateBookingsAsync(payloads);
-            var expectedIds = expected.Select(parsedResponse => parsedResponse.Content.BookingId).ToList();
+            var responses = await Client.CreateBookingsAsync(payloads);
+            var expected = responses.
+                Select(r => new BookingIdModel { BookingId = r.Content.BookingId })
+                .ToList();
 
             // Act
             var stringQueryParameters = new Dictionary<string, string>
@@ -146,10 +147,9 @@ namespace RestfulBooker.Tests.Tests
                 { "firstname", BookingData.UniqueFirstName },
             };
             var actual = await Client.GetBookingIdsAsync(stringQueryParameters);
-            var actualIds = actual.Content.Select(b => b.BookingId).ToList();
 
             // Assert
-            actualIds.Should().BeEquivalentTo(expectedIds);
+            AssertionHelper.AssertGetBookingIdsSucceeds(actual, expected);
         }
 
         [Test]
@@ -157,8 +157,10 @@ namespace RestfulBooker.Tests.Tests
         {
             // Arrange
             var payloads = BookingData.UniqueFamily;
-            var expected = await Client.CreateBookingsAsync(payloads);
-            var expectedIds = expected.Select(parsedResponse => parsedResponse.Content.BookingId).ToList();
+            var responses = await Client.CreateBookingsAsync(payloads);
+            var expected = responses.
+                Select(r => new BookingIdModel { BookingId = r.Content.BookingId })
+                .ToList();
 
             // Act
             var stringQueryParameters = new Dictionary<string, string>
@@ -166,10 +168,9 @@ namespace RestfulBooker.Tests.Tests
                 { "lastname", BookingData.UniqueLastName },
             };
             var actual = await Client.GetBookingIdsAsync(stringQueryParameters);
-            var actualIds = actual.Content.Select(b => b.BookingId).ToList();
 
             // Assert
-            actualIds.Should().BeEquivalentTo(expectedIds);
+            AssertionHelper.AssertGetBookingIdsSucceeds(actual, expected);
         }
 
         [Test]
@@ -177,8 +178,10 @@ namespace RestfulBooker.Tests.Tests
         {
             // Arrange
             var payloads = BookingData.UniqueFamily;
-            var expected = await Client.CreateBookingsAsync(payloads);
-            var expectedIds = expected.Select(parsedResponse => parsedResponse.Content.BookingId).ToList();
+            var responses = await Client.CreateBookingsAsync(payloads);
+            var expected = responses.
+                Select(r => new BookingIdModel { BookingId = r.Content.BookingId })
+                .ToList();
 
             // Act
             var stringQueryParameters = new Dictionary<string, string>
@@ -187,10 +190,9 @@ namespace RestfulBooker.Tests.Tests
                 { "lastname", BookingData.UniqueLastName },
             };
             var actual = await Client.GetBookingIdsAsync(stringQueryParameters);
-            var actualIds = actual.Content.Select(b => b.BookingId).ToList();
 
             // Assert
-            actualIds.Should().BeEquivalentTo(expectedIds);
+            AssertionHelper.AssertGetBookingIdsSucceeds(actual, expected);
         }
 
         [Test]
@@ -198,7 +200,7 @@ namespace RestfulBooker.Tests.Tests
         {
             // Arrange
             // Don't create any data
-            var expectedIds = new List<BookingIdModel>();
+            var expected = new List<BookingIdModel>();
 
             // Act
             var stringQueryParameters = new Dictionary<string, string>
@@ -206,10 +208,9 @@ namespace RestfulBooker.Tests.Tests
                 { "firstname", BookingData.UniqueFirstName },
             };
             var actual = await Client.GetBookingIdsAsync(stringQueryParameters);
-            var actualIds = actual.Content.Select(b => b.BookingId).ToList();
 
             // Assert
-            actualIds.Should().BeEquivalentTo(expectedIds);
+            AssertionHelper.AssertGetBookingIdsSucceeds(actual, expected);
         }
     }
 }
