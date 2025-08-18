@@ -1,29 +1,18 @@
 namespace RestfulBooker.Tests.Models
 {
     using System.Net;
+    using RestSharp;
 
-    public class ParsedResponseModel
+    public class ParsedResponseModel<T>
     {
-        private object? parsedData;
+        required public T Content { get; set; }
+
+        required public string ContentType { get; set; }
+
+        public ResponseStatus ResponseStatus { get; set; }
 
         public HttpStatusCode StatusCode { get; set; }
 
-        public string? ContentType { get; set; }
-
-        public void SetParsedData(object? parsedData)
-        {
-            this.parsedData = parsedData;
-        }
-
-        public T GetParsedDataAs<T>()
-        {
-            if (parsedData is T value)
-            {
-                return value;
-            }
-
-            throw new InvalidCastException(
-                    $"Parsed data is not of expected type {typeof(T).Name}. Actual type: {parsedData?.GetType().Name ?? "null"}");
-        }
+        public Exception? ErrorException { get; set; }
     }
 }

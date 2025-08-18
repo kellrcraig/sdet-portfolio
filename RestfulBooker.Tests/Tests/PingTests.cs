@@ -1,28 +1,20 @@
 namespace RestfulBooker.Tests.Tests
 {
     using FluentAssertions;
-    using RestfulBooker.Tests.Clients;
 
     [TestFixture]
-    public class PingClientTests
+    public class PingTests : BaseTests
     {
-        private PingClient client;
-
-        [SetUp]
-        public void SetUp()
-        {
-            client = new PingClient();
-        }
-
         [Test]
-        public async Task GetPingAsync_ShouldReturnCreated()
+        public async Task HealthCheck_ShouldReturnCreated()
         {
+            // Arrange
             // Act
-            var actual = await client.GetPingAsync();
+            var actual = await Client.HealthCheckAsync();
 
             // Assert
             actual.StatusCode.Should().Be(System.Net.HttpStatusCode.Created);
-            actual.GetParsedDataAs<string>().Should().Be("Created");
+            actual.Content.Should().Be("Created");
         }
     }
 }
