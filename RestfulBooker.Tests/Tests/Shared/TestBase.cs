@@ -1,13 +1,13 @@
-namespace RestfulBooker.Tests.Tests
+namespace RestfulBooker.Tests.Tests.Shared
 {
     using RestfulBooker.Tests.Clients;
     using RestSharp;
 
-    public abstract class BaseTests
+    public abstract class TestBase
     {
         private static readonly RestClient SharedClient = new ("https://restful-booker.herokuapp.com");
 
-        public BaseTests()
+        public TestBase()
         {
             Client = new RestfulBookerClient(SharedClient);
         }
