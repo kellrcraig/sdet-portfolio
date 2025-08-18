@@ -6,56 +6,31 @@ namespace RestfulBooker.Tests.Parsers
 
     public class ResponseParser
     {
-        public static ParsedResponseModel Parse(RestResponse response)
+        public static ParsedResponseModel<T> Parse<T>(RestResponse response)
         {
-            var parsedData = new ParsedResponseModel
+            T? content;
+
+            if (response.Content is null)
             {
+                content = default;
+            }
+            else if (typeof(T) == typeof(string))
+            {
+                content = (T)(object)response.Content;
+            }
+            else
+            {
+                content = JsonSerializer.Deserialize<T>(response.Content);
+            }
+
+            return new ParsedResponseModel<T>
+            {
+                Content = content ?? throw new InvalidOperationException("RestResponse.Content is null"),
+                ContentType = response.ContentType ?? throw new InvalidOperationException("RestResponse.ContentType is null"),
+                ResponseStatus = response.ResponseStatus,
                 StatusCode = response.StatusCode,
-                ContentType = response.ContentType,
+                ErrorException = response.ErrorException,
             };
-
-            // Handles: null, empty string, whitespace only
-            if (string.IsNullOrWhiteSpace(response.Content) || response.ContentType == null)
-            {
-                return parsedData;
-            }
-
-            if (response.ContentType.Equals("text/plain"))
-            {
-                parsedData.SetParsedData(response.Content);
-                return parsedData;
-            }
-            else if (response.ContentType.Equals("application/json"))
-            {
-                using var document = JsonDocument.Parse(response.Content);
-                var root = document.RootElement;
-                if (root.ValueKind == JsonValueKind.Array &&
-                    (root.GetArrayLength() == 0 || root[0].TryGetProperty("bookingid", out _)))
-                {
-                    // Only GetBookingIds returns an array
-                    var list = JsonSerializer.Deserialize<List<BookingIdModel>>(response.Content)
-                               ?? new List<BookingIdModel>();
-                    parsedData.SetParsedData(list);
-                }
-                else if (root.TryGetProperty("token", out _))
-                {
-                    parsedData.SetParsedData(JsonSerializer.Deserialize<AuthTokenModel>(response.Content));
-                }
-                else if (root.TryGetProperty("reason", out _))
-                {
-                    parsedData.SetParsedData(JsonSerializer.Deserialize<AuthErrorModel>(response.Content));
-                }
-                else if (root.TryGetProperty("bookingid", out _))
-                {
-                    parsedData.SetParsedData(JsonSerializer.Deserialize<BookingWithIdModel>(response.Content));
-                }
-                else if (root.TryGetProperty("firstname", out _))
-                {
-                    parsedData.SetParsedData(JsonSerializer.Deserialize<BookingModel>(response.Content));
-                }
-            }
-
-            return parsedData;
         }
     }
 }
