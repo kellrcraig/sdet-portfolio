@@ -1,6 +1,7 @@
 namespace RestfulBooker.Tests
 {
     using RestfulBooker.Tests.Helpers;
+    using RestfulBooker.Tests.Tests.Infrastructure;
     using Serilog;
 
     [SetUpFixture]
@@ -23,12 +24,22 @@ namespace RestfulBooker.Tests
                 .MinimumLevel.Debug()
                 .CreateLogger();
             Log.ForContext("Banner", "--------------------Starting Test Run------------------").Information(string.Empty);
+            TestRunMetrics.Start();
         }
 
         [OneTimeTearDown]
         public void Cleanup()
         {
-            Log.ForContext("Banner", "--------------------Ending Test Run--------------------").Information(string.Empty);
+            var (passed, failed, skipped, inconclusive, total, duration) = TestRunMetrics.Snapshot();
+            Log.ForContext("Banner", "--------------------Ending Test Run--------------------").Information(
+                "{testRunOutcome}Failed: {Failed}, Passed: {Passed}, Skipped: {Skipped}, Inconclusive: {Inconclusive}, Total: {Total}, Duration: {Duration} ms",
+                passed == total ? "Passed!  - " : "Failed!  - ",
+                failed,
+                passed,
+                skipped,
+                inconclusive,
+                total,
+                duration);
             Log.CloseAndFlush();
         }
     }
