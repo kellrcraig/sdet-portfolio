@@ -6,7 +6,6 @@ namespace RestfulBooker.Tests.Clients
     using RestfulBooker.Tests.Models;
     using RestfulBooker.Tests.Parsers;
     using RestSharp;
-    using Serilog;
 
     public class RestfulBookerClient
     {
@@ -26,6 +25,7 @@ namespace RestfulBooker.Tests.Clients
             var response = await SendAsync(request);
             var parsedResponse = ResponseParser.Parse<BookingWithIdModel>(response);
             BookingLifecycleHelper.TrackBooking(parsedResponse.Content.BookingId);
+            LogHelper.DataCreated(parsedResponse.Content.BookingId);
             return parsedResponse;
         }
 
@@ -101,45 +101,14 @@ namespace RestfulBooker.Tests.Clients
 
         private async Task<RestResponse> SendAsync(RestRequest request)
         {
-            Log.Information(
-                """
-                
-                    [{TestName}]
-                    Request:
-                        Resource: {Resource}
-                        Method: {Method}
-                        RequestFormat: {RequestFormat}
-                        Parameters: {Parameters}
-                """,
-                TestContext.CurrentContext.Test.FullName,
-                request.Resource,
-                request.Method,
-                request.RequestFormat,
-                request.Parameters);
+            var cid = Guid.NewGuid().ToString("N");
+            LogHelper.Request(request, cid);
+
             var stopwatch = Stopwatch.StartNew();
             var response = await client.ExecuteAsync(request);
             stopwatch.Stop();
-            Log.Information(
-                """
-                
-                    [{TestName}]
-                    Response:
-                        Duration: {ElapsedMilliseconds} ms
-                        Content: {Content}
-                        ContentType: {ContentType}
-                        ResponseStatus: {ResponseStatus}
-                        StatusCode: {StatusCode}
-                        ErrorException: {ErrorException}                        
-                        ResponseUri: {ResponseUri}
-                """,
-                TestContext.CurrentContext.Test.FullName,
-                stopwatch.ElapsedMilliseconds,
-                response.Content,
-                response.ContentType,
-                response.ResponseStatus,
-                response.StatusCode,
-                response.ErrorException,
-                response.ResponseUri);
+
+            LogHelper.Response(response, stopwatch.ElapsedMilliseconds, cid);
             return response;
         }
     }

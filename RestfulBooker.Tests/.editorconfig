@@ -15,3 +15,6 @@ dotnet_diagnostic.SA0001.severity = none
 
 #SA1649FileNameMustMatchTypeName
 dotnet_diagnostic.SA1649.severity = none
+
+# Treat unnecessary usings as warnings
+dotnet_diagnostic.IDE0005.severity = warning

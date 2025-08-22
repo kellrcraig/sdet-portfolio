@@ -15,6 +15,7 @@ namespace RestfulBooker.Tests.Tests.BookingTests
                 var parsedResponses = await Client.DeleteBookingsAsync(bookingIds);
                 parsedResponses.ForEach(AssertionHelper.AssertDeleteBookingSucceeds);
                 BookingLifecycleHelper.ClearIdsForCurrentTest();
+                LogHelper.DataDeleted(bookingIds);
             }
         }
     }
