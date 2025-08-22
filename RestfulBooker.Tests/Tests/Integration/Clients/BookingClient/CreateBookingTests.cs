@@ -1,4 +1,4 @@
-namespace RestfulBooker.Tests.Tests.BookingTests
+namespace RestfulBooker.Tests.Tests.Integration.Clients.BookingClient
 {
     using RestfulBooker.Tests.Data;
     using RestfulBooker.Tests.Helpers;

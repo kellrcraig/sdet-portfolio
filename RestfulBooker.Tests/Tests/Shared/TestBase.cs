@@ -2,21 +2,14 @@ namespace RestfulBooker.Tests.Tests.Shared
 {
     using System.Diagnostics;
     using NUnit.Framework.Interfaces;
-    using RestfulBooker.Tests.Clients;
     using RestfulBooker.Tests.Helpers;
+    using RestfulBooker.Tests.Tests.Infrastructure;
     using RestSharp;
 
     public abstract class TestBase
     {
-        private static readonly RestClient SharedClient = new ("https://restful-booker.herokuapp.com");
+        protected static readonly RestClient SharedClient = new ("https://restful-booker.herokuapp.com");
         private Stopwatch testTimer = default!;
-
-        public TestBase()
-        {
-            Client = new RestfulBookerClient(SharedClient);
-        }
-
-        protected RestfulBookerClient Client { get; }
 
         [SetUp]
         public void StartTest()
@@ -30,6 +23,7 @@ namespace RestfulBooker.Tests.Tests.Shared
         {
             testTimer.Stop();
             var result = TestContext.CurrentContext.Result;
+            TestRunMetrics.TrackCurrentTest(result.Outcome.Status);
 
             if (result.Outcome.Status == TestStatus.Failed)
             {

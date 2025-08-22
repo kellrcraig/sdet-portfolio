@@ -1,5 +1,6 @@
-namespace RestfulBooker.Tests.Tests
+namespace RestfulBooker.Tests.Tests.Integration.Clients.AuthClient
 {
+    using RestfulBooker.Tests.Clients;
     using RestfulBooker.Tests.Constants;
     using RestfulBooker.Tests.Helpers;
     using RestfulBooker.Tests.Models;
@@ -8,6 +9,14 @@ namespace RestfulBooker.Tests.Tests
     [TestFixture]
     public class AuthTests : TestBase
     {
+        private AuthClient client;
+
+        [OneTimeSetUp]
+        public void OneTimeSetUp()
+        {
+            client = new AuthClient(SharedClient);
+        }
+
         [Test]
         public async Task CreateTokenAsync_ShouldSucceedAuthentication_WhenCredentialsAreCorrect()
         {
@@ -15,7 +24,7 @@ namespace RestfulBooker.Tests.Tests
             var payload = new AuthCredentialsModel();
 
             // Act
-            var actual = await Client.CreateTokenAsync<AuthTokenModel>(payload);
+            var actual = await client.CreateTokenAsync<AuthTokenModel>(payload);
 
             // Assert
             AssertionHelper.AssertCreateTokenSucceeds(actual);
@@ -29,7 +38,7 @@ namespace RestfulBooker.Tests.Tests
                 username: PublicApiCredentials.UserName.ToUpper());
 
             // Act
-            var actual = await Client.CreateTokenAsync<AuthErrorModel>(payload);
+            var actual = await client.CreateTokenAsync<AuthErrorModel>(payload);
 
             // Assert
             AssertionHelper.AssertCreateTokenFails(actual);
@@ -43,7 +52,7 @@ namespace RestfulBooker.Tests.Tests
                 password: PublicApiCredentials.Password.PadRight(16));
 
             // Act
-            var actual = await Client.CreateTokenAsync<AuthErrorModel>(payload);
+            var actual = await client.CreateTokenAsync<AuthErrorModel>(payload);
 
             // Assert
             AssertionHelper.AssertCreateTokenFails(actual);
@@ -58,7 +67,7 @@ namespace RestfulBooker.Tests.Tests
                 password: null);
 
             // Act
-            var actual = await Client.CreateTokenAsync<AuthErrorModel>(payload);
+            var actual = await client.CreateTokenAsync<AuthErrorModel>(payload);
 
             // Assert
             AssertionHelper.AssertCreateTokenFails(actual);
@@ -72,7 +81,7 @@ namespace RestfulBooker.Tests.Tests
                 password: "IncorrectPassword");
 
             // Act
-            var actual = await Client.CreateTokenAsync<AuthErrorModel>(payload);
+            var actual = await client.CreateTokenAsync<AuthErrorModel>(payload);
 
             // Assert
             AssertionHelper.AssertCreateTokenFails(actual);
@@ -86,7 +95,7 @@ namespace RestfulBooker.Tests.Tests
                 username: "IncorrectUserName");
 
             // Act
-            var actual = await Client.CreateTokenAsync<AuthErrorModel>(payload);
+            var actual = await client.CreateTokenAsync<AuthErrorModel>(payload);
 
             // Assert
             AssertionHelper.AssertCreateTokenFails(actual);
@@ -101,7 +110,7 @@ namespace RestfulBooker.Tests.Tests
                 password: PublicApiCredentials.Password);
 
             // // Act
-            var actual = await Client.CreateTokenAsync<AuthErrorModel>(payload);
+            var actual = await client.CreateTokenAsync<AuthErrorModel>(payload);
 
             // // Assert
             AssertionHelper.AssertCreateTokenFails(actual);
@@ -116,7 +125,7 @@ namespace RestfulBooker.Tests.Tests
                 "IncorrectPassword");
 
             // Act
-            var actual = await Client.CreateTokenAsync<AuthErrorModel>(payload);
+            var actual = await client.CreateTokenAsync<AuthErrorModel>(payload);
 
             // Assert
             AssertionHelper.AssertCreateTokenFails(actual);
@@ -131,7 +140,7 @@ namespace RestfulBooker.Tests.Tests
                 string.Empty);
 
             // Act
-            var actual = await Client.CreateTokenAsync<AuthErrorModel>(payload);
+            var actual = await client.CreateTokenAsync<AuthErrorModel>(payload);
 
             // Assert
             AssertionHelper.AssertCreateTokenFails(actual);
@@ -146,7 +155,7 @@ namespace RestfulBooker.Tests.Tests
                 null);
 
             // Act
-            var actual = await Client.CreateTokenAsync<AuthErrorModel>(payload);
+            var actual = await client.CreateTokenAsync<AuthErrorModel>(payload);
 
             // Assert
             AssertionHelper.AssertCreateTokenFails(actual);

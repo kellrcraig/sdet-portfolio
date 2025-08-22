@@ -1,19 +1,20 @@
 namespace RestfulBooker.Tests.Clients
 {
-    using System.Diagnostics;
     using RestfulBooker.Tests.Builders;
     using RestfulBooker.Tests.Helpers;
     using RestfulBooker.Tests.Models;
     using RestfulBooker.Tests.Parsers;
+    using RestfulBooker.Tests.Providers;
     using RestSharp;
 
-    public class RestfulBookerClient
+    public class BookingClient : ClientBase
     {
-        private readonly RestClient client;
+        private readonly AuthProvider authProvider;
 
-        public RestfulBookerClient(RestClient sharedClient)
+        public BookingClient(RestClient sharedClient, AuthProvider authProvider)
+            : base(sharedClient)
         {
-            client = sharedClient;
+            this.authProvider = authProvider;
         }
 
         public async Task<ParsedResponseModel<BookingWithIdModel>> CreateBookingAsync(BookingModel payload)
@@ -36,23 +37,11 @@ namespace RestfulBooker.Tests.Clients
             return parsedResponses.ToList();
         }
 
-        public async Task<ParsedResponseModel<T>> CreateTokenAsync<T>(AuthCredentialsModel payload)
-        {
-            var request = RestRequestBuilder
-                .CreateTokenRequest()
-                .WithBodyJson(payload)
-                .Build();
-            var response = await SendAsync(request);
-            var parsedResponse = ResponseParser.Parse<T>(response);
-            return parsedResponse;
-        }
-
         public async Task<ParsedResponseModel<string>> DeleteBookingAsync(int id)
         {
-            var payload = new AuthCredentialsModel();
-            var parsedResponse = await CreateTokenAsync<AuthTokenModel>(payload);
+            var token = await authProvider.GetTokenAsync();
             var request = RestRequestBuilder
-                    .DeleteBookingRequest(id, parsedResponse.Content.Token)
+                    .DeleteBookingRequest(id, token)
                     .Build();
             var response = await SendAsync(request);
             return ResponseParser.Parse<string>(response);
@@ -87,29 +76,6 @@ namespace RestfulBooker.Tests.Clients
             var response = await SendAsync(request);
             var parsedResponse = ResponseParser.Parse<List<BookingIdModel>>(response);
             return parsedResponse;
-        }
-
-        public async Task<ParsedResponseModel<string>> HealthCheckAsync()
-        {
-            var request = RestRequestBuilder
-                .HealthCheckRequest()
-                .Build();
-            var response = await SendAsync(request);
-            var parsedResponse = ResponseParser.Parse<string>(response);
-            return parsedResponse;
-        }
-
-        private async Task<RestResponse> SendAsync(RestRequest request)
-        {
-            var cid = Guid.NewGuid().ToString("N");
-            LogHelper.Request(request, cid);
-
-            var stopwatch = Stopwatch.StartNew();
-            var response = await client.ExecuteAsync(request);
-            stopwatch.Stop();
-
-            LogHelper.Response(response, stopwatch.ElapsedMilliseconds, cid);
-            return response;
         }
     }
 }
