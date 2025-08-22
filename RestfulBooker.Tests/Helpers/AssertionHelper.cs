@@ -5,6 +5,7 @@ namespace RestfulBooker.Tests.Helpers
     using FluentAssertions.Execution;
     using RestfulBooker.Tests.Constants;
     using RestfulBooker.Tests.Models;
+    using RestSharp;
 
     public static class AssertionHelper
     {
@@ -15,7 +16,7 @@ namespace RestfulBooker.Tests.Helpers
                 actual.Content.BookingId.Should().BeGreaterThan(0);
                 actual.Content.Booking.Should().BeEquivalentTo(expectedContent);
                 actual.ContentType.Should().Be(ContentTypes.Json);
-                actual.ResponseStatus.Should().Be(RestSharp.ResponseStatus.Completed);
+                actual.ResponseStatus.Should().Be(ResponseStatus.Completed);
                 actual.StatusCode.Should().Be(HttpStatusCode.OK);
                 actual.ErrorException.Should().BeNull();
             }
@@ -29,7 +30,7 @@ namespace RestfulBooker.Tests.Helpers
                 actual.Content.Token.Should().MatchRegex("^[a-f0-9]{15}$");
                 actual.Content.Token.Should().HaveLength(15);
                 actual.ContentType.Should().Be(ContentTypes.Json);
-                actual.ResponseStatus.Should().Be(RestSharp.ResponseStatus.Completed);
+                actual.ResponseStatus.Should().Be(ResponseStatus.Completed);
                 actual.StatusCode.Should().Be(HttpStatusCode.OK);
                 actual.ErrorException.Should().BeNull();
             }
@@ -41,7 +42,7 @@ namespace RestfulBooker.Tests.Helpers
             {
                 actual.Content.Reason.Should().Be("Bad credentials");
                 actual.ContentType.Should().Be(ContentTypes.Json);
-                actual.ResponseStatus.Should().Be(RestSharp.ResponseStatus.Completed);
+                actual.ResponseStatus.Should().Be(ResponseStatus.Completed);
                 actual.StatusCode.Should().Be(HttpStatusCode.OK);
                 actual.ErrorException.Should().BeNull();
             }
@@ -53,7 +54,7 @@ namespace RestfulBooker.Tests.Helpers
             {
                 actual.Content.Should().Be("Created");
                 actual.ContentType.Should().Be(ContentTypes.PlainText);
-                actual.ResponseStatus.Should().Be(RestSharp.ResponseStatus.Completed);
+                actual.ResponseStatus.Should().Be(ResponseStatus.Completed);
                 actual.StatusCode.Should().Be(HttpStatusCode.Created);
                 actual.ErrorException.Should().BeNull();
             }
@@ -65,7 +66,7 @@ namespace RestfulBooker.Tests.Helpers
             {
                 actual.Content.Should().Be("Created");
                 actual.ContentType.Should().Be(ContentTypes.PlainText);
-                actual.ResponseStatus.Should().Be(RestSharp.ResponseStatus.Completed);
+                actual.ResponseStatus.Should().Be(ResponseStatus.Completed);
                 actual.StatusCode.Should().Be(HttpStatusCode.Created);
                 actual.ErrorException.Should().BeNull();
             }
@@ -77,7 +78,7 @@ namespace RestfulBooker.Tests.Helpers
             {
                 actual.Content.Should().BeEquivalentTo(expected);
                 actual.ContentType.Should().Be(ContentTypes.Json);
-                actual.ResponseStatus.Should().Be(RestSharp.ResponseStatus.Completed);
+                actual.ResponseStatus.Should().Be(ResponseStatus.Completed);
                 actual.StatusCode.Should().Be(HttpStatusCode.OK);
                 actual.ErrorException.Should().BeNull();
             }

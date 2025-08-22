@@ -1,6 +1,8 @@
 namespace RestfulBooker.Tests.Parsers
 {
     using System.Text.Json;
+    using RestfulBooker.Tests.Extensions;
+    using RestfulBooker.Tests.Helpers;
     using RestfulBooker.Tests.Models;
     using RestSharp;
 
@@ -9,7 +11,7 @@ namespace RestfulBooker.Tests.Parsers
         public static ParsedResponseModel<T> Parse<T>(RestResponse response)
         {
             T? content;
-
+            var type = typeof(T).GetFriendlyName();
             if (response.Content is null)
             {
                 content = default;
@@ -20,10 +22,18 @@ namespace RestfulBooker.Tests.Parsers
             }
             else
             {
-                content = JsonSerializer.Deserialize<T>(response.Content);
+                try
+                {
+                    content = JsonSerializer.Deserialize<T>(response.Content);
+                }
+                catch (JsonException error)
+                {
+                    LogHelper.ParseFailed(error, type, response.Content);
+                    throw;
+                }
             }
 
-            return new ParsedResponseModel<T>
+            var parsedResponse = new ParsedResponseModel<T>
             {
                 Content = content ?? throw new InvalidOperationException("RestResponse.Content is null"),
                 ContentType = response.ContentType ?? throw new InvalidOperationException("RestResponse.ContentType is null"),
@@ -31,6 +41,9 @@ namespace RestfulBooker.Tests.Parsers
                 StatusCode = response.StatusCode,
                 ErrorException = response.ErrorException,
             };
+
+            LogHelper.ParseOk(type);
+            return parsedResponse;
         }
     }
 }
